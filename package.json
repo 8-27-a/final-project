@@ -1,12 +1,16 @@
 {
-  "name": "deploy-app",
+  "name": "mentor4me",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "dev": "nodemon server.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "engines": {
+    "node": "8.11.3"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +19,8 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }
