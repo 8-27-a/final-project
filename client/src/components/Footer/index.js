@@ -24,7 +24,7 @@ const Footer = () => (
             instagram
           </a>
           <a
-            href="http://twitter.com/mentor4me"
+            href="https://twitter.com/Mentor4MeCoding"
             target="_blank"
             rel="noopener noreferrer"
           >
