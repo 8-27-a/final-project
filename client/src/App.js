@@ -2,17 +2,25 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Home, Appointment, Profile, Login, Register } from "./containers";
+import {
+  Home,
+  Mentor,
+  Student,
+  Community,
+  Login,
+  Register
+} from "./containers";
 
 class App extends Component {
   render() {
     return (
       <Router>
         <React.Fragment>
-          <Header brand="Mentors 4 Me" />
+          <Header brand="Mentor4me" />
           <Route exact path="/" component={Home} />
-          <Route exact path="/Profile" component={Profile} />
-          <Route exact path="/Appt" component={Appointment} />
+          <Route exact path="/Mentor" component={Mentor} />
+          <Route exact path="/Student" component={Student} />
+          <Route exact path="/Community" component={Community} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Footer />
@@ -23,4 +31,3 @@ class App extends Component {
 }
 
 export default App;
- 

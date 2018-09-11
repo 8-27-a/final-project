@@ -27,25 +27,48 @@ const Header = ({ brand }) => (
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/profile">
-              Profile
+            <NavLink className="nav-link" to="/mentor">
+              Find a mentor
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/appt">
-              Appointment
+            <NavLink className="nav-link" to="/student">
+              Student
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/login" className="btn btn-outline-primary mr-3">
-              Login
+            <NavLink className="nav-link" to="/community">
+              Community
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink to="/register" className="btn btn-primary mr-3">
-              Sign Up
-            </NavLink>
-          </li>
+          {localStorage.getItem("JWT") ? (
+            <React.Fragment>
+              <li className="nav-item">
+                <button
+                  className="btn btn-outline-primary"
+                  onClick={() => {
+                    localStorage.removeItem("JWT");
+                    console.log("User logged out");
+                  }}
+                >
+                  Log Out
+                </button>
+              </li>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <li className="nav-item">
+                <NavLink to="/login" className="btn btn-outline-primary mr-3">
+                  Login
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/register" className="btn btn-primary mr-3">
+                  Sign Up
+                </NavLink>
+              </li>
+            </React.Fragment>
+          )}
         </ul>
       </div>
     </div>
