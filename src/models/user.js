@@ -2,12 +2,18 @@ module.exports = (sequelize, DataTypes) => {
   var Model = sequelize.define("User", {
     userId: {
       type: DataTypes.INTEGER,
-      autoincrement: true,
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true
     },
-    first: DataTypes.STRING,
-    last: DataTypes.STRING,
+    first: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    last: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,6 +28,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ENUM,
       allowNull: false,
       values: ["student", "mentor"]
+    },
+    imgUrl: {
+      type: DataTypes.STRING
     }
   });
 
@@ -31,5 +40,6 @@ module.exports = (sequelize, DataTypes) => {
   //   });
   // };
 
+  // sequelize.sync({ force: true });
   return Model;
 };

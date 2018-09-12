@@ -1,6 +1,5 @@
 export { default as Home } from "./Home";
 export { default as Register } from "./Register";
-export { default as Mentor } from "./Student";
-export { default as Student } from "./Student";
-export { default as Community } from "./Community";
+export { default as Mentor } from "./Mentor";
+export { default as Dashboard } from "./Dashboard";
 export { default as Login } from "./Login";

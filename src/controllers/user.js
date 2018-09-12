@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const user = require("../models/user");
+const User = require("../models").User;
 
 const signup = (req, res) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
@@ -11,9 +11,12 @@ const signup = (req, res) => {
     } else {
       // console.log("hashedPass:", hash);
       const newUser = {
+        first: req.body.first,
+        last: req.body.last,
         email: req.body.email,
         password: hash,
-        role: req.body.role
+        role: req.body.role,
+        imgUrl: req.body.imgUrl
       };
 
       User.create(newUser)
@@ -25,7 +28,7 @@ const signup = (req, res) => {
         })
         .catch(err => {
           res.status(200).json({
-            message: err.errors[0].message
+            message: err
           });
         });
     }
@@ -55,7 +58,14 @@ const auth = (req, res) => {
   });
 };
 
+const mentors = (req, res) => {
+  User.findAll({ where: { role: "mentor" } }).then(mentors =>
+    res.json(mentors)
+  );
+};
+
 module.exports = {
   signup,
-  auth
+  auth,
+  mentors
 };

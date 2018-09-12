@@ -10,7 +10,7 @@ const Footer = () => (
         </div>
         <div className="col-md-6 social-media">
           <a
-            href="http://facebook.com/"
+            href="http://facebook.com/mentor4mecoding"
             target="_blank"
             rel="noopener noreferrer"
           >

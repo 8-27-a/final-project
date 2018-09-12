@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+// import SignIn from "../components/Forms/SignIn";
 
-class Login extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Login Page</h1>
-            </div>
-        );
-    }
+class Register extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Register Page</h1>
+        {/* <SignIn /> */}
+      </div>
+    );
+  }
 }
 
-export default Login;
+export default Register;
