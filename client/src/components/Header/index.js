@@ -32,15 +32,11 @@ const Header = ({ brand }) => (
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/student">
-              Student
+            <NavLink className="nav-link" to="/dashboard">
+              Dashboard
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/community">
-              Community
-            </NavLink>
-          </li>
+
           {localStorage.getItem("JWT") ? (
             <React.Fragment>
               <li className="nav-item">

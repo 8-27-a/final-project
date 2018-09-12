@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class Community extends Component {
+class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h1>Community Page</h1>
+        <h1>Dashboard</h1>
       </div>
     );
   }
 }
 
-export default Community;
+export default Dashboard;

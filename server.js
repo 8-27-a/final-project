@@ -13,6 +13,21 @@ if (process.env.NODE_ENV) {
   app.use(express.static(path.join(__dirname, "client/build")));
 }
 
+// Connect to Datase and Load models
+const models = require("./src/models");
+models.sequelize
+  .authenticate()
+  .then(() => {
+    console.log("Connected to SQL database:", process.env.DB_NAME);
+  })
+  .catch(err => {
+    console.error("Unable to connect to SQL database:", process.env.DB_NAME);
+  });
+if (process.env.app === "dev") {
+  // models.sequelize.sync(); // For creating new tables
+  // models.sequelize.sync({ force: true }); // For re-creating all tables
+}
+
 // app middleware
 app.use(express.json());
 app.use(cors());
