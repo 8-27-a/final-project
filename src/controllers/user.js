@@ -58,14 +58,84 @@ const auth = (req, res) => {
   });
 };
 
+const students = (req, res) => {
+  User.findAll({ where: { role: "student" } }).then(students =>
+    res.json(students)
+  );
+};
+
 const mentors = (req, res) => {
   User.findAll({ where: { role: "mentor" } }).then(mentors =>
     res.json(mentors)
   );
 };
 
+const update = (req, res) => {
+  const { userId, first, last, imgUrl, role } = req.body;
+
+  const updatedUser = {};
+
+  if (userId) {
+    updatedUser.userId = userId;
+  }
+  if (first) {
+    updatedUser.first = first;
+  }
+  if (last) {
+    updatedUser.last = last;
+  }
+  if (imgUrl) {
+    updatedUser.imgUrl = imgUrl;
+  }
+  if (role) {
+    updatedUser.role = role;
+  }
+
+  Post.update(updatedUser, {
+    where: {
+      PostId: req.params.id
+    }
+  })
+    .then(user => res.json({ updated: true }))
+    .catch(err =>
+      res.json({
+        updated: false,
+        message: err
+      })
+    );
+};
+
+const remove = (req, res, next) => {
+  console.log("userData:", req.userData);
+  Post.findOne({ where: { userId: req.params.id } }).then(post => {
+    if (post !== null) {
+      User.destroy({
+        where: {
+          userId: req.params.id
+        }
+      })
+        .then(users =>
+          res.json({ success: true, message: "User has been deleted." })
+        )
+        .catch(err =>
+          res.json({
+            Error: err
+          })
+        );
+    } else {
+      res.json({
+        success: false,
+        message: "There's no user with the that userId."
+      });
+    }
+  });
+};
+
 module.exports = {
   signup,
   auth,
-  mentors
+  mentors,
+  students,
+  update,
+  remove
 };
