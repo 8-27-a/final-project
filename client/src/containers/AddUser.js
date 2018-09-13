@@ -39,7 +39,7 @@ class AddUser extends Component {
         {this.state.loading ? <h1>Loading...</h1> : ""}
 
         <div className="row">
-          {this.state.users.reverse().map(post => (
+          {this.state.users.reverse().map(user => (
             <div key={user.userId} className="col-md-6">
               <Card
                 imgUrl={user.imgUrl}

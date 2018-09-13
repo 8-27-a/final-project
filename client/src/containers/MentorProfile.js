@@ -10,7 +10,7 @@ class MentorProfile extends Component {
 
   componentDidMount = () => {
     Axios.get(
-      `http://localhost:5000/v1/mentors/${this.props.match.params.post_id}`
+      `http://localhost:5000/v1/mentors/${this.props.match.params.userId}`
     ).then(res => {
       console.log(res.data);
       this.setState({ mentors: res.data });
