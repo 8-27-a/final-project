@@ -91,9 +91,9 @@ const update = (req, res) => {
     updatedUser.role = role;
   }
 
-  Post.update(updatedUser, {
+  User.update(updatedUser, {
     where: {
-      PostId: req.params.id
+      userId: req.params.id
     }
   })
     .then(user => res.json({ updated: true }))
@@ -105,16 +105,23 @@ const update = (req, res) => {
     );
 };
 
-const remove = (req, res, next) => {
+const getOne = (req, res) => {
   console.log("userData:", req.userData);
-  Post.findOne({ where: { userId: req.params.id } }).then(post => {
-    if (post !== null) {
+  User.findOne({ where: { userId: req.params.id } }).then(user => {
+    res.json({ success: true, message: "User found" });
+  });
+};
+
+const remove = (req, res) => {
+  console.log("userData:", req.userData);
+  User.findOne({ where: { userId: req.params.id } }).then(user => {
+    if (user !== null) {
       User.destroy({
         where: {
           userId: req.params.id
         }
       })
-        .then(users =>
+        .then(user =>
           res.json({ success: true, message: "User has been deleted." })
         )
         .catch(err =>
@@ -137,5 +144,6 @@ module.exports = {
   mentors,
   students,
   update,
-  remove
+  remove,
+  getOne
 };
