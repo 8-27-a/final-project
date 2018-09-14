@@ -22,7 +22,7 @@ class Register extends Component {
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
-      Axios.post("http://localhost:5000/signup", { email, password }).then(
+      Axios.post("http://localhost:5000/v1/signup", { email, password }).then(
         user => {
           if (user.data.success) {
             this.props.history.push("/login");
