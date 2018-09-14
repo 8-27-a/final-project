@@ -4,7 +4,7 @@ import Card from "../components/Card";
 
 class MentorProfile extends Component {
   state = {
-    mentors: [],
+    mentor = [],
     isLoaded: false
   };
 
@@ -21,18 +21,16 @@ class MentorProfile extends Component {
     return (
       <div className="container">
         <div className="row">
-          {this.state.mentors.map(mentor => (
-            <div className="col-md-12" key={mentor.userId}>
-              <h3>{mentor.first + " " + mentor.last}</h3>
-              <Card
-                imgUrl={mentor.imgUrl}
-                userId={mentor.userId}
-                first={mentor.first}
-                last={mentor.last}
-                email={mentor.email}
-              />
-            </div>
-          ))}
+          <div className="col-md-12">
+            <h3>{mentor.first + " " + mentor.last}</h3>
+            <Card
+              imgUrl={mentor.imgUrl}
+              userId={mentor.userId}
+              first={mentor.first}
+              last={mentor.last}
+              email={mentor.email}
+            />
+          </div>
         </div>
       </div>
     );
