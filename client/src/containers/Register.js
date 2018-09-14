@@ -1,40 +1,50 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import SignUp from "../components/Forms/SignUp";
+import { API_URL } from "../backend_api";
 
 class Register extends Component {
   state = {
-    email: "",
-    password: "",
-    password2: "",
+    email: "me@email.com",
+    password: "12345",
+    password2: "12345",
+    first: "Dane",
+    last: "Shambrook",
+    role: "mentor",
     errors: {}
   };
 
   handleChange = e => {
-    this.setState({ ...this.state, [e.target.name]: e.targe.value });
+    console.log("changed", e.target.value);
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = e => {
     e.preventDefault();
 
-    const { email, password, password2 } = this.state;
+    const { email, password, password2, first, last, role } = this.state;
     const errors = this.validate({ email, password, password2 });
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
-      Axios.post("http://localhost:5000/v1/signup", { email, password }).then(
-        user => {
-          if (user.data.success) {
-            this.props.history.push("/login");
-          } else {
-            this.setState({
-              errors: { ...this.state.errors, global: user.data.message }
-            });
-          }
-          // console.log(res.data);
-          // this.setState({ email, password });
+      Axios.post(`${API_URL}/signup`, {
+        email,
+        password,
+        first,
+        last,
+        role
+      }).then(user => {
+        if (user.status === 201) {
+          this.props.history.push("/login");
+        } else {
+          this.setState({
+            errors: { ...this.state.errors, global: user.data }
+          });
+
         }
-      );
+        // console.log(res.data);
+        // this.setState({ email, password });
+      });
     }
   };
 
