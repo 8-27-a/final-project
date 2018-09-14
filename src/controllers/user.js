@@ -3,34 +3,40 @@ const jwt = require("jsonwebtoken");
 const User = require("../models").User;
 
 const signup = (req, res) => {
-  bcrypt.hash(req.body.password, 10, (err, hash) => {
-    if (err) {
-      return res.status(500).json({
-        Error: err
+  User.findOne({ where: { email: req.body.email } }).then(user => {
+    if (!user) {
+      bcrypt.hash(req.body.password, 10, (err, hash) => {
+        if (err) {
+          return res.status(500).json({
+            Error: err
+          });
+        } else {
+          // console.log("hashedPass:", hash);
+          const newUser = {
+            first: req.body.first,
+            last: req.body.last,
+            email: req.body.email,
+            password: hash,
+            role: req.body.role,
+            imgUrl: req.body.imgUrl
+          };
+
+          User.create(newUser)
+            .then(result => {
+              console.log(result);
+              res.status(201).json({
+                message: "User created"
+              });
+            })
+            .catch(err => {
+              res.status(200).json({
+                message: err
+              });
+            });
+        }
       });
     } else {
-      // console.log("hashedPass:", hash);
-      const newUser = {
-        first: req.body.first,
-        last: req.body.last,
-        email: req.body.email,
-        password: hash,
-        role: req.body.role,
-        imgUrl: req.body.imgUrl
-      };
-
-      User.create(newUser)
-        .then(result => {
-          console.log(result);
-          res.status(201).json({
-            message: "User created"
-          });
-        })
-        .catch(err => {
-          res.status(200).json({
-            message: err
-          });
-        });
+      res.json({ message: "Email already in use" });
     }
   });
 };
@@ -47,13 +53,15 @@ const auth = (req, res) => {
             process.env.JWT_ENCRYPTION,
             { expiresIn: process.env.JWT_EXPIRATION }
           );
-          res.json({ token });
+          res.json({ success: true, token });
         } else {
-          res.json({ success: false, message: "Incorrect password" });
+          res
+            .status(403)
+            .json({ success: false, message: "Incorrect password" });
         }
       });
     } else {
-      res.json({ success: false, message: "Email already in use" });
+      res.json({ success: false, message: "No users found with your email." });
     }
   });
 };

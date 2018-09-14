@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import SignIn from "../components/Forms/SignIn";
+import { API_URL } from "../backend_api";
+
+console.log("API_URL", API_URL);
 
 class Login extends Component {
   state = {
@@ -17,7 +20,7 @@ class Login extends Component {
   // }
 
   handleChange = e => {
-    this.setState({ ...this.state, [e.target.name]: e.targe.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = e => {
@@ -28,20 +31,18 @@ class Login extends Component {
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
-      Axios.post("http://localhost:5000/auth", { email, password }).then(
-        user => {
-          if (user.data.success) {
-            localStorage.setItem("JWT", user.data.token);
-            this.props.history.push("/");
-          } else {
-            this.setState({
-              errors: { ...this.state.errors, global: user.data.message }
-            });
-          }
-          // console.log(res.data);
-          //   this.setState({ email, password });
+      Axios.post(`${API_URL}/auth`, { email, password }).then(user => {
+        if (user.data.success) {
+          localStorage.setItem("JWT", user.data.token);
+          this.props.history.push("/");
+        } else {
+          this.setState({
+            errors: { ...this.state.errors, global: user.data.message }
+          });
         }
-      );
+        // console.log(res.data);
+        //   this.setState({ email, password });
+      });
     }
   };
   validate = data => {
