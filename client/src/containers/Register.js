@@ -5,12 +5,12 @@ import { API_URL } from "../backend_api";
 
 class Register extends Component {
   state = {
-    email: "me@email.com",
-    password: "12345",
-    password2: "12345",
-    first: "Dane",
-    last: "Shambrook",
-    role: "mentor",
+    email: "",
+    password: "",
+    password2: "",
+    first: "",
+    last: "",
+    role: "",
     errors: {}
   };
 
@@ -40,7 +40,6 @@ class Register extends Component {
           this.setState({
             errors: { ...this.state.errors, global: user.data }
           });
-
         }
         // console.log(res.data);
         // this.setState({ email, password });
