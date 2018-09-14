@@ -40,6 +40,7 @@ class Register extends Component {
           this.setState({
             errors: { ...this.state.errors, global: user.data }
           });
+
         }
         // console.log(res.data);
         // this.setState({ email, password });

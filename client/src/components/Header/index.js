@@ -27,7 +27,7 @@ const Header = ({ brand }) => (
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/mentor">
+            <NavLink className="nav-link" to="/mentors">
               Find a mentor
             </NavLink>
           </li>
