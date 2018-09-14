@@ -8,8 +8,8 @@ class Register extends Component {
     email: "me@email.com",
     password: "12345",
     password2: "12345",
-    first: "Dioni",
-    last: "Mercado",
+    first: "Dane",
+    last: "Shambrook",
     role: "mentor",
     errors: {}
   };
