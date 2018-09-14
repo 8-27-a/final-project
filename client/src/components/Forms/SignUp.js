@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 
 const SignUp = props => (
   <form>
-    {!!props.errors.global && (
-      <div className="alert alert-danger">{props.errors.global}</div>
-    )}
     <div className="form-group">
       <h2 className="text-center mb-3">Sign up in seconds</h2>
       <p className="text-center">
         <strong>Already a member?</strong>
-        <Link to="/users/login/"> Sign in here</Link>
+        <Link to="/login/"> Sign in here</Link>
       </p>
     </div>
     <div className="form-group">
@@ -21,7 +18,7 @@ const SignUp = props => (
         name="email"
         className="form-control mt-2"
         value={props.email}
-        onChange={props.handleChange}
+        onChange={props.onChange}
       />
       {props.errors.email && (
         <small className="text-danger">{props.errors.email}</small>
@@ -35,7 +32,7 @@ const SignUp = props => (
         name="password"
         className="form-control mt-2"
         value={props.password}
-        onChange={props.handleChange}
+        onChange={props.onChange}
       />
       {props.errors.password && (
         <small className="text-danger">{props.errors.password}</small>
@@ -49,7 +46,7 @@ const SignUp = props => (
         name="password2"
         className="form-control mt-2"
         value={props.password2}
-        onChange={props.handleChange}
+        onChange={props.onChange}
         required
       />
       {props.errors.password && (
