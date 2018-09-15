@@ -47,11 +47,6 @@ class Register extends Component {
     }
   };
 
-  // Axios.get(`http://localhost:5000/v1/users`).then(res => {
-  //   console.log(res.data);
-  //   const { email, password } = res.data;
-  //   this.setState({ email, password });
-  // });
   validate = data => {
     const errors = {};
 

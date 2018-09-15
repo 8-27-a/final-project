@@ -20,6 +20,7 @@ const SignIn = props => (
         name="email"
         id="email"
         className="form-control"
+        placeholder="example@example.com"
         onChange={props.onChange}
         value={props.email}
       />

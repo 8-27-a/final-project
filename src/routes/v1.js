@@ -1,15 +1,20 @@
 const express = require("express");
 const router = require("express").Router();
 const userCtrl = require("../controllers/user");
+const mentorCtrl = require("../controllers/mentor");
+const studentCtrl = require("../controllers/student");
 
 router.get("/", (req, res) => {});
 
 router.post("/signup", userCtrl.signup);
 router.post("/auth", userCtrl.auth);
-router.get("/mentors", userCtrl.mentors);
-router.get("/students", userCtrl.students);
-router.get("/mentors/profile", userCtrl.getOne);
-router.delete("/users/:id", userCtrl.remove);
-router.put("/users/:id", userCtrl.update);
+// router.delete("/users/:id", userCtrl.remove);
+
+router.get("/mentors", mentorCtrl.getAll);
+router.get("/mentors/:id", mentorCtrl.getOne);
+router.put("/mentors/:id", mentorCtrl.update);
+
+router.get("/students", studentCtrl.getAll);
+router.put("/students/:id", studentCtrl.update);
 
 module.exports = router;

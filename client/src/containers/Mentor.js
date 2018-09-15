@@ -1,46 +1,36 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import Card from "../components/Card";
-import List from "../components/List";
+import { API_URL } from "../backend_api";
 
 class Mentor extends Component {
   state = {
-    mentors: [],
+    mentor: {},
     isLoaded: false
   };
 
   componentDidMount = () => {
-    Axios.get("http://localhost:5000/v1/mentors").then(res => {
-      console.log(res);
-      this.setState({ mentors: res.data });
+    Axios.get(`${API_URL}/mentors/${this.props.match.params.id}`).then(res => {
+      console.log(res.data);
+      this.setState({ mentor: res.data });
     });
   };
 
   render() {
+    const { mentor } = this.state;
     return (
       <div className="container">
         <div className="row">
-          <h3>Find a mentor</h3>
-
-          {this.state.mentors.reverse().map(mentor => (
-            <div className="col-md-12" key={mentor.userId}>
-              <List
-                imgUrl={mentor.imgUrl}
-                userId={mentor.userId}
-                first={mentor.first}
-                last={mentor.last}
-                email={mentor.email}
-              />
-              {/* <h3>{mentor.first + " " + mentor.last}</h3> */}
-              {/* <Card
-                imgUrl={mentor.imgUrl}
-                userId={mentor.userId}
-                first={mentor.first}
-                last={mentor.last}
-                email={mentor.email}
-              /> */}
-            </div>
-          ))}
+          <div className="col-md-12">
+            <h3>{mentor.first + " " + mentor.last}</h3>
+            <Card
+              imgUrl={mentor.imgUrl}
+              userId={mentor.userId}
+              first={mentor.first}
+              last={mentor.last}
+              email={mentor.email}
+            />
+          </div>
         </div>
       </div>
     );

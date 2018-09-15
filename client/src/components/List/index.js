@@ -12,6 +12,8 @@ const List = ({ userId, first, last, email, imgUrl, role }) => (
         <div className="row">
           <Image
             className="card-img-top img-fluid col-md-3"
+            width="50"
+            height="465"
             src={imgUrl}
             circle
             alt="Card image"
@@ -23,7 +25,7 @@ const List = ({ userId, first, last, email, imgUrl, role }) => (
             <small>bio</small>
           </div>
           <div className="col-md-3">
-            <Link to="/mentor/profile" className="btn btn-primary">
+            <Link to={`/mentor/${userId}`} className="btn btn-primary">
               More info
             </Link>
           </div>
