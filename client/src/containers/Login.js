@@ -12,13 +12,6 @@ class Login extends Component {
     errors: {}
   };
 
-  // login = (data) => {
-  //   return Axios.post('/auth', data).then(res => {
-  //     const token = res.data.token;
-  //     localStorage.setItem('jwtToken', token);
-  //   });
-  // }
-
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };

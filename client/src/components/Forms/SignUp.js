@@ -17,6 +17,7 @@ const SignUp = props => (
         id="email"
         name="email"
         className="form-control mt-2"
+        placeholder="example@example.com"
         value={props.email}
         onChange={props.onChange}
       />
@@ -53,7 +54,7 @@ const SignUp = props => (
         <small className="text-danger">{props.errors.password}</small>
       )}
     </div>
-    <button className="btn  btn-primary" type="submit" onClick={props.onSubmit}>
+    <button className="btn btn-primary" type="submit" onClick={props.onSubmit}>
       Sign Up
     </button>
   </form>

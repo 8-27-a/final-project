@@ -19,15 +19,6 @@ class Home extends Component {
             training & coaching experiences.
           </p>
         </Jumbotron>
-        {/* <Register /> */}
-        <div className="col-md-4 mx-auto">
-          <a className="btn btn-info mx-auto" href="/register" role="button">
-            Sign up today
-          </a>
-          <a className="btn btn-info mx-auto" href="/login" role="button">
-            Login
-          </a>
-        </div>
       </div>
     );
   }

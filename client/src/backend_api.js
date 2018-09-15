@@ -1,6 +1,7 @@
 let backendUrl;
+const version = "v1";
 
-if (window.location.hostname === "locahost") {
+if (window.location.hostname === "localhost") {
   backendUrl = "http://localhost:5000/v1";
 } else {
   backendUrl = `${window.location.origin}/v1`;

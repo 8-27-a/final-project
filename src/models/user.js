@@ -7,18 +7,16 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     first: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     },
     last: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: { isEmail: { msg: "Email invalid." } }
+      validate: { isEmail: { msg: "Email invalid" } }
     },
     password: {
       type: DataTypes.STRING,
@@ -34,11 +32,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-  // Model.associate = function(models) {
-  //   this.Postings = this.belongsToMany(models.Posting, {
-  //     through: "UserPosting"
-  //   });
-  // };
+  Model.associate = function(models) {
+    this.User = this.hasOne(models.Profile, {
+      foreignKey: "userId"
+    });
+  };
 
   // sequelize.sync({ force: true });
   return Model;
