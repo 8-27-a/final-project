@@ -10,7 +10,6 @@ const SignUp = props => (
         <Link to="/login/"> Sign in here</Link>
       </p>
     </div>
-
     <div className="form-group">
       <label htmlFor="first">First Name</label>
       <input
@@ -22,7 +21,6 @@ const SignUp = props => (
         onChange={props.onChange}
       />
     </div>
-
     <div className="form-group">
       <label htmlFor="last">Last Name</label>
       <input
@@ -35,31 +33,15 @@ const SignUp = props => (
       />
     </div>
 
-    <div className="form-group">
-      <div className="custom-control custom-radio custom-control-inline">
-        <input 
-          type="radio" 
-          className="custom-control-input" 
-          id="role" 
-          name="role" 
-          value={props.role} 
-          onChange={props.onChange}
-          />
-        <label className="custom-control-label" htmlFor="role">Student</label>
-      </div>
-      <div className="custom-control custom-radio custom-control-inline">
-        <input 
-          type="radio" 
-          className="custom-control-input" 
-          id="role2" 
-          name="role2"
-          value={props.role2} 
-          onChange={props.onChange}
-          />
-        <label className="custom-control-label" htmlFor="role2">Mentor</label>
-      </div>
+    <div className="form-group" onSubmit={props.handleSubmit}>
+      <label>
+        Are you a MENTOR or a STUDENT?
+        <select name="role" value={props.role} onChange={props.onChange}>
+          <option value="student">Student</option>
+          <option value="mentor">Mentor</option>
+        </select>
+      </label>
     </div>
-
 
     <div className="form-group">
       <label htmlFor="email">Email Address</label>
