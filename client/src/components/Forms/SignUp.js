@@ -11,6 +11,39 @@ const SignUp = props => (
       </p>
     </div>
     <div className="form-group">
+      <label htmlFor="first">First Name</label>
+      <input
+        type="text"
+        id="first"
+        name="first"
+        className="form-control mt-2"
+        value={props.first}
+        onChange={props.onChange}
+      />
+    </div>
+    <div className="form-group">
+      <label htmlFor="last">Last Name</label>
+      <input
+        type="text"
+        id="last"
+        name="last"
+        className="form-control mt-2"
+        value={props.last}
+        onChange={props.onChange}
+      />
+    </div>
+
+    <div className="form-group" onSubmit={props.handleSubmit}>
+      <label>
+        Are you a MENTOR or a STUDENT?
+        <select name="role" value={props.role} onChange={props.onChange}>
+          <option value="student">Student</option>
+          <option value="mentor">Mentor</option>
+        </select>
+      </label>
+    </div>
+
+    <div className="form-group">
       <label htmlFor="email">Email Address</label>
       <input
         type="email"

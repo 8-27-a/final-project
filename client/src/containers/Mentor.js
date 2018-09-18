@@ -6,6 +6,7 @@ import { API_URL } from "../backend_api";
 class Mentor extends Component {
   state = {
     mentor: {},
+    profile: {},
     isLoaded: false
   };
 
@@ -18,6 +19,7 @@ class Mentor extends Component {
 
   render() {
     const { mentor } = this.state;
+    console.log("mentor", this.state.mentor);
     return (
       <div className="container">
         <div className="row">
@@ -29,6 +31,8 @@ class Mentor extends Component {
               first={mentor.first}
               last={mentor.last}
               email={mentor.email}
+              summary={mentor.Profile.summary}
+              bio={mentor.Profile.bio}
             />
           </div>
         </div>
