@@ -6,13 +6,14 @@ import { API_URL } from "../backend_api";
 class Mentor extends Component {
   state = {
     mentors: [],
+    profiles: [],
     isLoaded: false
   };
 
   componentDidMount = () => {
     Axios.get(`${API_URL}/mentors`).then(res => {
       console.log(res);
-      this.setState({ mentors: res.data });
+      this.setState({ mentor: res.data });
     });
   };
 
@@ -30,6 +31,8 @@ class Mentor extends Component {
                 first={mentor.first}
                 last={mentor.last}
                 email={mentor.email}
+                summary={mentor.Profile.summary}
+                bio={mentor.Profile.bio}
               />
             </div>
           ))}

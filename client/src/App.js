@@ -8,7 +8,8 @@ import {
   Mentor,
   Dashboard,
   Login,
-  Register
+  Register,
+  Profile
 } from "./containers";
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/mentors" component={Mentors} />
           <Route exact path="/mentor/:id" component={Mentor} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/profile" component={Profile} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Footer />
