@@ -39,6 +39,19 @@ const Profile = props => (
     </div>
 
     <div className="form-group">
+      <label htmlFor="imgUrl">Profile Image</label>
+      <input
+        type="file"
+        id="imgUrl"
+        name="imgUrl"
+        className="form-control mt-2"
+        placeholder="image file"
+        value={props.imgUrl}
+        onChange={props.onChange}
+      />
+    </div>
+
+    <div className="form-group">
       <label htmlFor="email">Email Address</label>
       <input
         type="email"

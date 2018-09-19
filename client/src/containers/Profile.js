@@ -8,6 +8,8 @@ class Profile extends Component {
   state = {
     first: "",
     last: "",
+    role: "",
+    imgUrl: "",
     email: "",
     password: "",
     password2: "",
@@ -29,6 +31,8 @@ class Profile extends Component {
     const {
       first,
       last,
+      role,
+      imgUrl,
       email,
       password,
       password2,
@@ -39,13 +43,15 @@ class Profile extends Component {
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
+      // need to make this dynamic for students also
       Axios.put(`${API_URL}/mentors/${userId}`, {
         first,
         last,
         email,
+        imgUrl,
         password,
-        bio,
-        summary
+        summary,
+        bio
       }).then(user => {
         if (user.data.updated) {
           this.setState({ success: "Your changes has been saved." });
