@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TIME,
       allowNull: false
     },
+    comment: {
+      type: DataTypes.STRING
+    },
     status: {
       type: DataTypes.ENUM,
       allowNull: false,

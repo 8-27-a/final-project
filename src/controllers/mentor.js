@@ -11,7 +11,7 @@ const getOne = (req, res) => {
       firstName: mentor.first,
       lastName: mentor.last,
       email: mentor.email,
-      imgUrl: mentor.imgUrl,
+      image: mentor.imgUrl,
       bio: mentor.Profile.bio,
       summary: mentor.Profile.summary
     };
@@ -19,12 +19,6 @@ const getOne = (req, res) => {
     res.json(output);
   });
 };
-
-// const getAll = (req, res) => {
-//   User.findAll({ where: { role: "mentor" } }).then(mentor =>
-//     res.json(mentors)
-//   );
-// };
 
 const getAll = (req, res) => {
   User.findAll({
@@ -42,16 +36,21 @@ const getAll = (req, res) => {
             firstName: mentor.first,
             lastName: mentor.last,
             email: mentor.email,
-            image: mentor.imgUrl,
+            imgUrl: mentor.imgUrl,
             bio: mentor.Profile.bio,
             summary: mentor.Profile.summary
           }
         );
       });
-      console.log("mentorProfile", mentorProfile);
       res.json({ mentorProfile });
     });
 };
+
+// const getAll = (req, res) => {
+//   User.findAll({ where: { role: "mentor" } }).then(mentor =>
+//     res.json(mentors)
+//   );
+// };
 
 const update = (req, res) => {
   const { first, last, imgUrl, summary, bio } = req.body;
