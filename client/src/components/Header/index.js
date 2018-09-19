@@ -60,10 +60,10 @@ class Header extends Component {
               {localStorage.getItem("JWT") ? (
                 <React.Fragment>
                   <li className="nav-item dropdown">
-                    <a
+                    <Link
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
-                      href="#"
+                      to="#"
                       role="button"
                       aria-haspopup="true"
                       aria-expanded="false"
@@ -74,7 +74,7 @@ class Header extends Component {
                         src={this.state.avatarUrl}
                         alt=""
                       />
-                    </a>
+                    </Link>
                     <div className="dropdown-menu">
                       <Link className="dropdown-item" to="/dashboard">
                         Dashboard
@@ -90,6 +90,7 @@ class Header extends Component {
                       <NavLink
                         to="/home"
                         className="btn btn-outline-primary ml-3"
+                        onClick={this.logOut}
                       >
                         Log Out
                       </NavLink>
