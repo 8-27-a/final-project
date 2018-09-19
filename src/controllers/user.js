@@ -49,7 +49,12 @@ const auth = (req, res) => {
       bcrypt.compare(password, user.password, (err, result) => {
         if (result) {
           const token = jwt.sign(
-            { userId: user.userId, email: user.email, role: user.role },
+            {
+              userId: user.userId,
+              email: user.email,
+              role: user.role,
+              avatar: user.imgUrl
+            },
             process.env.JWT_ENCRYPTION,
             { expiresIn: process.env.JWT_EXPIRATION }
           );

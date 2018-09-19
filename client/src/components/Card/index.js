@@ -5,10 +5,11 @@ import { Image } from "react-bootstrap";
 const Card = ({ first, last, imgUrl, summary, bio }) => (
   <div className="card">
     <Image
-      className="card-img-top img-fluid"
+      className="mt-5 mx-auto rounded-circle"
       src={imgUrl}
-      circle
       alt="Card image"
+      height="250"
+      width="250"
     />
     <div className="card-body">
       <h5 className="card-title">{first + " " + last}</h5>

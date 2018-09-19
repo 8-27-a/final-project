@@ -19,20 +19,19 @@ class Mentor extends Component {
 
   render() {
     const { mentor } = this.state;
-    console.log("mentor", this.state.mentor);
+    console.log("mentor", mentor);
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h3>{mentor.first + " " + mentor.last}</h3>
             <Card
               imgUrl={mentor.imgUrl}
               userId={mentor.userId}
-              first={mentor.first}
-              last={mentor.last}
+              first={mentor.firstName}
+              last={mentor.lastName}
               email={mentor.email}
-              summary={mentor.Profile.summary}
-              bio={mentor.Profile.bio}
+              summary={mentor.summary}
+              bio={mentor.bio}
             />
           </div>
         </div>

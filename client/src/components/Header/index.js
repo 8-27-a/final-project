@@ -1,14 +1,19 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import decode from "jwt-decode";
 
 class Header extends Component {
   state = {
-    isAuth: false
+    isAuth: false,
+    token: null,
+    avatarUrl: null
   };
 
   componentWillMount = () => {
-    if (localStorage.getItem("JWT")) {
-      this.setState({ isAuth: true });
+    const jwt = localStorage.getItem("JWT");
+    if (jwt) {
+      const payload = decode(jwt);
+      this.setState({ isAuth: true, token: jwt, avatarUrl: payload.avatar });
     }
   };
 
@@ -19,6 +24,9 @@ class Header extends Component {
 
   render() {
     const { brand } = this.props;
+
+    // const { avatar: avatarUrl } = decode(localStorage.getItem("JWT"));
+    const avatarUrl = "";
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
@@ -49,21 +57,37 @@ class Header extends Component {
                   Find a mentor
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/dashboard">
-                  Dashboard
-                </NavLink>
-              </li>
-
               {localStorage.getItem("JWT") ? (
                 <React.Fragment>
-                  <li className="nav-item">
-                    <button
-                      className="btn btn-outline-primary"
-                      onClick={this.logOut}
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
                     >
-                      Log Out
-                    </button>
+                      <img
+                        height="30"
+                        className="rounded-circle"
+                        src={this.state.avatarUrl}
+                        alt=""
+                      />
+                    </a>
+                    <div className="dropdown-menu">
+                      <Link className="dropdown-item" to="/dashboard">
+                        Dashboard
+                      </Link>
+                      <Link className="dropdown-item" to="/profile">
+                        Profile
+                      </Link>
+
+                      <div className="dropdown-divider" />
+                      <button className="dropdown-item" onClick={this.logOut}>
+                        Log Out
+                      </button>
+                    </div>
                   </li>
                 </React.Fragment>
               ) : (

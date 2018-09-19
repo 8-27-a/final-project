@@ -6,7 +6,18 @@ const getOne = (req, res) => {
     where: { role: "mentor", userId: req.params.id },
     attributes: {},
     include: { model: Profile }
-  }).then(mentor => res.json(mentor));
+  }).then(mentor => {
+    const output = {
+      firstName: mentor.first,
+      lastName: mentor.last,
+      email: mentor.email,
+      imgUrl: mentor.imgUrl,
+      bio: mentor.Profile.bio,
+      summary: mentor.Profile.summary
+    };
+
+    res.json(output);
+  });
 };
 
 // const getAll = (req, res) => {
@@ -45,6 +56,8 @@ const getAll = (req, res) => {
 const update = (req, res) => {
   const { first, last, imgUrl, summary, bio } = req.body;
 
+  console.log("BODY", req.body);
+
   const updateUser = {};
   const updateProfile = {};
 
@@ -64,39 +77,46 @@ const update = (req, res) => {
     updateProfile.bio = bio;
   }
 
-  User.update(updateUser, {
-    where: {
-      userId: req.params.id
-    }
-  })
-    .then(() => {
-      Profile.update(updateProfile, { where: { userId: req.params.id } }).then(
-        () =>
-          User.findOne({
-            where: { role: "mentor", userId: req.params.id },
-            attributes: {},
-            include: { model: Profile }
-          }).then(updatedUser => {
-            const userOutput = {
-              userId: updatedUser.userId,
-              firstName: updatedUser.first,
-              lastName: updatedUser.last,
-              email: updatedUser.email,
-              image: updatedUser.imgUrl,
-              bio: updatedUser.Profile.bio,
-              summary: updatedUser.Profile.summary
-            };
-
-            res.json({ updated: true, user: userOutput });
-          })
-      );
-    })
-    .catch(err =>
-      res.json({
-        updated: false,
-        message: err
+  User.findOne({ where: { userId: req.params.id } }).then(foundUser => {
+    if (foundUser) {
+      User.update(updateUser, {
+        where: {
+          userId: req.params.id
+        }
       })
-    );
+        .then(() => {
+          Profile.update(updateProfile, {
+            where: { userId: req.params.id }
+          }).then(() =>
+            User.findOne({
+              where: { role: "mentor", userId: req.params.id },
+              attributes: {},
+              include: { model: Profile }
+            }).then(updatedUser => {
+              const userOutput = {
+                userId: updatedUser.userId,
+                firstName: updatedUser.first,
+                lastName: updatedUser.last,
+                email: updatedUser.email,
+                image: updatedUser.imgUrl,
+                bio: updatedUser.Profile.bio,
+                summary: updatedUser.Profile.summary
+              };
+
+              res.json({ updated: true, user: userOutput });
+            })
+          );
+        })
+        .catch(err =>
+          res.json({
+            updated: false,
+            message: err
+          })
+        );
+    } else {
+      res.json({ updated: false, message: "No users found with that ID" });
+    }
+  });
 };
 
 module.exports = {
