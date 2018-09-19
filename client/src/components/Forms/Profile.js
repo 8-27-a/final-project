@@ -6,7 +6,7 @@ const Profile = props => (
     <div className="form-group">
       <h2 className="text-center mb-3">Edit your profile</h2>
       <p className="text-center">
-        <Link to={`/mentor/${props.userId}`}> Profile preview</Link>
+        <Link to={`/${props.role}/${props.userId}`}> Profile preview</Link>
       </p>
     </div>
     {!!props.success && (

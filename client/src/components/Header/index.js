@@ -84,9 +84,15 @@ class Header extends Component {
                       </Link>
 
                       <div className="dropdown-divider" />
-                      <button className="dropdown-item" onClick={this.logOut}>
+                      {/* <button className="dropdown-item" onClick={this.logOut}>
                         Log Out
-                      </button>
+                      </button> */}
+                      <NavLink
+                        to="/home"
+                        className="btn btn-outline-primary ml-3"
+                      >
+                        Log Out
+                      </NavLink>
                     </div>
                   </li>
                 </React.Fragment>
