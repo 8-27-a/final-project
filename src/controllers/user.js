@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models").User;
+const Profile = require("../models").Profile;
 
 const signup = (req, res) => {
   User.findOne({ where: { email: req.body.email } }).then(user => {
@@ -24,6 +25,7 @@ const signup = (req, res) => {
           User.create(newUser)
             .then(result => {
               console.log(result);
+              Profile.create({ bio: "", summary: "", userId: result.userId });
               res.status(201).json({
                 message: "User created"
               });
@@ -101,9 +103,63 @@ const remove = (req, res) => {
   });
 };
 
+const update = (req, res) => {
+  const { first, last, imgUrl, summary, bio } = req.body;
+
+  console.log("BODY", req.body);
+
+  const updateUser = {};
+  const updateProfile = {};
+
+  if (first) {
+    updateUser.first = first;
+  }
+  if (last) {
+    updateUser.last = last;
+  }
+  if (imgUrl) {
+    updateUser.imgUrl = imgUrl;
+  }
+  if (summary) {
+    updateProfile.summary = summary;
+  }
+  if (bio) {
+    updateProfile.bio = bio;
+  }
+
+  User.findOne({ where: { userId: req.params.id } }).then(foundUser => {
+    if (foundUser) {
+      User.update(updateUser, {
+        where: {
+          userId: req.params.id
+        }
+      })
+        .then(() => {
+          Profile.update(updateProfile, {
+            where: { userId: req.params.id }
+          })
+            .then(() => {
+              console.log("us", u);
+              res.json({ updated: true });
+            })
+            .catch(() => res.json({ error: "something went wrong." }));
+        })
+        .catch(err =>
+          res.json({
+            updated: false,
+            message: err
+          })
+        );
+    } else {
+      res.json({ updated: false, message: "No users found with that ID" });
+    }
+  });
+};
+
 module.exports = {
   signup,
   auth,
   getAll,
+  update,
   remove
 };

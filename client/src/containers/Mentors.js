@@ -26,10 +26,10 @@ class Mentor extends Component {
           {this.state.mentors.reverse().map(mentor => (
             <div className="col-md-12" key={mentor.userId}>
               <List
-                imgUrl={mentor.imgUrl}
+                imgUrl={mentor.image}
                 userId={mentor.userId}
-                first={mentor.first}
-                last={mentor.last}
+                first={mentor.firstName}
+                last={mentor.lastName}
                 email={mentor.email}
                 summary={mentor.Profile.summary}
                 bio={mentor.Profile.bio}

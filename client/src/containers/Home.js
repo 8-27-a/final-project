@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
-// import Register from "../containers/Register";
 
 class Home extends Component {
   state = {};

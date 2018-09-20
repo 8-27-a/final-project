@@ -9,15 +9,16 @@ const profileCtrl = require("../controllers/profile");
 router.get("/users", userCtrl.getAll);
 router.post("/signup", userCtrl.signup);
 router.post("/auth", userCtrl.auth);
-router.delete("/users/:id", userCtrl.remove);
+router.put("/users/:id", userCtrl.update);
+router.delete("/user/:id", userCtrl.remove);
 
 router.get("/mentors", mentorCtrl.getAll);
 router.get("/mentors/:id", mentorCtrl.getOne);
-router.put("/mentors/:id", mentorCtrl.update);
+//router.put("/mentors/:id", mentorCtrl.update);
 
 router.get("/students", studentCtrl.getAll);
-router.get("/students/:id", studentCtrl.getOne);
-router.put("/students/:id", studentCtrl.update);
+router.get("/student/:id", studentCtrl.getOne);
+router.put("/student/:id", studentCtrl.update);
 
 // profile CRUD routes
 router.get("/profile/:id", profileCtrl.getOne);

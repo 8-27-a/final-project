@@ -8,7 +8,6 @@ class Profile extends Component {
   state = {
     first: "",
     last: "",
-    role: "",
     imgUrl: "",
     email: "",
     password: "",
@@ -31,7 +30,6 @@ class Profile extends Component {
     const {
       first,
       last,
-      role,
       imgUrl,
       email,
       password,
@@ -43,8 +41,7 @@ class Profile extends Component {
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
-      // need to make this dynamic for students also
-      Axios.put(`${API_URL}/mentors/${userId}`, {
+      Axios.put(`${API_URL}/users/${userId}`, {
         first,
         last,
         email,
@@ -81,14 +78,15 @@ class Profile extends Component {
   };
 
   componentDidMount = () => {
-    const { userId } = decode(localStorage.getItem("JWT"));
-    Axios.get(`${API_URL}/mentors/${userId}`).then(profile => {
+    const { userId, role } = decode(localStorage.getItem("JWT"));
+    Axios.get(`${API_URL}/${role}s/${userId}`).then(profile => {
       console.log("profile", profile);
-      const { firstName, lastName, email } = profile.data;
+      const { firstName, lastName, email, image } = profile.data;
       this.setState({
         first: firstName,
         last: lastName,
         email,
+        imgUrl: image,
         summary: profile.data.summary,
         bio: profile.data.bio
       });
@@ -110,7 +108,7 @@ class Profile extends Component {
                 success={this.state.success}
                 first={this.state.first}
                 last={this.state.last}
-                role={this.state.role}
+                imgUrl={this.state.imgUrl}
                 email={this.state.email}
                 password={this.state.password}
                 password2={this.state.password2}

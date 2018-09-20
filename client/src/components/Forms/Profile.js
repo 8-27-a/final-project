@@ -6,7 +6,7 @@ const Profile = props => (
     <div className="form-group">
       <h2 className="text-center mb-3">Edit your profile</h2>
       <p className="text-center">
-        <Link to={`/${props.role}/${props.userId}`}> Profile preview</Link>
+        <Link to={`/mentor/${props.userId}`}> Profile preview</Link>
       </p>
     </div>
     {!!props.success && (
@@ -41,11 +41,10 @@ const Profile = props => (
     <div className="form-group">
       <label htmlFor="imgUrl">Profile Image</label>
       <input
-        type="file"
+        type="text"
         id="imgUrl"
         name="imgUrl"
         className="form-control mt-2"
-        placeholder="image file"
         value={props.imgUrl}
         onChange={props.onChange}
       />

@@ -38,6 +38,6 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
-  // sequelize.sync({ force: true });
+  //Model.sync({ force: true });
   return Model;
 };

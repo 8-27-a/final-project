@@ -6,7 +6,7 @@ import { API_URL } from "../backend_api";
 class Mentor extends Component {
   state = {
     mentor: {},
-    profile: {},
+    Profile: {},
     isLoaded: false
   };
 
@@ -25,10 +25,10 @@ class Mentor extends Component {
         <div className="row">
           <div className="col-md-12">
             <Card
-              imgUrl={mentor.imgUrl}
               userId={mentor.userId}
               first={mentor.firstName}
               last={mentor.lastName}
+              imgUrl={mentor.image}
               email={mentor.email}
               summary={mentor.summary}
               bio={mentor.bio}

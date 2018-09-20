@@ -6,7 +6,7 @@ const Card = ({ first, last, imgUrl, summary, bio }) => (
   <div className="card">
     <Image
       className="mt-5 mx-auto rounded-circle"
-      src={imgUrl}
+      src={imgUrl ? imgUrl : "/images/no-avatar.png"}
       alt="Card image"
       height="250"
       width="250"

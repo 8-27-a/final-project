@@ -7,7 +7,7 @@ class Register extends Component {
   state = {
     first: "",
     last: "",
-    role: "",
+    role: "student",
     email: "",
     password: "",
     password2: "",

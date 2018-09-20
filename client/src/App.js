@@ -6,6 +6,7 @@ import {
   Home,
   Mentors,
   Mentor,
+  // Tutor,
   Dashboard,
   Login,
   Register,
