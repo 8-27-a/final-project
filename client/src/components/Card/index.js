@@ -6,7 +6,7 @@ const Card = ({ first, last, role, imgUrl, summary, bio, userId }) => (
     <img
       className="mt-5 mx-auto rounded-circle"
       src={imgUrl ? imgUrl : "/images/no-avatar.png"}
-      alt="Card image"
+      alt={`${first} ${last}`}
       height="250"
       width="250"
     />
