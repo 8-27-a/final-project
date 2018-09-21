@@ -6,10 +6,12 @@ import decode from "jwt-decode";
 
 class Profile extends Component {
   state = {
+    userId: null,
     first: "",
     last: "",
     imgUrl: "",
     email: "",
+    role: "",
     password: "",
     password2: "",
     summary: "",
@@ -79,23 +81,24 @@ class Profile extends Component {
 
   componentDidMount = () => {
     const { userId, role } = decode(localStorage.getItem("JWT"));
-    Axios.get(`${API_URL}/${role}s/${userId}`).then(profile => {
+
+    Axios.get(`${API_URL}/users/${userId}`).then(profile => {
       console.log("profile", profile);
-      const { firstName, lastName, email, image } = profile.data;
+      const { firstName, lastName, email, image, userId, role } = profile.data;
       this.setState({
         first: firstName,
         last: lastName,
         email,
+        role,
         imgUrl: image,
         summary: profile.data.summary,
-        bio: profile.data.bio
+        bio: profile.data.bio,
+        userId
       });
     });
   };
 
   render() {
-    const { userId } = decode(localStorage.getItem("JWT"));
-
     return (
       <div className="bg-light py-5">
         <div className="container">
@@ -110,11 +113,12 @@ class Profile extends Component {
                 last={this.state.last}
                 imgUrl={this.state.imgUrl}
                 email={this.state.email}
+                role={this.state.role}
                 password={this.state.password}
                 password2={this.state.password2}
                 summary={this.state.summary}
                 bio={this.state.bio}
-                userId={userId}
+                userId={this.state.userId}
               />
             </div>
           </div>

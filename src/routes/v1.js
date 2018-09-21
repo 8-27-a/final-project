@@ -10,6 +10,7 @@ router.get("/users", userCtrl.getAll);
 router.post("/signup", userCtrl.signup);
 router.post("/auth", userCtrl.auth);
 router.put("/users/:id", userCtrl.update);
+router.get("/users/:id", userCtrl.getOne);
 router.delete("/user/:id", userCtrl.remove);
 
 router.get("/mentors", mentorCtrl.getAll);

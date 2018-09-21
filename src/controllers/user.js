@@ -138,11 +138,10 @@ const update = (req, res) => {
           Profile.update(updateProfile, {
             where: { userId: req.params.id }
           })
-            .then(() => {
-              console.log("us", u);
-              res.json({ updated: true });
-            })
-            .catch(() => res.json({ error: "something went wrong." }));
+            .then(() => res.json({ updated: true }))
+            .catch(() =>
+              res.json({ updated: false, message: "something went wrong." })
+            );
         })
         .catch(err =>
           res.json({
@@ -156,9 +155,32 @@ const update = (req, res) => {
   });
 };
 
+const getOne = (req, res) => {
+  User.findOne({
+    where: { userId: req.params.id },
+    include: { model: Profile }
+  }).then(foundUser => {
+    if (foundUser) {
+      const output = {
+        userId: foundUser.userId,
+        firstName: foundUser.first,
+        lastName: foundUser.last,
+        email: foundUser.email,
+        image: foundUser.imgUrl,
+        role: foundUser.role,
+        summary: foundUser.Profile.summary,
+        bio: foundUser.Profile.bio
+      };
+
+      res.json(output);
+    }
+  });
+};
+
 module.exports = {
   signup,
   auth,
+  getOne,
   getAll,
   update,
   remove

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import decode from "jwt-decode";
+import axios from "axios";
+import { API_URL } from "../../backend_api";
 
 class Header extends Component {
   state = {
@@ -9,23 +11,35 @@ class Header extends Component {
     avatarUrl: null
   };
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     const jwt = localStorage.getItem("JWT");
+
     if (jwt) {
+      console.log("token found.");
       const payload = decode(jwt);
-      this.setState({ isAuth: true, token: jwt, avatarUrl: payload.avatar });
+
+      axios.get(`${API_URL}/users/${payload.userId}`).then(user => {
+        this.setState({
+          isAuth: true,
+          token: jwt,
+          avatarUrl: user.data.image
+        });
+      });
     }
+  };
+
+  componentWillUpdate = (nextProps, nextState) => {
+    console.log("CWU:", nextProps, nextState);
   };
 
   logOut = () => {
     localStorage.removeItem("JWT");
-    this.setState({ isAuth: false });
+    this.setState({ isAuth: false, token: false, avatarUrl: false });
   };
 
   render() {
     const { brand } = this.props;
-    // const { avatar: avatarUrl } = decode(localStorage.getItem("JWT"));
-    const avatarUrl = "";
+
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
@@ -37,9 +51,6 @@ class Header extends Component {
             type="button"
             data-toggle="collapse"
             data-target="#navbarsExample07"
-            aria-controls="navbarsExample07"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon" />
           </button>
@@ -56,7 +67,7 @@ class Header extends Component {
                   Find a mentor
                 </NavLink>
               </li>
-              {localStorage.getItem("JWT") ? (
+              {this.state.isAuth ? (
                 <React.Fragment>
                   <li className="nav-item dropdown">
                     <a
