@@ -24,7 +24,6 @@ class Header extends Component {
 
   render() {
     const { brand } = this.props;
-
     // const { avatar: avatarUrl } = decode(localStorage.getItem("JWT"));
     const avatarUrl = "";
     return (
@@ -88,9 +87,6 @@ class Header extends Component {
                       </Link>
 
                       <div className="dropdown-divider" />
-                      {/* <button className="dropdown-item" onClick={this.logOut}>
-                        Log Out
-                      </button> */}
                       <NavLink
                         to="/"
                         className="btn btn-outline-primary ml-3"

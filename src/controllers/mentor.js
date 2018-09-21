@@ -38,9 +38,9 @@ const getAll = (req, res) => {
             firstName: mentor.first,
             lastName: mentor.last,
             email: mentor.email,
-            image: mentor.imgUrl
-            //summary: mentor.Profile.summary,
-            //bio: mentor.Profile.bio
+            image: mentor.imgUrl,
+            summary: mentor.Profile.summary,
+            bio: mentor.Profile.bio
           }
         );
       });

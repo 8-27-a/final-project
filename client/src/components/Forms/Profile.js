@@ -6,7 +6,7 @@ const Profile = props => (
     <div className="form-group">
       <h2 className="text-center mb-3">Edit your profile</h2>
       <p className="text-center">
-        <Link to={`/mentor/${props.userId}`}> Profile preview</Link>
+        <Link to={`/mentor/${props.userId}`}>Profile preview</Link>
       </p>
     </div>
     {!!props.success && (
@@ -119,6 +119,9 @@ const Profile = props => (
     <button className="btn btn-primary" type="submit" onClick={props.onSubmit}>
       Save Changes
     </button>
+    {!!props.success && (
+      <div className="alert alert-success">{props.success}</div>
+    )}
   </form>
 );
 

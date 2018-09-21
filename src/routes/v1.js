@@ -17,8 +17,8 @@ router.get("/mentors/:id", mentorCtrl.getOne);
 //router.put("/mentors/:id", mentorCtrl.update);
 
 router.get("/students", studentCtrl.getAll);
-router.get("/student/:id", studentCtrl.getOne);
-router.put("/student/:id", studentCtrl.update);
+router.get("/students/:id", studentCtrl.getOne);
+// router.put("/student/:id", studentCtrl.update);
 
 // profile CRUD routes
 router.get("/profile/:id", profileCtrl.getOne);

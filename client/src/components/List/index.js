@@ -5,7 +5,7 @@ import { Image } from "react-bootstrap";
 const List = ({ userId, first, last, imgUrl, summary, bio }) => (
   <div className="list-group">
     <Link
-      to={`/mentors/${userId}`}
+      to={`/mentor/${userId}`}
       className="list-group-item list-group-item-action flex-column align-items-start"
     >
       <div className="d-flex w-100 justify-content-between">
@@ -19,14 +19,14 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
           />
           <div className="col-md-6">
             <h3 className="mb-1">{first + " " + last}</h3>
-            <h3 className="mb-1">skills</h3>
+            <h3 className="mb-1">Skills</h3>
             <small>{summary}</small>
-            <h4 className="mb-1">bio</h4>
+            <h4 className="mb-1">Biography</h4>
             <small>{bio}</small>
           </div>
           <div className="col-md-3">
-            <Link to={`/mentors/${userId}`} className="btn btn-primary">
-              More info
+            <Link to={`/mentor/${userId}`} className="btn btn-primary">
+              Mentor Profile
             </Link>
           </div>
         </div>
