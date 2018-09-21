@@ -121,6 +121,13 @@ const Profile = props => {
       >
         Save Changes
       </button>
+      <button
+        className="btn btn-danger mb-5 ml-5"
+        type="submit"
+        onClick={props.onSubmit}
+      >
+        Delete Account
+      </button>
       {!!props.success && (
         <div className="alert alert-success">{props.success}</div>
       )}

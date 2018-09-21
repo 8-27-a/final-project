@@ -75,10 +75,10 @@ class Header extends Component {
               {this.state.isAuth ? (
                 <React.Fragment>
                   <li className="nav-item dropdown">
-                    <a
+                    <Link
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
-                      href="#"
+                      to="#"
                       role="button"
                       aria-haspopup="true"
                       aria-expanded="false"
@@ -93,7 +93,7 @@ class Header extends Component {
                         }
                         alt=""
                       />
-                    </a>
+                    </Link>
                     <div className="dropdown-menu">
                       <Link className="dropdown-item" to="/dashboard">
                         Dashboard

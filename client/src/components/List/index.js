@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Image } from "react-bootstrap";
+import "./style.css"
 
 const List = ({ userId, first, last, imgUrl, summary, bio }) => (
   <div className="list-group ">
@@ -16,16 +16,17 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
             alt={`${first} ${last}`}
           />
         </div>
-        <div className="col-md-6">
-          <h3 className="mb-4">{`${first} ${last}`}</h3>
-          <h5 className="mb-2">{summary}</h5>
+        <div className="col-md-7">
+          <h3>{`${first} ${last}`}</h3>
+          <h5>{summary}</h5>
           <small>{bio}</small>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-2">
           <Link to={`/mentor/${userId}`} className="btn btn-primary">
             Mentor Profile
           </Link>
         </div>
+
       </div>
     </Link>
   </div>
