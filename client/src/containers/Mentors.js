@@ -13,7 +13,7 @@ class Mentors extends Component {
   componentDidMount = () => {
     Axios.get(`${API_URL}/mentors`).then(res => {
       console.log(res);
-      this.setState({ mentor: res.data });
+      this.setState({ mentors: res.data });
     });
   };
 
@@ -23,7 +23,7 @@ class Mentors extends Component {
         <div className="row">
           <h3>Find a mentor</h3>
 
-          {this.state.mentors.reverse().map(mentor => (
+          {this.state.mentors.map(mentor => (
             <div className="col-md-12" key={mentor.userId}>
               <List
                 imgUrl={mentor.image}

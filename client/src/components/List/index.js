@@ -3,32 +3,28 @@ import { Link } from "react-router-dom";
 import { Image } from "react-bootstrap";
 
 const List = ({ userId, first, last, imgUrl, summary, bio }) => (
-  <div className="list-group">
+  <div className="list-group  mb-3">
     <Link
       to={`/mentor/${userId}`}
-      className="list-group-item list-group-item-action flex-column align-items-start"
+      className="list-group-item list-group-item-action"
     >
-      <div className="d-flex w-100 justify-content-between">
-        <div className="row">
-          <Image
-            className="card-img-top img-fluid col-md-3"
-            height="200"
+      <div className="row">
+        <div className="col-md-3">
+          <img
+            className="rounded-circle d-block w-100"
             src={imgUrl}
-            circle
-            alt="Card image"
+            alt={`${first} ${last}`}
           />
-          <div className="col-md-6">
-            <h3 className="mb-1">{first + " " + last}</h3>
-            <h3 className="mb-1">Skills</h3>
-            <small>{summary}</small>
-            <h4 className="mb-1">Biography</h4>
-            <small>{bio}</small>
-          </div>
-          <div className="col-md-3">
-            <Link to={`/mentor/${userId}`} className="btn btn-primary">
-              Mentor Profile
-            </Link>
-          </div>
+        </div>
+        <div className="col-md-6">
+          <h3 className="mb-1">{`${first} ${last}`}</h3>
+          <h3 className="mb-1">Skills</h3>
+          <small>{summary}</small>
+        </div>
+        <div className="col-md-3">
+          <Link to={`/mentor/${userId}`} className="btn btn-primary">
+            Mentor Profile
+          </Link>
         </div>
       </div>
     </Link>

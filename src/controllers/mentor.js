@@ -29,8 +29,9 @@ const getAll = (req, res) => {
     include: { model: Profile }
   })
     // .then(mentors => res.json(mentors));
-    .then(mentor => {
-      const mentorProfile = mentor.map(mentor => {
+    .then(mentors => {
+      //console.log("mentor", mentors);
+      const mentorProfile = mentors.map(mentor => {
         return Object.assign(
           {},
           {
@@ -44,7 +45,7 @@ const getAll = (req, res) => {
           }
         );
       });
-      res.json({ mentorProfile });
+      res.json(mentorProfile);
     });
 };
 

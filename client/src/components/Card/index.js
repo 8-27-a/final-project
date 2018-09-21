@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Image } from "react-bootstrap";
 
 const Card = ({ first, last, imgUrl, summary, bio, userId }) => (
   <div className="card">
-    <Image
+    <img
       className="mt-5 mx-auto rounded-circle"
       src={imgUrl ? imgUrl : "/images/no-avatar.png"}
       alt="Card image"
