@@ -19,12 +19,6 @@ class Register extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  // handleRoleChange = e => {
-  //   this.setState.role === ""
-  //     ? [e.target.role] === "mentor"
-  //     : [e.target.role] === "student";
-  // };
-
   handleSubmit = e => {
     e.preventDefault();
 

@@ -10,6 +10,7 @@ const SignUp = props => (
         <Link to="/login/"> Sign in here</Link>
       </p>
     </div>
+
     <div className="form-group">
       <label htmlFor="first">First Name</label>
       <input

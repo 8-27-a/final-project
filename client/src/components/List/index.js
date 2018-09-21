@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Image } from "react-bootstrap";
 
 const List = ({ userId, first, last, imgUrl, summary, bio }) => (
-  <div className="list-group  mb-3">
+  <div className="list-group ">
     <Link
       to={`/mentor/${userId}`}
       className="list-group-item list-group-item-action"
@@ -17,9 +17,9 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
           />
         </div>
         <div className="col-md-6">
-          <h3 className="mb-1">{`${first} ${last}`}</h3>
-          <h3 className="mb-1">Skills</h3>
-          <small>{summary}</small>
+          <h3 className="mb-4">{`${first} ${last}`}</h3>
+          <h5 className="mb-2">{summary}</h5>
+          <small>{bio}</small>
         </div>
         <div className="col-md-3">
           <Link to={`/mentor/${userId}`} className="btn btn-primary">
