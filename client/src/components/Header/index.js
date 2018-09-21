@@ -118,13 +118,13 @@ class Header extends Component {
                   <li className="nav-item">
                     <NavLink
                       to="/login"
-                      className="btn btn-outline-primary"
+                      className="btn btn-outline-primary mr-3"
                     >
                       Login
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to="/register" className="btn btn-primary ml-3">
+                    <NavLink to="/register" className="btn btn-primary mr-3">
                       Sign Up
                     </NavLink>
                   </li>

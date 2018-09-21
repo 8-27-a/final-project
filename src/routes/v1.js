@@ -4,6 +4,8 @@ const userCtrl = require("../controllers/user");
 const mentorCtrl = require("../controllers/mentor");
 const studentCtrl = require("../controllers/student");
 const profileCtrl = require("../controllers/profile");
+const apptCtrl = require("../controllers/appointment");
+
 
 // user CRUD routes
 router.get("/users", userCtrl.getAll);
@@ -27,5 +29,9 @@ router.get("/profiles", profileCtrl.getAll);
 router.post("/profiles", profileCtrl.create);
 router.put("/profile/:id", profileCtrl.update);
 router.delete("/profile/:id", profileCtrl.remove);
+
+// appointment CRUD routes
+router.get("/appointments", apptCtrl.getAll);
+router.post("/appointments", apptCtrl.create);
 
 module.exports = router;
