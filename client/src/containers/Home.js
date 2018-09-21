@@ -7,7 +7,10 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <Jumbotron title="Mentor4me">
+        <Jumbotron
+          title="It's time to look for a mentor!"
+          className="text-center"
+        >
           <h3>
             Find your tutor and get the help you need to become a successful
             programmer!

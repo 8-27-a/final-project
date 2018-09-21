@@ -67,6 +67,11 @@ class Header extends Component {
                   Find a mentor
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/about">
+                  About Us
+                </NavLink>
+              </li>
               {this.state.isAuth ? (
                 <React.Fragment>
                   <li className="nav-item dropdown">
