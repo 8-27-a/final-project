@@ -13,4 +13,3 @@ const getAll = (req, res) => {
 };
 
 module.exports = { create, getAll };
-攀
