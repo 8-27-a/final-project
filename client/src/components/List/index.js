@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./style.css"
+import "./style.css";
 
 const List = ({ userId, first, last, imgUrl, summary, bio }) => (
   <div className="list-group ">
@@ -12,7 +12,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
         <div className="col-md-3">
           <img
             className="rounded-circle d-block w-100"
-            src={imgUrl}
+            src={imgUrl ? imgUrl : "/images/no-avatar.png"}
             alt={`${first} ${last}`}
           />
         </div>
@@ -26,7 +26,6 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
             Mentor Profile
           </Link>
         </div>
-
       </div>
     </Link>
   </div>
