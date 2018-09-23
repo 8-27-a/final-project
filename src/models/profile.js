@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
 
   Model.associate = function(models) {
     this.Profile = this.belongsTo(models.User, {
-      foreignKey: "userId",
-      targetKey: "userId"
+      foreignKey: "userId"
+      //targetKey: "userId"
     });
   };
 
-  // sequelize.sync({ force: true });
+  //sequelize.sync({ force: true });
   return Model;
 };

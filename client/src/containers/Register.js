@@ -7,7 +7,7 @@ class Register extends Component {
   state = {
     first: "",
     last: "",
-    role: "",
+    role: "student",
     email: "",
     password: "",
     password2: "",
@@ -18,12 +18,6 @@ class Register extends Component {
     console.log("changed", e.target.value);
     this.setState({ [e.target.name]: e.target.value });
   };
-
-  // handleRoleChange = e => {
-  //   this.setState.role === ""
-  //     ? [e.target.role] === "mentor"
-  //     : [e.target.role] === "student";
-  // };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -44,10 +38,10 @@ class Register extends Component {
           this.props.history.push("/login");
         } else {
           this.setState({
-            errors: { ...this.state.errors, global: user.data }
+            errors: { ...this.state.errors, global: user.data.message }
           });
         }
-        // console.log(res.data);
+        console.log("errors", errors);
         // this.setState({ email, password });
       });
     }

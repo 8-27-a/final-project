@@ -1,5 +1,3 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const Profile = require("../models").Profile;
 const User = require("../models").User;
 
@@ -63,7 +61,7 @@ const update = (req, res) => {
       profileId: req.params.id
     }
   })
-    .then(profile => res.json({ updated: true }))
+    .then(res => res.json({ updated: true }))
     .catch(err =>
       res.json({
         updated: false,

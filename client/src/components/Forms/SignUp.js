@@ -10,6 +10,7 @@ const SignUp = props => (
         <Link to="/login/"> Sign in here</Link>
       </p>
     </div>
+
     <div className="form-group">
       <label htmlFor="first">First Name</label>
       <input
@@ -35,8 +36,13 @@ const SignUp = props => (
 
     <div className="form-group" onSubmit={props.handleSubmit}>
       <label>
-        Are you a MENTOR or a STUDENT?
-        <select name="role" value={props.role} onChange={props.onChange}>
+        MENTOR or STUDENT?
+        <select
+          name="role"
+          value={props.role}
+          onChange={props.onChange}
+          className="form-control"
+        >
           <option value="student">Student</option>
           <option value="mentor">Mentor</option>
         </select>

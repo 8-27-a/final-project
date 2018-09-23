@@ -6,11 +6,12 @@ import decode from "jwt-decode";
 
 class Profile extends Component {
   state = {
+    userId: null,
     first: "",
     last: "",
-    role: "",
     imgUrl: "",
     email: "",
+    role: "",
     password: "",
     password2: "",
     summary: "",
@@ -31,7 +32,6 @@ class Profile extends Component {
     const {
       first,
       last,
-      role,
       imgUrl,
       email,
       password,
@@ -39,12 +39,12 @@ class Profile extends Component {
       bio,
       summary
     } = this.state;
+
     const errors = this.validate({ email, password, password2 });
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
-      // need to make this dynamic for students also
-      Axios.put(`${API_URL}/mentors/${userId}`, {
+      Axios.put(`${API_URL}/users/${userId}`, {
         first,
         last,
         email,
@@ -60,6 +60,7 @@ class Profile extends Component {
             errors: { ...this.state.errors, global: user.data.message }
           });
         }
+        console.log("error", errors);
       });
     }
   };
@@ -81,23 +82,25 @@ class Profile extends Component {
   };
 
   componentDidMount = () => {
-    const { userId } = decode(localStorage.getItem("JWT"));
-    Axios.get(`${API_URL}/mentors/${userId}`).then(profile => {
+    const { userId, role } = decode(localStorage.getItem("JWT"));
+
+    Axios.get(`${API_URL}/users/${userId}`).then(profile => {
       console.log("profile", profile);
-      const { firstName, lastName, email } = profile.data;
+      const { firstName, lastName, email, image, userId, role } = profile.data;
       this.setState({
         first: firstName,
         last: lastName,
         email,
+        role,
+        imgUrl: image,
         summary: profile.data.summary,
-        bio: profile.data.bio
+        bio: profile.data.bio,
+        userId
       });
     });
   };
 
   render() {
-    const { userId } = decode(localStorage.getItem("JWT"));
-
     return (
       <div className="bg-light py-5">
         <div className="container">
@@ -110,13 +113,14 @@ class Profile extends Component {
                 success={this.state.success}
                 first={this.state.first}
                 last={this.state.last}
-                role={this.state.role}
+                imgUrl={this.state.imgUrl}
                 email={this.state.email}
+                role={this.state.role}
                 password={this.state.password}
                 password2={this.state.password2}
                 summary={this.state.summary}
                 bio={this.state.bio}
-                userId={userId}
+                userId={this.state.userId}
               />
             </div>
           </div>
