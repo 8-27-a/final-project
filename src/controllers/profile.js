@@ -1,12 +1,10 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const Profile = require("../models").Profile;
 const User = require("../models").User;
 
 const getOne = (req, res) => {
   Profile.findOne({
     where: {
-      profile_Id: req.params.id
+      profileId: req.params.id
     }
   }).then(profile => {
     console.log(profile);
@@ -14,11 +12,18 @@ const getOne = (req, res) => {
   });
 };
 
+const getAll = (req, res) => {
+  Profile.findAll().then(profile => {
+    console.log(profile);
+    res.json(profile);
+  });
+};
+
 const create = (req, res) => {
   const newProfile = {
-    title: req.body.title,
-    description: req.body.description,
-    UserUserId: req.body.UserUserId
+    summary: req.body.summary,
+    bio: req.body.bio,
+    userId: req.body.userId
   };
 
   Profile.create(newProfile)
@@ -37,26 +42,26 @@ const create = (req, res) => {
 // };
 
 const update = (req, res) => {
-  const { title, description, UserUserId } = req.body;
+  const { summary, bio, userId } = req.body;
 
-  const updatedProfile = {};
+  const updateProfile = {};
 
-  if (title) {
-    updatedProfile.title = title;
+  if (summary) {
+    updateSummary.summary = summary;
   }
-  if (description) {
-    updatedUser.description = description;
+  if (bio) {
+    updateUser.bio = bio;
   }
-  if (UserUserId) {
-    updatedUser.UserUserId = UserUserId;
+  if (userId) {
+    updateUser.userId = userId;
   }
 
-  Profile.update(updatedProfile, {
+  Profile.update(updateProfile, {
     where: {
-      profile_Id: req.params.id
+      profileId: req.params.id
     }
   })
-    .then(profile => res.json({ updated: true }))
+    .then(res => res.json({ updated: true }))
     .catch(err =>
       res.json({
         updated: false,
@@ -65,24 +70,13 @@ const update = (req, res) => {
     );
 };
 
-const getOne = (req, res) => {
-  Profile.findOne({
-    where: {
-      profile_Id: req.params.id
-    }
-  }).then(profile => {
-    console.log(profile);
-    res.json(profile);
-  });
-};
-
 const remove = (req, res) => {
-  console.log("profData:", req.profData);
-  Profile.findOne({ where: { profile_Id: req.params.id } }).then(prof => {
-    if (prof !== null) {
+  console.log("profileData:", req.profileData);
+  Profile.findOne({ where: { profileId: req.params.id } }).then(profile => {
+    if (profile !== null) {
       Profile.destroy({
         where: {
-          profile_Id: req.params.id
+          profileId: req.params.id
         }
       })
         .then(prof =>
@@ -104,6 +98,7 @@ const remove = (req, res) => {
 
 module.exports = {
   getOne,
+  getAll,
   create,
   update,
   remove

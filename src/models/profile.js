@@ -6,22 +6,20 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     summary: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     },
     bio: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     }
   });
 
   Model.associate = function(models) {
     this.Profile = this.belongsTo(models.User, {
-      foreignKey: "userId",
-      targetKey: "userId"
+      foreignKey: "userId"
+      //targetKey: "userId"
     });
   };
 
-  // sequelize.sync({ force: true });
+  //sequelize.sync({ force: true });
   return Model;
 };

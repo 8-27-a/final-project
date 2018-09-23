@@ -10,14 +10,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false
     },
-    time: {
-      type: DataTypes.TIME,
-      allowNull: false
+    comment: {
+      type: DataTypes.STRING
     },
     status: {
       type: DataTypes.ENUM,
-      allowNull: false,
-      values: ["accepted", "rejected", "pending"]
+      values: ["accepted", "rejected", "pending"],
+      defaultValue: "pending"
     }
   });
 
@@ -33,6 +32,6 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
-  // sequelize.sync({ force: true });
+  //sequelize.sync({ force: true });
   return Model;
 };

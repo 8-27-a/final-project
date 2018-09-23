@@ -1,17 +1,23 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import SignUp from "../components/Forms/SignUp";
+import ProfileForm from "../components/Forms/Profile";
 import { API_URL } from "../backend_api";
+import decode from "jwt-decode";
 
-class Register extends Component {
+class Profile extends Component {
   state = {
+    userId: null,
     first: "",
     last: "",
-    role: "student",
+    imgUrl: "",
     email: "",
+    role: "",
     password: "",
     password2: "",
-    errors: {}
+    summary: "",
+    bio: "",
+    errors: {},
+    success: ""
   };
 
   handleChange = e => {
@@ -21,28 +27,40 @@ class Register extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const { userId } = decode(localStorage.getItem("JWT"));
 
-    const { first, last, role, email, password, password2 } = this.state;
+    const {
+      first,
+      last,
+      imgUrl,
+      email,
+      password,
+      password2,
+      bio,
+      summary
+    } = this.state;
+
     const errors = this.validate({ email, password, password2 });
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
-      Axios.post(`${API_URL}/signup`, {
+      Axios.put(`${API_URL}/users/${userId}`, {
         first,
         last,
-        role,
         email,
-        password
+        imgUrl,
+        password,
+        summary,
+        bio
       }).then(user => {
-        if (user.status === 201) {
-          this.props.history.push("/login");
+        if (user.data.updated) {
+          this.setState({ success: "Your changes has been saved." });
         } else {
           this.setState({
             errors: { ...this.state.errors, global: user.data.message }
           });
         }
-        console.log("errors", errors);
-        // this.setState({ email, password });
+        console.log("error", errors);
       });
     }
   };
@@ -51,7 +69,6 @@ class Register extends Component {
     const errors = {};
 
     if (!data.email) errors.email = "Enter email";
-    if (!data.password) errors.password = "Enter password";
     if (data.password !== data.password2)
       errors.password = "Password does not match";
 
@@ -59,9 +76,28 @@ class Register extends Component {
   };
 
   componentWillMount = () => {
-    if (localStorage.getItem("JWT")) {
-      this.props.history.push("/");
+    if (!localStorage.getItem("JWT")) {
+      this.props.history.push("/login");
     }
+  };
+
+  componentDidMount = () => {
+    const { userId, role } = decode(localStorage.getItem("JWT"));
+
+    Axios.get(`${API_URL}/users/${userId}`).then(profile => {
+      console.log("profile", profile);
+      const { firstName, lastName, email, image, userId, role } = profile.data;
+      this.setState({
+        first: firstName,
+        last: lastName,
+        email,
+        role,
+        imgUrl: image,
+        summary: profile.data.summary,
+        bio: profile.data.bio,
+        userId
+      });
+    });
   };
 
   render() {
@@ -70,16 +106,21 @@ class Register extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">
-              <SignUp
+              <ProfileForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
                 errors={this.state.errors}
+                success={this.state.success}
                 first={this.state.first}
                 last={this.state.last}
-                role={this.state.role}
+                imgUrl={this.state.imgUrl}
                 email={this.state.email}
+                role={this.state.role}
                 password={this.state.password}
                 password2={this.state.password2}
+                summary={this.state.summary}
+                bio={this.state.bio}
+                userId={this.state.userId}
               />
             </div>
           </div>
@@ -89,4 +130,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default Profile;

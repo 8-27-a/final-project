@@ -3,9 +3,10 @@ import Axios from "axios";
 import List from "../components/List";
 import { API_URL } from "../backend_api";
 
-class Mentor extends Component {
+class Mentors extends Component {
   state = {
     mentors: [],
+    Profiles: [],
     isLoaded: false
   };
 
@@ -20,16 +21,17 @@ class Mentor extends Component {
     return (
       <div className="container">
         <div className="row">
-          <h3>Find a mentor</h3>
-
-          {this.state.mentors.reverse().map(mentor => (
+          {/* <h3>Find a mentor</h3> */}
+          {this.state.mentors.map(mentor => (
             <div className="col-md-12" key={mentor.userId}>
               <List
-                imgUrl={mentor.imgUrl}
+                imgUrl={mentor.image}
                 userId={mentor.userId}
-                first={mentor.first}
-                last={mentor.last}
+                first={mentor.firstName}
+                last={mentor.lastName}
                 email={mentor.email}
+                summary={mentor.summary}
+                bio={mentor.bio}
               />
             </div>
           ))}
@@ -39,4 +41,4 @@ class Mentor extends Component {
   }
 }
 
-export default Mentor;
+export default Mentors;
