@@ -1,3 +1,12 @@
+footer {
+    margin-top: 1rem;
+    color: #fff;
+}
+
+.copyright {
+    color: #fff;
+}
+
 .social-media {
     display: inline-flex;
     justify-content: space-around;

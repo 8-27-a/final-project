@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import Card from "../components/Card";
 import { API_URL } from "../backend_api";
@@ -34,6 +35,12 @@ class Student extends Component {
               bio={student.bio}
             />
           </div>
+          <Link to="/profile" className="btn btn-primary ml-3">
+            Back
+          </Link>
+          <Link to="/" className="btn btn-primary ml-3">
+            Home
+          </Link>
         </div>
       </div>
     );

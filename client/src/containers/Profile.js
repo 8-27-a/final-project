@@ -39,6 +39,7 @@ class Profile extends Component {
       bio,
       summary
     } = this.state;
+
     const errors = this.validate({ email, password, password2 });
     this.setState({ errors });
 
@@ -59,6 +60,7 @@ class Profile extends Component {
             errors: { ...this.state.errors, global: user.data.message }
           });
         }
+        console.log("error", errors);
       });
     }
   };

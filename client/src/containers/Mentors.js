@@ -21,8 +21,7 @@ class Mentors extends Component {
     return (
       <div className="container">
         <div className="row">
-          <h3>Find a mentor</h3>
-
+          {/* <h3>Find a mentor</h3> */}
           {this.state.mentors.map(mentor => (
             <div className="col-md-12" key={mentor.userId}>
               <List

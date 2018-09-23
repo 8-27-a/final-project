@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Profile = props => {
   console.log("props.success", props.success);
-  console.log("props.erros", props.errors);
+  console.log("props.errors", props.errors);
   return (
     <form>
       <div className="form-group">

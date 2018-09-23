@@ -14,13 +14,13 @@ const Card = ({ first, last, role, imgUrl, summary, bio, userId }) => (
       <h5 className="card-title">{`${first} ${last}`}</h5>
       <p className="card-text">{summary}</p>
       <p className="card-text">{bio}</p>
-      <Link to={`/dashboard/${role}`} className="btn btn-primary">
+      {/* <Link to={`/mentor/${userId}/appt`} className="btn btn-primary">
         Book Appointment?
       </Link>
 
       <Link to="/mentors" className="btn btn-outline-primary ml-3">
         Back
-      </Link>
+      </Link> */}
     </div>
   </div>
 );

@@ -38,10 +38,10 @@ class Register extends Component {
           this.props.history.push("/login");
         } else {
           this.setState({
-            errors: { ...this.state.errors, global: user.data }
+            errors: { ...this.state.errors, global: user.data.message }
           });
         }
-        // console.log(res.data);
+        console.log("errors", errors);
         // this.setState({ email, password });
       });
     }

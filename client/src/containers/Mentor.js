@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import Card from "../components/Card";
 import { API_URL } from "../backend_api";
@@ -34,6 +35,15 @@ class Mentor extends Component {
               bio={mentor.bio}
             />
           </div>
+          <Link
+            to={`/mentor/${this.props.match.params.id}/appt`}
+            className="btn btn-primary ml-3"
+          >
+            Book Appointment?
+          </Link>
+          <Link to="/mentors" className="btn btn-outline-primary ml-3">
+            Back
+          </Link>
         </div>
       </div>
     );
