@@ -6,7 +6,6 @@ const studentCtrl = require("../controllers/student");
 const profileCtrl = require("../controllers/profile");
 const apptCtrl = require("../controllers/appointment");
 
-
 // user CRUD routes
 router.get("/users", userCtrl.getAll);
 router.post("/signup", userCtrl.signup);
@@ -33,5 +32,12 @@ router.delete("/profile/:id", profileCtrl.remove);
 // appointment CRUD routes
 router.get("/appointments", apptCtrl.getAll);
 router.post("/appointments", apptCtrl.create);
+router.put("/appointment/:id", apptCtrl.update);
+router.get("/appointments/mentor/:id", apptCtrl.getAllMentor);
+router.get("/appointments/student/:id", apptCtrl.getAllStudent);
+// these 2 not working yet
+// router.get("/appointment/mentor/:id", apptCtrl.getOneMentor);
+// router.get("/appointment/student/:id", apptCtrl.getOneStudent);
+router.delete("/appointment/:id", apptCtrl.remove);
 
 module.exports = router;
