@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 const List = ({ userId, first, last, imgUrl, summary, bio }) => (
-  <div className="list-group ">
+  <div className="list-group">
     <Link
       to={`/mentor/${userId}`}
       className="list-group-item list-group-item-action"

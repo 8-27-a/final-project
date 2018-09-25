@@ -13,21 +13,25 @@ const Footer = () => (
             className="fa fa-envelope"
             href="mailto:mentor4me@gmail.com"
             target="_blank"
+            rel="noopener noreferrer"
           />
           <a
             className="fa fa-facebook"
             href="http://facebook.com/mentor4mecoding"
             target="_blank"
+            rel="noopener noreferrer"
           />
           <a
             className="fa fa-instagram"
             href="http://instagram.com/mentor4me"
             target="_blank"
+            rel="noopener noreferrer"
           />
           <a
             className=" fa fa-twitter"
             href="https://twitter.com/Mentor4MeCoding"
             target="_blank"
+            rel="noopener noreferrer"
           />
         </div>
       </div>

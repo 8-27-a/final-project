@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import decode from "jwt-decode";
 import Axios from "axios";
 import { API_URL } from "../backend_api";
+import "./Dashboard.css";
 
 class Dashboard extends Component {
   state = {
     appointments: [],
-    role: ""
+    role: "",
+    errors: {}
   };
   componentWillMount = () => {
     if (!localStorage.getItem("JWT")) {
@@ -20,12 +22,30 @@ class Dashboard extends Component {
       this.setState({ appointments: appts, role })
     );
   };
+  // --------------------------
 
+  // handleApprove = e => {
+  //   e.preventDefault();
+
+  //     Axios.put(`${API_URL}/appointment/${apptId}`, {
+  //       status,
+  //       comment
+  //     }).then(appt = {
+  //       if (res.data.updated){
+  //         this.setState({ success: "Appointment Accepted"}
+  //       })
+  //     }
+
+  //     );
+  //   }
+  // };
+
+  // ---------
   render() {
     console.log("state", this.state);
 
     return (
-      <div className="container bg-white">
+      <div className="container bg-light">
         <h1>Dashboard</h1>
 
         <table className="table">
@@ -49,8 +69,22 @@ class Dashboard extends Component {
                   {appt.User.first} {appt.User.last}
                 </td>
                 <td>{appt.status}</td>
-              {this.state.role === "mentor" && <td scope="col"><button className="btn btn-danger">Decline</button><button className="btn btn-success">Approve</button></td>}
-
+                {this.state.role === "mentor" && (
+                  <td scope="col">
+                    <button
+                      className="btn btn-danger"
+                      onClick={this.handleDecline}
+                    >
+                      Decline
+                    </button>
+                    <button
+                      className="btn btn-success"
+                      onClick={this.handleAccept}
+                    >
+                      Accept
+                    </button>
+                  </td>
+                )}
               </tr>
             ))}
           </tbody>
