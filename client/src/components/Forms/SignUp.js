@@ -93,9 +93,16 @@ const SignUp = props => (
         <small className="text-danger">{props.errors.password}</small>
       )}
     </div>
-    <button className="btn btn-primary" type="submit" onClick={props.onSubmit}>
+    <button
+      className="btn btn-primary mb-3"
+      type="submit"
+      onClick={props.onSubmit}
+    >
       Sign Up
     </button>
+    {!!props.errors.global && (
+      <div className="alert alert-danger">{props.errors.global}</div>
+    )}
   </form>
 );
 

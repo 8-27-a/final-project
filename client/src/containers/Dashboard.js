@@ -3,6 +3,7 @@ import decode from "jwt-decode";
 import Axios from "axios";
 import { API_URL } from "../backend_api";
 import "./Dashboard.css";
+import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
   state = {
@@ -17,30 +18,28 @@ class Dashboard extends Component {
   };
 
   componentDidMount = () => {
+    this.fetchAppts();
+  };
+
+  fetchAppts = () => {
     const { userId, role } = decode(localStorage.getItem("JWT"));
     Axios.get(`${API_URL}/appointments/${userId}`).then(({ data: appts }) =>
       this.setState({ appointments: appts, role })
     );
   };
-  // --------------------------
 
-  // handleApprove = e => {
-  //   e.preventDefault();
+  handleStatus = (apptId, status) => {
+    //e.preventDefault();
 
-  //     Axios.put(`${API_URL}/appointment/${apptId}`, {
-  //       status,
-  //       comment
-  //     }).then(appt = {
-  //       if (res.data.updated){
-  //         this.setState({ success: "Appointment Accepted"}
-  //       })
-  //     }
+    Axios.put(`${API_URL}/appointment/${apptId}`, {
+      status
+    }).then(res => {
+      if (res.data.updated) {
+        this.fetchAppts();
+      }
+    });
+  };
 
-  //     );
-  //   }
-  // };
-
-  // ---------
   render() {
     console.log("state", this.state);
 
@@ -61,25 +60,30 @@ class Dashboard extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.appointments.map(appt => (
+            {this.state.appointments.map((appt, k) => (
               <tr>
-                <th scope="row">-</th>
+                <th scope="row">{k + 1}</th>
                 <td>{new Date(appt.date).toLocaleString()}</td>
                 <td>
-                  {appt.User.first} {appt.User.last}
+                  <Link
+                    to={`/${appt.User.role}/${appt.User.userId}`}
+                    className="btn btn-link"
+                  >
+                    {appt.User.first} {appt.User.last}
+                  </Link>
                 </td>
                 <td>{appt.status}</td>
                 {this.state.role === "mentor" && (
                   <td scope="col">
                     <button
                       className="btn btn-danger"
-                      onClick={this.handleDecline}
+                      onClick={() => this.handleStatus(appt.apptId, "rejected")}
                     >
                       Decline
                     </button>
                     <button
                       className="btn btn-success"
-                      onClick={this.handleAccept}
+                      onClick={() => this.handleStatus(appt.apptId, "accepted")}
                     >
                       Accept
                     </button>

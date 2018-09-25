@@ -94,7 +94,7 @@ class Header extends Component {
                         alt=""
                       />
                     </Link>
-                    <div className="dropdown-menu">
+                    <div className="dropdown-menu dropdown-menu-right">
                       <Link className="dropdown-item" to="/dashboard">
                         Dashboard
                       </Link>

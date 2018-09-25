@@ -83,24 +83,24 @@ const update = (req, res) => {
   const updateAppointment = {};
 
   if (date) {
-    updateDate.date = date;
+    updateAppointment.date = date;
   }
   if (time) {
-    updateTime.time = time;
+    updateAppointment.time = time;
   }
   if (status) {
-    updateStatus.status = status;
+    updateAppointment.status = status;
   }
   if (comment) {
-    updateComment.comment = comment;
+    updateAppointment.comment = comment;
   }
 
-  Appt.update(updateAppt, {
+  Appt.update(updateAppointment, {
     where: {
       apptId: req.params.id
     }
   })
-    .then(res => res.json({ updated: true }))
+    .then(() => res.json({ updated: true }))
     .catch(err =>
       res.json({
         updated: false,

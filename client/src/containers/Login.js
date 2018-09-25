@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import validator from "validator";
 import Axios from "axios";
 import SignIn from "../components/Forms/SignIn";
 import { API_URL } from "../backend_api";
@@ -29,6 +30,7 @@ class Login extends Component {
           localStorage.setItem("JWT", user.data.token);
           this.props.history.push("/");
         } else {
+          console.log("err", user.data.message);
           this.setState({
             errors: { ...this.state.errors, global: user.data.message }
           });
@@ -42,6 +44,7 @@ class Login extends Component {
     const errors = {};
 
     if (!data.email) errors.email = "Enter email";
+    if (!validator.isEmail(data.email)) errors.email = "Enter a valid email";
     if (!data.password) errors.password = "Enter password";
 
     return errors;
