@@ -12,7 +12,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
         <div className="col-md-3">
           <img
             className="rounded-circle d-block w-100"
-            src={imgUrl ? imgUrl : "/images/no-avatar.png"}
+            src={imgUrl ? imgUrl : "/images/no+avatar.png"}
             alt={`${first} ${last}`}
           />
         </div>
