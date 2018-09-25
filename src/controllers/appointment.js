@@ -31,9 +31,7 @@ const getAll = (req, res) => {
 const getOneMentor = (req, res) => {
   Appt.findOne({
     where: {
-      // ???
-      mentorId: req.body.id,
-      apptId: req.params.id
+      [Op.or]: [{ mentorId: req.params.user_id }, { apptId: req.params.apptId }]
     }
   }).then(appt => {
     console.log(appt);
@@ -46,9 +44,10 @@ const getOneMentor = (req, res) => {
 const getOneStudent = (req, res) => {
   Appt.findOne({
     where: {
-      // ???
-      studentId: req.body.id,
-      apptId: req.params.id
+      [Op.or]: [
+        { studentId: req.params.user_id },
+        { apptId: req.params.apptId }
+      ]
     }
   }).then(appt => {
     console.log(appt);
