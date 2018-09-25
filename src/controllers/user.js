@@ -102,7 +102,7 @@ const remove = (req, res) => {
 };
 
 const update = (req, res) => {
-  const { first, last, imgUrl, summary, bio } = req.body;
+  const { first, last, password, imgUrl, summary, bio } = req.body;
 
   console.log("BODY", req.body);
 
@@ -114,6 +114,11 @@ const update = (req, res) => {
   }
   if (last) {
     updateUser.last = last;
+  }
+  if (password) {
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
+      updateUser.password = hash;
+    });
   }
   if (imgUrl) {
     updateUser.imgUrl = imgUrl;
