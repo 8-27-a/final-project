@@ -62,9 +62,7 @@ const auth = (req, res) => {
           );
           res.json({ success: true, token });
         } else {
-          res
-            .status(403)
-            .json({ success: false, message: "Incorrect password" });
+          res.json({ success: false, message: "Incorrect password" });
         }
       });
     } else {

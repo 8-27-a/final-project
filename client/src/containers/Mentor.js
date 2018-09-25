@@ -10,6 +10,11 @@ class Mentor extends Component {
     Profile: {},
     isLoaded: false
   };
+  componentWillMount = () => {
+    if (!localStorage.getItem("JWT")) {
+      this.props.history.push("/login");
+    }
+  };
 
   componentDidMount = () => {
     Axios.get(`${API_URL}/mentors/${this.props.match.params.id}`).then(res => {

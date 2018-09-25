@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import validator from "validator";
 import Axios from "axios";
 import SignUp from "../components/Forms/SignUp";
 import { API_URL } from "../backend_api";
@@ -40,8 +41,8 @@ class Register extends Component {
           this.setState({
             errors: { ...this.state.errors, global: user.data.message }
           });
+          console.log("errors", user.data);
         }
-        console.log("errors", errors);
         // this.setState({ email, password });
       });
     }
@@ -51,6 +52,7 @@ class Register extends Component {
     const errors = {};
 
     if (!data.email) errors.email = "Enter email";
+    if (!validator.isEmail(data.email)) errors.email = "Enter a valid email";
     if (!data.password) errors.password = "Enter password";
     if (data.password !== data.password2)
       errors.password = "Password does not match";
