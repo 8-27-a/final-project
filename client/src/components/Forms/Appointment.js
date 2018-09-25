@@ -1,6 +1,6 @@
 import React from "react";
 
-const AppointmentForm = ({ onChange, onSubmit, data, errors }) => (
+const AppointmentForm = ({ onChange, onSubmit, data }) => (
   <form>
     <div className="form-group">
       <h2 className="text-center mb-3">Create an Appointment</h2>
@@ -41,7 +41,7 @@ const AppointmentForm = ({ onChange, onSubmit, data, errors }) => (
       />
     </div>
 
-    <button type="submit" className="btn btn-primary" onClick={onSubmit}>
+    <button type="submit" className="btn btn-secondary" onClick={onSubmit}>
       SUBMIT APPOINTMENT
     </button>
   </form>

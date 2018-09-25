@@ -35,10 +35,10 @@ class Student extends Component {
               bio={student.bio}
             />
           </div>
-          <Link to="/profile" className="btn btn-primary ml-3">
+          <Link to="/profile" className="btn btn-secondary mt-2 ml-3">
             Back
           </Link>
-          <Link to="/" className="btn btn-primary ml-3">
+          <Link to="/" className="btn btn-outline-secondary mt-2 ml-3">
             Home
           </Link>
         </div>

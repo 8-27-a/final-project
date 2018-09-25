@@ -22,7 +22,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
           <small>{bio}</small>
         </div>
         <div className="col-md-2">
-          <Link to={`/mentor/${userId}`} className="btn btn-primary">
+          <Link to={`/mentor/${userId}`} className="btn btn-secondary">
             Mentor Profile
           </Link>
         </div>
