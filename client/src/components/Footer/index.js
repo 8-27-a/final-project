@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
 
 const Footer = () => (
   <footer>
@@ -11,36 +10,61 @@ const Footer = () => (
         </div>
 
         <div className="col-md-6 social-media">
-          <Link
+          {/* <Link
             to="mentor4me@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa fa-envelope-o" />
-          </Link>
+          </Link> */}
 
-          <Link
+          <a
+            className="fa fa-envelope"
+            href="mailto:mentor4me@gmail.com"
+            target="_blank"
+          />
+
+          {/* <Link
             to="http://facebook.com/mentor4mecoding"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa fa-facebook" />
-          </Link>
+          </Link> */}
 
-          <Link
+          <a
+            className="fa fa-facebook"
+            href="http://facebook.com/mentor4mecoding"
+            target="_blank"
+          />
+
+          {/* <Link
             to="http://instagram.com/mentor4me"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa fa-instagram" />
-          </Link>
-          <Link
+          </Link> */}
+
+          <a
+            className="fa fa-instagram"
+            href="http://instagram.com/mentor4me"
+            target="_blank"
+          />
+
+          {/* <Link
             to="https://twitter.com/Mentor4MeCoding"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa fa-twitter" />
-          </Link>
+          </Link> */}
+
+          <a
+            className=" fa fa-twitter"
+            href="https://twitter.com/Mentor4MeCoding"
+            target="_blank"
+          />
         </div>
       </div>
     </div>

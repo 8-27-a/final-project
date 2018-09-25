@@ -39,7 +39,7 @@ class Mentor extends Component {
             to={`/mentor/${this.props.match.params.id}/appt`}
             className="btn btn-primary ml-3"
           >
-            Book Appointment?
+            Book Appointment
           </Link>
           <Link to="/mentors" className="btn btn-outline-primary ml-3">
             Back
