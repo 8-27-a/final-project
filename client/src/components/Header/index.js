@@ -89,7 +89,7 @@ class Header extends Component {
                         src={
                           this.state.avatarUrl
                             ? this.state.avatarUrl
-                            : "/images/no-avatar.png"
+                            : "/images/no+avatar.png"
                         }
                         alt=""
                       />

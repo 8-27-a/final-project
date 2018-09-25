@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 const List = ({ userId, first, last, imgUrl, summary, bio }) => (
-  <div className="list-group ">
+  <div className="list-group">
     <Link
       to={`/mentor/${userId}`}
       className="list-group-item list-group-item-action"
@@ -12,7 +12,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
         <div className="col-md-3">
           <img
             className="rounded-circle d-block w-100"
-            src={imgUrl ? imgUrl : "/images/no-avatar.png"}
+            src={imgUrl ? imgUrl : "/images/no+avatar.png"}
             alt={`${first} ${last}`}
           />
         </div>
@@ -22,7 +22,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
           <small>{bio}</small>
         </div>
         <div className="col-md-2">
-          <Link to={`/mentor/${userId}`} className="btn btn-primary">
+          <Link to={`/mentor/${userId}`} className="btn btn-secondary">
             Mentor Profile
           </Link>
         </div>

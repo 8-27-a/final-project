@@ -32,7 +32,7 @@ body {
   color: #90afc5;
 }
 
-.btn-primary,
+/* .btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:visited,
@@ -50,7 +50,7 @@ body {
 .btn-outline-primary:active:focus {
   background-color: #90afc5;
   border-color: #90afc5;
-}
+} */
 
 .App {
   text-align: center;

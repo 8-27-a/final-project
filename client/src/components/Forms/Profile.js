@@ -115,7 +115,7 @@ const Profile = props => {
         />
       </div>
       <button
-        className="btn btn-primary mb-5"
+        className="btn btn-secondary mb-5"
         type="submit"
         onClick={props.onSubmit}
       >
