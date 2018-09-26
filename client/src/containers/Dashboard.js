@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
   state = {
+    comment: "",
     appointments: [],
     role: "",
     errors: {}
@@ -19,6 +20,20 @@ class Dashboard extends Component {
 
   componentDidMount = () => {
     this.fetchAppts();
+  };
+
+  reply = (apptId, oldComment) => {
+    Axios.put(`${API_URL}/appointment/${apptId}`, {
+      comment: `
+      ${this.state.comment}
+      ->
+      ${oldComment}
+      `
+    }).then(res => {
+      if (res.data.updated) {
+        this.fetchAppts();
+      }
+    });
   };
 
   fetchAppts = () => {
@@ -55,6 +70,7 @@ class Dashboard extends Component {
               <th scope="col">
                 {this.state.role === "mentor" ? "Student" : "Mentor"}
               </th>
+              <th scope="col">Comments</th>
               <th scope="col">Status</th>
               {this.state.role === "mentor" && <th scope="col">Action</th>}
             </tr>
@@ -71,6 +87,68 @@ class Dashboard extends Component {
                   >
                     {appt.User.first} {appt.User.last}
                   </Link>
+                </td>
+                <td>
+                  <button
+                    className="btn btn-success"
+                    data-toggle="modal"
+                    data-target="#commentsModal"
+                  >
+                    <i className="fas fa-comments" />
+                  </button>
+                  <div
+                    className="modal fade"
+                    id="commentsModal"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog" role="document">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="exampleModalLabel">
+                            {appt.User.first} {appt.User.last}
+                          </h5>
+                          <button
+                            type="button"
+                            className="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div className="modal-body">
+                          <p>{appt.comment}</p>
+                          <textarea
+                            className="form-control"
+                            onChange={e =>
+                              this.setState({ comment: e.target.value })
+                            }
+                            value={this.state.comment}
+                          />
+                        </div>
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            onClick={() =>
+                              this.reply(appt.apptId, appt.comment)
+                            }
+                            className="btn btn-primary"
+                          >
+                            Reply
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </td>
                 <td>{appt.status}</td>
                 {this.state.role === "mentor" && (
