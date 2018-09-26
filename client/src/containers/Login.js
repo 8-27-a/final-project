@@ -40,6 +40,7 @@ class Login extends Component {
       });
     }
   };
+
   validate = data => {
     const errors = {};
 
@@ -58,7 +59,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="bg-light py-5">
+      <div className="bg-navy text-white py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">

@@ -174,7 +174,6 @@ const getOne = (req, res) => {
         summary: foundUser.Profile.summary,
         bio: foundUser.Profile.bio
       };
-
       res.json(output);
     }
   });
