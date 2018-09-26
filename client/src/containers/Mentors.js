@@ -19,8 +19,21 @@ class Mentors extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">
+          <form className="form-inline ml-3 mb-3 mr-sm-2 w-100">
+            <i className="fa fa-search position-absolute" />
+            <input
+              className="form-control pl-4 w-100 mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            {/* <button
+              className="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            /> */}
+          </form>
           {/* <h3>Find a mentor</h3> */}
           {this.state.mentors.map(mentor => (
             <div className="col-md-12" key={mentor.userId}>

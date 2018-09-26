@@ -7,42 +7,44 @@ const Profile = props => {
   return (
     <form>
       <div className="form-group">
-        <h2 className="text-center mb-3">Edit your profile</h2>
+        <h4 className="text-center mb-3">Edit your profile</h4>
         <p className="text-center">
           <Link to={`/${props.role}/${props.userId}`}>Profile preview</Link>
         </p>
       </div>
-
-      <div className="form-group">
-        <label htmlFor="first">First Name</label>
-        <input
-          type="text"
-          id="first"
-          name="first"
-          className="form-control mt-2"
-          value={props.first}
-          onChange={props.onChange}
-        />
+      <div className="container">
+        <div className="row">
+          <div className="form-group col-md-6">
+            <label htmlFor="first">First Name</label>
+            <input
+              type="text"
+              id="first"
+              name="first"
+              className="form-control"
+              value={props.first}
+              onChange={props.onChange}
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <label htmlFor="last">Last Name</label>
+            <input
+              type="text"
+              id="last"
+              name="last"
+              className="form-control"
+              value={props.last}
+              onChange={props.onChange}
+            />
+          </div>
+        </div>
       </div>
-      <div className="form-group">
-        <label htmlFor="last">Last Name</label>
-        <input
-          type="text"
-          id="last"
-          name="last"
-          className="form-control mt-2"
-          value={props.last}
-          onChange={props.onChange}
-        />
-      </div>
-
       <div className="form-group">
         <label htmlFor="imgUrl">Profile Image</label>
         <input
           type="text"
           id="imgUrl"
           name="imgUrl"
-          className="form-control mt-2"
+          className="form-control"
           value={props.imgUrl}
           onChange={props.onChange}
         />
@@ -54,7 +56,7 @@ const Profile = props => {
           type="email"
           id="email"
           name="email"
-          className="form-control mt-2"
+          className="form-control"
           placeholder="example@example.com"
           value={props.email}
           onChange={props.onChange}
@@ -69,7 +71,7 @@ const Profile = props => {
           type="password"
           id="password"
           name="password"
-          className="form-control mt-2"
+          className="form-control"
           value={props.password}
           onChange={props.onChange}
         />
@@ -83,7 +85,7 @@ const Profile = props => {
           type="password"
           id="password2"
           name="password2"
-          className="form-control mt-2"
+          className="form-control"
           value={props.password2}
           onChange={props.onChange}
           required
@@ -97,7 +99,7 @@ const Profile = props => {
         <textarea
           id="summary"
           name="summary"
-          className="form-control mt-2"
+          className="form-control"
           value={props.summary}
           onChange={props.onChange}
           required
@@ -108,7 +110,7 @@ const Profile = props => {
         <textarea
           id="bio"
           name="bio"
-          className="form-control mt-2"
+          className="form-control"
           value={props.bio}
           onChange={props.onChange}
           required
@@ -122,7 +124,7 @@ const Profile = props => {
         Save Changes
       </button>
       <button
-        className="btn btn-danger mb-5 ml-5"
+        className="btn btn-danger mb-5 ml-3"
         type="submit"
         onClick={props.onSubmit}
       >

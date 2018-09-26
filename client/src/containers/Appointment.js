@@ -59,7 +59,7 @@ class Appointment extends Component {
     console.log("data", this.state.data);
     console.log("props", this.props);
     return (
-      <div className="bg-light py-5">
+      <div className="bg-navy text-white py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">

@@ -22,12 +22,6 @@ const getOne = (req, res) => {
   });
 };
 
-// const getAll = (req, res) => {
-//   User.findAll({ where: { role: "student" } }).then(students =>
-//     res.json(students)
-//   );
-// };
-
 const getAll = (req, res) => {
   User.findAll({
     where: { role: "student" },
@@ -54,63 +48,6 @@ const getAll = (req, res) => {
       res.json({ studentProfile });
     });
 };
-
-// const update = (req, res) => {
-//   const { first, last, imgUrl, summary, bio } = req.body;
-
-//   const updateUser = {};
-//   const updateProfile = {};
-
-//   if (first) {
-//     updateUser.first = first;
-//   }
-//   if (last) {
-//     updateUser.last = last;
-//   }
-//   if (imgUrl) {
-//     updateUser.imgUrl = imgUrl;
-//   }
-//   if (summary) {
-//     updateProfile.summary = summary;
-//   }
-//   if (bio) {
-//     updateProfile.bio = bio;
-//   }
-
-//   User.update(updateUser, {
-//     where: {
-//       userId: req.params.id
-//     }
-//   })
-//     .then(() => {
-//       Profile.update(updateProfile, { where: { userId: req.params.id } }).then(
-//         () =>
-//           User.findOne({
-//             where: { role: "student", userId: req.params.id },
-//             attributes: {},
-//             include: { model: Profile }
-//           }).then(updatedUser => {
-//             const userOutput = {
-//               userId: updatedUser.userId,
-//               firstName: updatedUser.first,
-//               lastName: updatedUser.last,
-//               email: updatedUser.email,
-//               image: updatedUser.imgUrl,
-//               bio: updatedUser.Profile.bio,
-//               summary: updatedUser.Profile.summary
-//             };
-
-//             res.json({ updated: true, user: userOutput });
-//           })
-//       );
-//     })
-//     .catch(err =>
-//       res.json({
-//         updated: false,
-//         message: err
-//       })
-//     );
-// };
 
 module.exports = {
   getAll,

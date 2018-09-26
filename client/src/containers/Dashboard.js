@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import decode from "jwt-decode";
 import Axios from "axios";
 import { API_URL } from "../backend_api";
-import "./Dashboard.css";
 import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
@@ -12,6 +11,7 @@ class Dashboard extends Component {
     role: "",
     errors: {}
   };
+
   componentWillMount = () => {
     if (!localStorage.getItem("JWT")) {
       this.props.history.push("/login");
@@ -22,18 +22,20 @@ class Dashboard extends Component {
     this.fetchAppts();
   };
 
-  reply = (apptId, oldComment) => {
+  handleReply = (apptId, oldComment) => {
     Axios.put(`${API_URL}/appointment/${apptId}`, {
       comment: `
       ${this.state.comment}
       ->
       ${oldComment}
       `
-    }).then(res => {
-      if (res.data.updated) {
-        this.fetchAppts();
-      }
-    });
+    })
+      .then(res => {
+        if (res.data.updated) {
+          this.fetchAppts();
+        }
+      })
+      .then((this.setState.comment = ""));
   };
 
   fetchAppts = () => {
@@ -59,7 +61,7 @@ class Dashboard extends Component {
     console.log("state", this.state);
 
     return (
-      <div className="container bg-light">
+      <div className="container bg-light mt-3">
         <h1>Dashboard</h1>
 
         <table className="table">
@@ -139,7 +141,7 @@ class Dashboard extends Component {
                           </button>
                           <button
                             onClick={() =>
-                              this.reply(appt.apptId, appt.comment)
+                              this.handleReply(appt.apptId, appt.comment)
                             }
                             className="btn btn-primary"
                           >

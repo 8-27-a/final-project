@@ -28,7 +28,7 @@ const Footer = () => (
             rel="noopener noreferrer"
           />
           <a
-            className=" fa fa-twitter"
+            className="fa fa-twitter"
             href="https://twitter.com/Mentor4MeCoding"
             target="_blank"
             rel="noopener noreferrer"

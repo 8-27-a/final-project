@@ -35,7 +35,7 @@ router.post("/appointments", apptCtrl.create);
 router.put("/appointment/:id", apptCtrl.update);
 router.get("/appointments/mentor/:id", apptCtrl.getAllMentor);
 router.get("/appointments/student/:id", apptCtrl.getAllStudent);
-// these 2 not working yet
+
 // router.get("/appointment/mentor/:id", apptCtrl.getOneMentor);
 // router.get("/appointment/student/:id", apptCtrl.getOneStudent);
 router.delete("/appointment/:id", apptCtrl.remove);
