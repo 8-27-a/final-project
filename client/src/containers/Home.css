@@ -12,3 +12,69 @@ h5 {
   margin-top: 40px;
 } */
 /* */
+
+.home-image {
+  /* background-image: url("/images/tech.jpeg"); */
+  background-color: rgba(0, 0, 0, .2);
+  height: 50rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  color: grey;
+}
+
+.btn-group-lg>.btn,
+.btn-lg {
+  margin-top: 4rem;
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 4rem;
+  margin-bottom: .5rem;
+  color: white;
+} */
+
+.title,
+.subtitle,
+.paragraph {
+  margin-top: 4rem;
+  margin-bottom: .5rem;
+  color: white;
+}
+
+.title {
+  font-weight: 700;
+  color: red;
+}
+
+.subtitle,
+.paragraph {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  color: rgba(255, 255, 255, .8);
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const AppointmentForm = ({ onChange, onSubmit, data }) => (
+const Appointment = ({ onChange, onSubmit, data }) => (
   <form>
     <div className="form-group">
       <h2 className="text-center mb-3">Create an Appointment</h2>
@@ -47,4 +47,4 @@ const AppointmentForm = ({ onChange, onSubmit, data }) => (
   </form>
 );
 
-export default AppointmentForm;
+export default Appointment;

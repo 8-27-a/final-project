@@ -41,6 +41,9 @@ class Student extends Component {
           <Link to="/" className="btn btn-outline-secondary mt-2 ml-3">
             Home
           </Link>
+          <Link to="/dashboard" className="btn btn-secondary ml-3 mt-2">
+            Dashboard
+          </Link>
         </div>
       </div>
     );

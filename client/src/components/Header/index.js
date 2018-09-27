@@ -41,7 +41,7 @@ class Header extends Component {
     const { brand } = this.props;
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-navy">
         <NavLink className="navbar-brand text-center mr-5" to="/">
           {brand}
         </NavLink>
@@ -88,7 +88,7 @@ class Header extends Component {
                       src={
                         this.state.avatarUrl
                           ? this.state.avatarUrl
-                          : "/images/no+avatar.png"
+                          : "/images/no-avatar.png"
                       }
                       alt=""
                     />

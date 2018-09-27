@@ -117,14 +117,14 @@ const Profile = props => {
         />
       </div>
       <button
-        className="btn btn-secondary mb-5"
+        className="btn btn-secondary mb-3"
         type="submit"
         onClick={props.onSubmit}
       >
         Save Changes
       </button>
       <button
-        className="btn btn-danger mb-5 ml-3"
+        className="btn btn-danger mb-3 ml-3"
         type="submit"
         onClick={props.onSubmit}
       >
