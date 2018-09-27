@@ -1,6 +1,13 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+
+  background-image: url("/images/background1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  font-family: 'Lato', sans-serif;
   background-color: #2d4262;
   color: #0f283a;
 }
@@ -19,7 +26,7 @@ body {
 }
 
 .bg-dark {
-  background-color: 363237;
+  background-color: #363237;
 }
 
 .nav-link.active {

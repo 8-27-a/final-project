@@ -46,8 +46,11 @@ class Mentor extends Component {
           >
             Book Appointment
           </Link>
-          <Link to="/mentors" className="btn btn-outline-secondary mt-2 ml-3">
+          <Link to="/mentors" className="btn btn-outline-secondary mt-2 ml-5">
             Back
+          </Link>
+          <Link to="/dashboard" className="btn btn-secondary ml-5 mt-2">
+            Dashboard
           </Link>
         </div>
       </div>

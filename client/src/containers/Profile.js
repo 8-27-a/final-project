@@ -102,7 +102,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="bg-navy text-white py-5">
+      <div className="bg-light-grey text-white py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">
