@@ -7,13 +7,20 @@ class Mentors extends Component {
   state = {
     mentors: [],
     Profiles: [],
-    isLoaded: false
+    isLoaded: false,
+    search: ""
   };
 
   componentDidMount = () => {
     Axios.get(`${API_URL}/mentors`).then(res => {
       console.log(res);
       this.setState({ mentors: res.data });
+    });
+  };
+
+  onSearch = e => {
+    Axios.get(`${API_URL}/mentors?s=${this.state.search}`).then(res => {
+      this.setState({ search: e.target.value, mentors: res.data });
     });
   };
 
@@ -33,6 +40,8 @@ class Mentors extends Component {
                 placeholder="Search"
                 name="srch-term"
                 id="srch-term"
+                value={this.state.search}
+                onChange={this.onSearch}
               />
               <div className="input-group-btn">
                 <button className="btn btn-default" type="submit">

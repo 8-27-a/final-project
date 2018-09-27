@@ -94,13 +94,13 @@ class Dashboard extends Component {
                   <button
                     className="btn btn-success"
                     data-toggle="modal"
-                    data-target="#commentsModal"
+                    data-target={`#commentsModal${appt.apptId}`}
                   >
                     <i className="fas fa-comments" />
                   </button>
                   <div
                     className="modal fade"
-                    id="commentsModal"
+                    id={`#commentsModal${appt.apptId}`}
                     tabindex="-1"
                     role="dialog"
                     aria-labelledby="exampleModalLabel"

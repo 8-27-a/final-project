@@ -18,6 +18,7 @@ const getAll = (req, res) => {
         { mentorId: req.params.user_id }
       ]
     },
+    order: [["apptId", "DESC"]],
     include: [
       {
         model: User
