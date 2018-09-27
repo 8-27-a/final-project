@@ -14,7 +14,7 @@ const Profile = props => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="form-group col-md-6">
+          <div className="form-group col-md-6 pl-0">
             <label htmlFor="first">First Name</label>
             <input
               type="text"
@@ -25,7 +25,7 @@ const Profile = props => {
               onChange={props.onChange}
             />
           </div>
-          <div className="form-group col-md-6">
+          <div className="form-group col-md-6 pr-0">
             <label htmlFor="last">Last Name</label>
             <input
               type="text"
@@ -95,7 +95,7 @@ const Profile = props => {
         )}
       </div>
       <div className="form-group">
-        <label htmlFor="summary">Summary</label>
+        <label htmlFor="summary">Skillsets/Languages</label>
         <textarea
           id="summary"
           name="summary"
