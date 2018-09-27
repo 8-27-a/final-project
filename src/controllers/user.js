@@ -143,7 +143,7 @@ const update = (req, res) => {
           })
             .then(() => res.json({ updated: true }))
             .catch(() =>
-              res.json({ updated: false, message: "something went wrong." })
+              res.json({ updated: false, message: "something went wrong" })
             );
         })
         .catch(err =>
