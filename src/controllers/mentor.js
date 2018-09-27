@@ -1,3 +1,4 @@
+const Op = require("sequelize").Op;
 const User = require("../models").User;
 const Profile = require("../models").Profile;
 
@@ -23,8 +24,15 @@ const getOne = (req, res) => {
 };
 
 const getAll = (req, res) => {
+  const where = {
+    role: "mentor"
+  };
+
+  if (req.query.s) {
+    //where[Op.or]: [{ first: req.query.s }, { last: req.query.s }]
+  }
   User.findAll({
-    where: { role: "mentor" },
+    where,
     attributes: {},
     include: { model: Profile }
   })
