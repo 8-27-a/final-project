@@ -5,15 +5,17 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
   <div
     className="card card-fluid mt-5"
     style={{
-      width: "100%",
-      backgroundColor: "rgba(230, 230, 230, .7)",
-      color: "white"
+      backgroundColor: "rgba(230, 230, 230, .7)"
     }}
   >
     <h1
       className="card-title"
-      ml-3
-      style={{ color: "hsl(0,0%,13%)" }}
+      style={{
+        color: "hsl(0,0%,13%)",
+        fontWeight: 700,
+        paddingLeft: 22,
+        paddingTop: 10
+      }}
     >{`${first} ${last}`}</h1>
     <img
       className="mx-auto rounded-circle"
@@ -22,7 +24,10 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
       height="250"
       width="250"
     />
-    <div className="email text-center text-white">
+    <div
+      className="email text-center"
+      style={{ paddingTop: 10, paddingBottom: 5 }}
+    >
       <a href="mailto:`${email}`" target="_blank" rel="noopener noreferrer">
         <i className="fa fa-envelope-o"> {`${email}`}</i>
       </a>
@@ -30,13 +35,15 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
     <div
       className="card-body"
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.8"
+        backgroundColor: "rgba(255, 255, 255, 0.7"
       }}
     >
       <h3
         className="card-text"
         style={{
-          color: "hsl(0, 0%, 29%)"
+          color: "hsl(0, 0%, 15%)",
+          fontWeight: 500,
+          paddingBottom: 15
         }}
       >
         {summary}
@@ -44,7 +51,8 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
       <h5
         className="card-text"
         style={{
-          color: "hsl(0, 0%, 45%)"
+          color: "hsl(0, 0%, 45%)",
+          paddingBottom: 85
         }}
       >
         {bio}
