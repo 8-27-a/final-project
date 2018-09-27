@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const List = ({ userId, first, last, imgUrl, summary, bio }) => (
   <div className="list-group rounded mt-3 mb-3">
@@ -27,7 +28,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
           >
             {summary}
           </h3>
-          <h5 className="list-bio">{bio}</h5>
+          <h5 className="list-bio overflow-ellipsis">{bio}</h5>
           <span className="pull-right">
             <Link
               to={`/mentor/${userId}`}
