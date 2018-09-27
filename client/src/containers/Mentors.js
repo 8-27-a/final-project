@@ -20,35 +20,42 @@ class Mentors extends Component {
   render() {
     return (
       <div className="container mt-5">
-        <div className="row">
-          <form className="form-inline ml-3 mb-3 mr-sm-2 w-100">
-            <i className="fa fa-search position-absolute" />
-            <input
-              className="form-control pl-4 w-100 mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            {/* <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            /> */}
-          </form>
-          {/* <h3>Find a mentor</h3> */}
-          {this.state.mentors.map(mentor => (
-            <div className="col-md-12" key={mentor.userId}>
-              <List
-                imgUrl={mentor.image}
-                userId={mentor.userId}
-                first={mentor.firstName}
-                last={mentor.lastName}
-                email={mentor.email}
-                summary={mentor.summary}
-                bio={mentor.bio}
+        <div className="col-md-6">
+          <form className="navbar-form" role="search">
+            <div className="input-group add-on">
+              <input
+                type="text"
+                className="form-control"
+                style={{
+                  backgroundColor: "rgba(0,0,0,.1",
+                  color: "rgba(255,255,255,1)"
+                }}
+                placeholder="Search"
+                name="srch-term"
+                id="srch-term"
               />
+              <div className="input-group-btn">
+                <button className="btn btn-default" type="submit">
+                  <i class="fa fa-search" />
+                </button>
+              </div>
             </div>
-          ))}
+          </form>
         </div>
+        {/* <h3>Find a mentor</h3> */}
+        {this.state.mentors.map(mentor => (
+          <div className="col-md-12" key={mentor.userId}>
+            <List
+              imgUrl={mentor.image}
+              userId={mentor.userId}
+              first={mentor.firstName}
+              last={mentor.lastName}
+              email={mentor.email}
+              summary={mentor.summary}
+              bio={mentor.bio}
+            />
+          </div>
+        ))}
       </div>
     );
   }
