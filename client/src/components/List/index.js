@@ -28,11 +28,16 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
             {summary}
           </h3>
           <h5 className="list-bio">{bio}</h5>
+          <span className="pull-right">
+            <Link
+              to={`/mentor/${userId}`}
+              className="btn btn-secondary ml-3 mt-3"
+              // style={{ float: "right" }}
+            >
+              View Profile
+            </Link>
+          </span>
         </div>
-
-        <Link to={`/mentor/${userId}`} className="btn btn-secondary ml-3 mt-3">
-          View Profile
-        </Link>
       </div>
     </Link>
   </div>

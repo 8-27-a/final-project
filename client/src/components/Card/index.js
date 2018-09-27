@@ -5,7 +5,7 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
   <div
     className="card card-fluid mt-5"
     style={{
-      backgroundColor: "rgba(230, 230, 230, .7)"
+      backgroundColor: "rgba(230, 230, 230, .5)"
     }}
   >
     <h1
@@ -48,7 +48,7 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
       >
         {summary}
       </h3>
-      <h5
+      <h4
         className="card-text"
         style={{
           color: "hsl(0, 0%, 45%)",
@@ -56,7 +56,7 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
         }}
       >
         {bio}
-      </h5>
+      </h4>
     </div>
   </div>
 );
