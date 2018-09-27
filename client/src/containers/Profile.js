@@ -54,7 +54,7 @@ class Profile extends Component {
         bio
       }).then(user => {
         if (user.data.updated) {
-          this.setState({ success: "Your changes has been saved." });
+          this.setState({ success: "Your changes has been saved" });
         } else {
           this.setState({
             errors: { ...this.state.errors, global: user.data.message }

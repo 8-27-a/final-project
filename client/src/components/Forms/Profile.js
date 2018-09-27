@@ -106,7 +106,7 @@ const Profile = props => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="bio">Biography</label>
+        <label htmlFor="bio">Bio/Intro</label>
         <textarea
           id="bio"
           name="bio"
