@@ -29,13 +29,11 @@ class Dashboard extends Component {
       ->
       ${oldComment}
       `
-    })
-      .then(res => {
-        if (res.data.updated) {
-          this.fetchAppts();
-        }
-      })
-      .then((this.setState.comment = ""));
+    }).then(res => {
+      if (res.data.updated) {
+        this.fetchAppts();
+      }
+    });
   };
 
   fetchAppts = () => {
@@ -61,7 +59,7 @@ class Dashboard extends Component {
     console.log("state", this.state);
 
     return (
-      <div className="container bg-light mt-3">
+      <div className="dash-container bg-light" style={{ minHeight: 800 }}>
         <h1>Dashboard</h1>
 
         <table className="table">

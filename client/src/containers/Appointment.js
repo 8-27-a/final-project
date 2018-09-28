@@ -39,6 +39,8 @@ class Appointment extends Component {
     e.preventDefault();
 
     const { date, time, comment, mentorId, studentId } = this.state.data;
+    const errors = this.validate({ time });
+    this.setState({ errors });
 
     const newAppt = {
       date: `${date} ${time}:00`,
@@ -48,21 +50,38 @@ class Appointment extends Component {
       studentId
     };
 
-    Axios.post(`${API_URL}/appointments`, newAppt).then(({ data: appt }) => {
-      if (appt.success) {
-        this.props.history.push("/dashboard");
-      }
-    });
+    if (Object.keys(errors).length === 0) {
+      Axios.post(`${API_URL}/appointments`, newAppt).then(({ data: appt }) => {
+        if (appt.success) {
+          this.props.history.push("/dashboard");
+        } else {
+          this.setState({
+            errors: { ...this.state.errors, global: appt.data.message }
+          });
+          console.log("errors", errors);
+        }
+      });
+    }
+  };
+
+  validate = data => {
+    const errors = {};
+
+    if (!data.date) errors.date = "Please choose a date";
+    if (!data.time) errors.time = "Please choose a time and am/pm ";
+
+    return errors;
   };
 
   render() {
-    console.log("data", this.state.data);
-    console.log("props", this.props);
     return (
-      <div className="bg-light-grey text-white py-5">
+      <div
+        className="bg-navy text-white py-5"
+        style={{ minHeight: 750, marginTop: 20 }}
+      >
         <div className="container">
           <div className="row">
-            <div className="col-md-6 mx-auto">
+            <div className="col-md-6 mx-auto mt-10">
               <AppointmentForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}

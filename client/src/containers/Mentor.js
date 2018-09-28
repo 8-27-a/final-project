@@ -27,7 +27,7 @@ class Mentor extends Component {
     const { mentor } = this.state;
     console.log("mentor", mentor);
     return (
-      <div className="container">
+      <div className="container pt-15" style={{ minHeight: 800 }}>
         <div className="row">
           <div className="col-md-12">
             <Card

@@ -34,7 +34,7 @@ class Mentors extends Component {
                 type="text"
                 className="form-control"
                 style={{
-                  backgroundColor: "rgba(0,0,0,.1",
+                  backgroundColor: "rgba(0,0,0,.1)",
                   color: "rgba(255,255,255,1)"
                 }}
                 placeholder="Search"
@@ -51,7 +51,6 @@ class Mentors extends Component {
             </div>
           </form>
         </div>
-        {/* <h3>Find a mentor</h3> */}
         {this.state.mentors.map(mentor => (
           <div className="col-md-12" key={mentor.userId}>
             <List
