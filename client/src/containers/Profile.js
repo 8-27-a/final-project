@@ -60,7 +60,7 @@ class Profile extends Component {
             errors: { ...this.state.errors, global: user.data.message }
           });
         }
-        console.log("error", errors);
+        console.log("errors", errors);
       });
     }
   };

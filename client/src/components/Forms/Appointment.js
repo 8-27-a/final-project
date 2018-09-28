@@ -1,11 +1,10 @@
 import React from "react";
 
-const Appointment = ({ onChange, onSubmit, data }) => (
+const Appointment = ({ onChange, onSubmit, data, props }) => (
   <form>
     <div className="form-group">
-      <h2 className="text-center mb-3">Create an Appointment</h2>
+      <h2 className="text-center">Create an Appointment</h2>
     </div>
-
     <div className="form-group">
       <label htmlFor="date">Date</label>
       <input
@@ -16,8 +15,10 @@ const Appointment = ({ onChange, onSubmit, data }) => (
         value={data.date}
         onChange={onChange}
       />
+      {/* {props.errors.date && (
+        <small className="text-danger">{props.errors.date}</small>
+      )} */}
     </div>
-
     <div className="form-group">
       <label htmlFor="time">Time</label>
       <input
@@ -28,8 +29,10 @@ const Appointment = ({ onChange, onSubmit, data }) => (
         value={data.time}
         onChange={onChange}
       />
+      {/* {props.errors.time && (
+        <small className="text-danger">{props.errors.time}</small>
+      )} */}
     </div>
-
     <div className="form-group">
       <label htmlFor="time">Comment</label>
       <textarea
@@ -40,10 +43,12 @@ const Appointment = ({ onChange, onSubmit, data }) => (
         onChange={onChange}
       />
     </div>
-
-    <button type="submit" className="btn btn-secondary" onClick={onSubmit}>
+    <button type="submit" className="btn btn-secondary mt-5" onClick={onSubmit}>
       SUBMIT APPOINTMENT
     </button>
+    {/* {!!props.errors.global && (
+        <div className="alert alert-danger">{props.errors.global}</div>
+      )} */}
   </form>
 );
 
