@@ -29,10 +29,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
           </h3>
           <h5 className="list-bio overflow-ellipsis">{bio}</h5>
           <span className="pull-right">
-            <Link
-              to={`/mentor/${userId}`}
-              className="btn btn-secondary ml-3 mt-3"
-            >
+            <Link to={`/mentor/${userId}`} className="btn btn-info ml-3 mt-3">
               View Profile
             </Link>
           </span>

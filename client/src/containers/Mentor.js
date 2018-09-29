@@ -49,7 +49,7 @@ class Mentor extends Component {
           <Link to="/mentors" className="btn btn-outline-secondary mt-2 ml-5">
             Back
           </Link>
-          <Link to="/dashboard" className="btn btn-secondary ml-5 mt-2">
+          <Link to="/dashboard" className="btn btn-info ml-5 mt-2">
             Dashboard
           </Link>
         </div>

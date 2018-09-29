@@ -66,7 +66,10 @@ class Appointment extends Component {
 
   validate = data => {
     const errors = {};
+    const now = new Date().toLocaleString();
 
+    // if (data.date != null || (data.date != " " && now.isAfter(data.date)))
+    //   errors.date = "Please choose a date after today";
     if (!data.date) errors.date = "Please choose a date";
     if (!data.time) errors.time = "Please choose a time and am/pm ";
 
