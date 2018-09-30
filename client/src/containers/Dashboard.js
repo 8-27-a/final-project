@@ -29,13 +29,11 @@ class Dashboard extends Component {
       ->
       ${oldComment}
       `
-    })
-      .then(res => {
-        if (res.data.updated) {
-          this.fetchAppts();
-        }
-      })
-      .then((this.setState.comment = ""));
+    }).then(res => {
+      if (res.data.updated) {
+        this.fetchAppts();
+      }
+    });
   };
 
   fetchAppts = () => {
@@ -61,8 +59,14 @@ class Dashboard extends Component {
     console.log("state", this.state);
 
     return (
-      <div className="container bg-light mt-3">
-        <h1>Dashboard</h1>
+      <div
+        className="container text-center m-10"
+        style={{ minHeight: 800, backgroundColor: "rgb(230, 230, 230, .8)" }}
+      >
+        <span>
+          <h2 className="text-white pt-2">Dashboard </h2>
+          <h6>newest appointment on top</h6>
+        </span>
 
         <table className="table">
           <thead className="thead-dark">
@@ -92,7 +96,7 @@ class Dashboard extends Component {
                 </td>
                 <td>
                   <button
-                    className="btn btn-success"
+                    className="btn btn-info"
                     data-toggle="modal"
                     data-target={`#commentsModal${appt.apptId}`}
                   >
@@ -143,7 +147,7 @@ class Dashboard extends Component {
                             onClick={() =>
                               this.handleReply(appt.apptId, appt.comment)
                             }
-                            className="btn btn-primary"
+                            className="btn btn-info"
                           >
                             Reply
                           </button>
@@ -156,16 +160,16 @@ class Dashboard extends Component {
                 {this.state.role === "mentor" && (
                   <td scope="col">
                     <button
+                      className="btn btn-info"
+                      onClick={() => this.handleStatus(appt.apptId, "accepted")}
+                    >
+                      Accept
+                    </button>
+                    <button
                       className="btn btn-danger"
                       onClick={() => this.handleStatus(appt.apptId, "rejected")}
                     >
                       Decline
-                    </button>
-                    <button
-                      className="btn btn-success"
-                      onClick={() => this.handleStatus(appt.apptId, "accepted")}
-                    >
-                      Accept
                     </button>
                   </td>
                 )}

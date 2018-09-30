@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class About extends Component {
   render() {
     return (
-      <div className="about">
+      <div className="about" style={{ minHeight: 800 }}>
         {/* style={{ backgroundImage: `url(require("images/tech4.gif"))` }}> */}
         <h1 className="text-center text-white">About Us</h1>
         <div

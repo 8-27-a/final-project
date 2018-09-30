@@ -27,7 +27,7 @@ class Mentor extends Component {
     const { mentor } = this.state;
     console.log("mentor", mentor);
     return (
-      <div className="container">
+      <div className="container pt-15" style={{ minHeight: 800 }}>
         <div className="row">
           <div className="col-md-12">
             <Card
@@ -46,10 +46,10 @@ class Mentor extends Component {
           >
             Book Appointment
           </Link>
-          <Link to="/mentors" className="btn btn-outline-secondary mt-2 ml-5">
+          <Link to="/profile" className="btn btn-outline-secondary mt-2 ml-5">
             Back
           </Link>
-          <Link to="/dashboard" className="btn btn-secondary ml-5 mt-2">
+          <Link to="/dashboard" className="btn btn-info ml-5 mt-2">
             Dashboard
           </Link>
         </div>

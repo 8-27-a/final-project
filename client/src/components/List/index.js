@@ -7,7 +7,6 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
     <Link
       to={`/mentor/${userId}`}
       className="list-group-item list-group-item-action"
-      // style={{ backgroundColor: "rgba(255,255,255,.1)" }}
     >
       <div className="row m-0 p-0">
         <div className="col-md-4">
@@ -30,11 +29,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
           </h3>
           <h5 className="list-bio overflow-ellipsis">{bio}</h5>
           <span className="pull-right">
-            <Link
-              to={`/mentor/${userId}`}
-              className="btn btn-secondary ml-3 mt-3"
-              // style={{ float: "right" }}
-            >
+            <Link to={`/mentor/${userId}`} className="btn btn-info ml-3 mt-3">
               View Profile
             </Link>
           </span>

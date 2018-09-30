@@ -46,7 +46,7 @@ const SignIn = props => (
         ""
       )}
     </div>
-    <button onClick={props.onSubmit} className="btn btn-primary mt-4">
+    <button onClick={props.onSubmit} className="btn btn-info mt-4">
       Login
     </button>
   </form>
