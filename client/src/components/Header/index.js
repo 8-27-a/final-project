@@ -28,6 +28,8 @@ class Header extends Component {
     }
   };
 
+  // comments....
+
   componentWillUpdate = (nextProps, nextState) => {
     console.log("CWU:", nextProps, nextState);
   };
