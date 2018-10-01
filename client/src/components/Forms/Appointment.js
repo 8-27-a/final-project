@@ -1,6 +1,6 @@
 import React from "react";
 
-const Appointment = ({ onChange, onSubmit, data, props }) => (
+const Appointment = ({ onChange, onSubmit, data, errors }) => (
   <form>
     <div className="form-group">
       <h2 className="text-center">Create an Appointment</h2>
@@ -11,13 +11,11 @@ const Appointment = ({ onChange, onSubmit, data, props }) => (
         type="date"
         id="date"
         name="date"
-        className="form-control"
+        className={`form-control ${errors.date && "is-invalid"}`}
         value={data.date}
         onChange={onChange}
       />
-      {/* {props.errors.date && (
-        <small className="text-danger">{props.errors.date}</small>
-      )} */}
+      {errors.date && <small className="text-danger">{errors.date}</small>}
     </div>
     <div className="form-group">
       <label htmlFor="time">Time</label>
@@ -25,13 +23,11 @@ const Appointment = ({ onChange, onSubmit, data, props }) => (
         type="time"
         id="time"
         name="time"
-        className="form-control"
+        className={`form-control ${errors.time && "is-invalid"}`}
         value={data.time}
         onChange={onChange}
       />
-      {/* {props.errors.time && (
-        <small className="text-danger">{props.errors.time}</small>
-      )} */}
+      {errors.time && <small className="text-danger">{errors.time}</small>}
     </div>
     <div className="form-group">
       <label htmlFor="time">Comment</label>
@@ -46,9 +42,6 @@ const Appointment = ({ onChange, onSubmit, data, props }) => (
     <button type="submit" className="btn btn-secondary mt-5" onClick={onSubmit}>
       SUBMIT APPOINTMENT
     </button>
-    {/* {!!props.errors.global && (
-        <div className="alert alert-danger">{props.errors.global}</div>
-      )} */}
   </form>
 );
 
