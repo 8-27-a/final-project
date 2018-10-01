@@ -28,6 +28,8 @@ class Header extends Component {
     }
   };
 
+  // comments....
+
   componentWillUpdate = (nextProps, nextState) => {
     console.log("CWU:", nextProps, nextState);
   };
@@ -41,7 +43,7 @@ class Header extends Component {
     const { brand } = this.props;
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-navy">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <NavLink className="navbar-brand text-center mr-5" to="/">
           {brand}
         </NavLink>

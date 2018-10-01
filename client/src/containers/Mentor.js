@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import decode from "jwt-decode";
 import Axios from "axios";
 import Card from "../components/Card";
 import { API_URL } from "../backend_api";
@@ -25,9 +26,11 @@ class Mentor extends Component {
 
   render() {
     const { mentor } = this.state;
-    console.log("mentor", mentor);
+    const { role } = decode(localStorage.getItem("JWT"));
+
+    console.log("role", role);
     return (
-      <div className="container">
+      <div className="container pt-15" style={{ minHeight: 800 }}>
         <div className="row">
           <div className="col-md-12">
             <Card
@@ -39,19 +42,22 @@ class Mentor extends Component {
               summary={mentor.summary}
               bio={mentor.bio}
             />
+            {role !== "mentor" && (
+              <Link
+                to={`/mentor/${this.props.match.params.id}/appt`}
+                className="btn btn-secondary mt-2 mr-3"
+              >
+                Book Appointment
+              </Link>
+            )}
+
+            <Link to="/mentors" className="btn btn-secondary mt-2 mr-3">
+              Back
+            </Link>
+            <Link to="/dashboard" className="btn btn-info mt-2 mr-3">
+              Dashboard
+            </Link>
           </div>
-          <Link
-            to={`/mentor/${this.props.match.params.id}/appt`}
-            className="btn btn-secondary mt-2 ml-3"
-          >
-            Book Appointment
-          </Link>
-          <Link to="/mentors" className="btn btn-outline-secondary mt-2 ml-5">
-            Back
-          </Link>
-          <Link to="/dashboard" className="btn btn-secondary ml-5 mt-2">
-            Dashboard
-          </Link>
         </div>
       </div>
     );

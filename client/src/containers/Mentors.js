@@ -13,14 +13,13 @@ class Mentors extends Component {
 
   componentDidMount = () => {
     Axios.get(`${API_URL}/mentors`).then(res => {
-      console.log(res);
       this.setState({ mentors: res.data });
     });
   };
 
-  onSearch = e => {
+  onSearch = () => {
     Axios.get(`${API_URL}/mentors?s=${this.state.search}`).then(res => {
-      this.setState({ search: e.target.value, mentors: res.data });
+      this.setState({ mentors: res.data });
     });
   };
 
@@ -34,24 +33,26 @@ class Mentors extends Component {
                 type="text"
                 className="form-control"
                 style={{
-                  backgroundColor: "rgba(0,0,0,.1",
+                  backgroundColor: "rgba(0,0,0,.1)",
                   color: "rgba(255,255,255,1)"
                 }}
                 placeholder="Search"
                 name="srch-term"
                 id="srch-term"
                 value={this.state.search}
-                onChange={this.onSearch}
+                onChange={e => {
+                  this.setState({ search: e.target.value });
+                  this.onSearch();
+                }}
               />
               <div className="input-group-btn">
                 <button className="btn btn-default" type="submit">
-                  <i class="fa fa-search" />
+                  <i className="fa fa-search" />
                 </button>
               </div>
             </div>
           </form>
         </div>
-        {/* <h3>Find a mentor</h3> */}
         {this.state.mentors.map(mentor => (
           <div className="col-md-12" key={mentor.userId}>
             <List

@@ -94,7 +94,7 @@ const SignUp = props => (
       )}
     </div>
     <button
-      className="btn btn-primary mb-3"
+      className="btn btn-info mb-3"
       type="submit"
       onClick={props.onSubmit}
     >
