@@ -1,48 +1,80 @@
-import React from "react";
+import React, { Component } from "react";
+import decode from "jwt-decode";
+import Axios from "axios";
+import { API_URL } from "../backend_api";
+import AppointmentForm from "../components/Forms/Appointment";
 
-const Appointment = ({ onChange, onSubmit, data, errors }) => (
-  <form>
-    <div className="form-group">
-      <h2 className="text-center">Create an Appointment</h2>
-    </div>
-    <div className="form-group">
-      <label htmlFor="date">Date</label>
-      <input
-        type="date"
-        id="date"
-        name="date"
-        className={`form-control ${errors.date && "is-invalid"}`}
-        value={data.date}
-        onChange={onChange}
-      />
-      {errors.date && <small className="text-danger">{errors.date}</small>}
-    </div>
-    <div className="form-group">
-      <label htmlFor="time">Time</label>
-      <input
-        type="time"
-        id="time"
-        name="time"
-        className={`form-control ${errors.time && "is-invalid"}`}
-        value={data.time}
-        onChange={onChange}
-      />
-      {errors.time && <small className="text-danger">{errors.time}</small>}
-    </div>
-    <div className="form-group">
-      <label htmlFor="time">Comment</label>
-      <textarea
-        id="comment"
-        name="comment"
-        className="form-control"
-        value={data.comment}
-        onChange={onChange}
-      />
-    </div>
-    <button type="submit" className="btn btn-secondary mt-5" onClick={onSubmit}>
-      SUBMIT APPOINTMENT
-    </button>
-  </form>
-);
+console.log("API_URL", API_URL);
+
+class Appointment extends Component {
+  state = {
+    data: {
+      date: "",
+      time: "",
+      comment: "",
+      mentorId: null,
+      studentId: null
+    },
+    errors: {}
+  };
+
+  componentDidMount = () => {
+    const { userId } = decode(localStorage.getItem("JWT"));
+    this.setState({
+      data: {
+        ...this.state.data,
+        mentorId: this.props.match.params.id,
+        studentId: userId
+      }
+    });
+  };
+
+  handleChange = e => {
+    this.setState({
+      data: { ...this.state.data, [e.target.name]: e.target.value }
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const { date, time, comment, mentorId, studentId } = this.state.data;
+
+    const newAppt = {
+      date: `${date} ${time}:00`,
+      time,
+      comment,
+      mentorId,
+      studentId
+    };
+
+    Axios.post(`${API_URL}/appointments`, newAppt).then(({ data: appt }) => {
+      if (appt.success) {
+        this.props.history.push("/dashboard");
+      }
+    });
+  };
+
+  render() {
+    console.log("data", this.state.data);
+    console.log("props", this.props);
+    return (
+      <div className="bg-light-grey text-white py-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 mx-auto">
+              <AppointmentForm
+                onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
+                errors={this.state.errors}
+                data={this.state.data}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Appointment;
