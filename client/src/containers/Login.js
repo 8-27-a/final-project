@@ -4,8 +4,6 @@ import Axios from "axios";
 import SignIn from "../components/Forms/SignIn";
 import { API_URL } from "../backend_api";
 
-console.log("API_URL", API_URL);
-
 class Login extends Component {
   state = {
     email: "",
@@ -36,7 +34,6 @@ class Login extends Component {
           });
         }
         // console.log(res.data);
-        //   this.setState({ email, password });
       });
     }
   };
