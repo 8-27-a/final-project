@@ -24,13 +24,16 @@ const getOne = (req, res) => {
 };
 
 const getAll = (req, res) => {
+  console.log("query", req.query.s);
+  const query = req.query.s;
   const where = {
-    role: "mentor"
+    role: "mentor",
+    [Op.or]: [
+      { first: { [Op.like]: `%${query ? query : ""}%` } },
+      { last: { [Op.like]: `%${query ? query : ""}%` } }
+    ]
   };
 
-  if (req.query.s) {
-    //where[Op.or]: [{ first: req.query.s }, { last: req.query.s }]
-  }
   User.findAll({
     where,
     attributes: {},

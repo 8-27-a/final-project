@@ -23,15 +23,19 @@ class Dashboard extends Component {
   };
 
   handleReply = (apptId, oldComment) => {
+    const { first } = decode(localStorage.getItem("JWT"));
+
     Axios.put(`${API_URL}/appointment/${apptId}`, {
       comment: `
-      ${this.state.comment}
-      ->
+      ${first}: ${this.state.comment}\n
+      \n
+      -->
       ${oldComment}
       `
     }).then(res => {
       if (res.data.updated) {
         this.fetchAppts();
+        this.setState({ comment: "" });
       }
     });
   };
@@ -56,8 +60,7 @@ class Dashboard extends Component {
   };
 
   render() {
-    console.log("state", this.state);
-
+    console.log("appts", this.state.appointments);
     return (
       <div
         className="container text-center m-10"
@@ -82,99 +85,107 @@ class Dashboard extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.appointments.map((appt, k) => (
-              <tr>
-                <th scope="row">{k + 1}</th>
-                <td>{new Date(appt.date).toLocaleString()}</td>
-                <td>
-                  <Link
-                    to={`/${appt.User.role}/${appt.User.userId}`}
-                    className="btn btn-link"
-                  >
-                    {appt.User.first} {appt.User.last}
-                  </Link>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-info"
-                    data-toggle="modal"
-                    data-target={`#commentsModal${appt.apptId}`}
-                  >
-                    <i className="fas fa-comments" />
-                  </button>
-                  <div
-                    className="modal fade"
-                    id={`#commentsModal${appt.apptId}`}
-                    tabindex="-1"
-                    role="dialog"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div className="modal-dialog" role="document">
-                      <div className="modal-content">
-                        <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLabel">
-                            {appt.User.first} {appt.User.last}
-                          </h5>
-                          <button
-                            type="button"
-                            className="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                          >
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div className="modal-body">
-                          <p>{appt.comment}</p>
-                          <textarea
-                            className="form-control"
-                            onChange={e =>
-                              this.setState({ comment: e.target.value })
-                            }
-                            value={this.state.comment}
-                          />
-                        </div>
-                        <div className="modal-footer">
-                          <button
-                            type="button"
-                            className="btn btn-secondary"
-                            data-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                          <button
-                            onClick={() =>
-                              this.handleReply(appt.apptId, appt.comment)
-                            }
-                            className="btn btn-info"
-                          >
-                            Reply
-                          </button>
+            {this.state.appointments.map((appt, k) => {
+              return (
+                <tr key={k}>
+                  <th scope="row">{k + 1}</th>
+                  <td>{new Date(appt.date).toLocaleString()}</td>
+                  <td>
+                    <Link
+                      to={`/${appt.User.role}/${appt.User.userId}`}
+                      className="btn btn-link"
+                    >
+                      {appt.User.first} {appt.User.last}
+                    </Link>
+                  </td>
+                  <td>
+                    <button
+                      type="button"
+                      className="btn btn-info"
+                      data-toggle="modal"
+                      data-target={`#exampleModal${appt.apptId}`}
+                    >
+                      <i className="fas fa-comment" />
+                    </button>
+
+                    <div
+                      className="modal fade"
+                      id={`exampleModal${appt.apptId}`}
+                      tabIndex="-1"
+                      role="dialog"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">
+                              {appt.User.first} {appt.User.last}
+                            </h5>
+                            <button
+                              type="button"
+                              className="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div className="modal-body">
+                            <p>{appt.comment}</p>
+                            <textarea
+                              className="form-control"
+                              onChange={e =>
+                                this.setState({ comment: e.target.value })
+                              }
+                              value={this.state.comment}
+                            />
+                          </div>
+                          <div className="modal-footer">
+                            <button
+                              type="button"
+                              className="btn btn-secondary"
+                              data-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button
+                              onClick={() =>
+                                this.handleReply(appt.apptId, appt.comment)
+                              }
+                              className="btn btn-info"
+                            >
+                              Reply
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </td>
-                <td>{appt.status}</td>
-                {this.state.role === "mentor" && (
-                  <td scope="col">
-                    <button
-                      className="btn btn-info"
-                      onClick={() => this.handleStatus(appt.apptId, "accepted")}
-                    >
-                      Accept
-                    </button>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => this.handleStatus(appt.apptId, "rejected")}
-                    >
-                      Decline
-                    </button>
                   </td>
-                )}
-              </tr>
-            ))}
+                  <td>{appt.status}</td>
+                  {this.state.role === "mentor" && (
+                    <td>
+                      <button
+                        className="btn btn-info"
+                        onClick={() =>
+                          this.handleStatus(appt.apptId, "accepted")
+                        }
+                      >
+                        Accept
+                      </button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() =>
+                          this.handleStatus(appt.apptId, "rejected")
+                        }
+                      >
+                        Decline
+                      </button>
+                    </td>
+                  )}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
