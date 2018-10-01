@@ -53,6 +53,8 @@ const auth = (req, res) => {
           const token = jwt.sign(
             {
               userId: user.userId,
+              first: user.first,
+              last: user.last,
               email: user.email,
               role: user.role,
               avatar: user.imgUrl
