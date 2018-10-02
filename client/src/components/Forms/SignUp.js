@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const SignUp = props => (
   <form>
-    <div className="form-group">
-      <h2 className="text-center mb-3">Sign up in seconds</h2>
+    <div className="form-group mt-5">
+      <h2 className="text-center mt-5 mb-3">Sign up in seconds</h2>
       <p className="text-center">
         <strong>Already a member?</strong>
         <Link to="/login/"> Sign in here</Link>
@@ -17,7 +17,7 @@ const SignUp = props => (
         type="text"
         id="first"
         name="first"
-        className="form-control mt-2"
+        className="form-control"
         value={props.first}
         onChange={props.onChange}
       />
@@ -28,7 +28,7 @@ const SignUp = props => (
         type="text"
         id="last"
         name="last"
-        className="form-control mt-2"
+        className="form-control"
         value={props.last}
         onChange={props.onChange}
       />
@@ -36,7 +36,7 @@ const SignUp = props => (
 
     <div className="form-group" onSubmit={props.handleSubmit}>
       <label>
-        MENTOR or STUDENT?
+        Mentor or Student?
         <select
           name="role"
           value={props.role}
@@ -55,7 +55,7 @@ const SignUp = props => (
         type="email"
         id="email"
         name="email"
-        className="form-control mt-2"
+        className="form-control"
         placeholder="example@example.com"
         value={props.email}
         onChange={props.onChange}
@@ -70,7 +70,7 @@ const SignUp = props => (
         type="password"
         id="password"
         name="password"
-        className="form-control mt-2"
+        className="form-control"
         value={props.password}
         onChange={props.onChange}
       />
@@ -84,7 +84,7 @@ const SignUp = props => (
         type="password"
         id="password2"
         name="password2"
-        className="form-control mt-2"
+        className="form-control"
         value={props.password2}
         onChange={props.onChange}
         required
