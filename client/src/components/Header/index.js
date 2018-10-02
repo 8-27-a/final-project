@@ -106,7 +106,7 @@ class Header extends Component {
                     <div className="dropdown-divider" />
                     <NavLink
                       to="/"
-                      className="btn btn-outline-primary ml-3"
+                      className="btn btn-outline-info ml-3"
                       onClick={() => this.logOut()}
                     >
                       Log Out
@@ -117,12 +117,12 @@ class Header extends Component {
             ) : (
               <React.Fragment>
                 <li className="nav-item">
-                  <NavLink to="/login" className="btn btn-outline-primary mr-3">
+                  <NavLink to="/login" className="btn btn-outline-info mr-3">
                     Login
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/register" className="btn btn-primary mr-3">
+                  <NavLink to="/register" className="btn btn-info mr-3">
                     Sign Up
                   </NavLink>
                 </li>

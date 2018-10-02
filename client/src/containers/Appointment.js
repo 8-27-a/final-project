@@ -4,8 +4,6 @@ import Axios from "axios";
 import { API_URL } from "../backend_api";
 import AppointmentForm from "../components/Forms/Appointment";
 
-console.log("API_URL", API_URL);
-
 class Appointment extends Component {
   state = {
     data: {
@@ -75,6 +73,13 @@ class Appointment extends Component {
   validate = data => {
     const errors = {};
 
+    const currentDate = new Date().getTime();
+    const pickedDate = new Date(`${data.date} ${data.time}`).getTime();
+
+    if (pickedDate <= currentDate + 24 * 60 * 60 * 1000) {
+      errors.date = "Appointment must be booked at least 24 hrs prior";
+    }
+
     if (!data.date) errors.date = "Please choose a date";
     if (!data.time) errors.time = "Please choose a time and am/pm ";
 
@@ -84,7 +89,7 @@ class Appointment extends Component {
   render() {
     return (
       <div
-        className="bg-navy text-white py-5"
+        className="form-group text-white py-5"
         style={{ minHeight: 750, marginTop: 20 }}
       >
         <div className="container">
