@@ -105,7 +105,7 @@ class Dashboard extends Component {
                       data-toggle="modal"
                       data-target={`#exampleModal${appt.apptId}`}
                     >
-                      <i className="fas fa-comment" />
+                      <i className="fa fa-comments-o" />
                     </button>
 
                     <div
