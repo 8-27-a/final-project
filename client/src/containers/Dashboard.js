@@ -61,6 +61,7 @@ class Dashboard extends Component {
 
   render() {
     console.log("appts", this.state.appointments);
+
     return (
       <div
         className="container text-center m-10"
@@ -76,6 +77,7 @@ class Dashboard extends Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Date</th>
+              <th scope="col">Time</th>
               <th scope="col">
                 {this.state.role === "mentor" ? "Student" : "Mentor"}
               </th>
@@ -89,7 +91,15 @@ class Dashboard extends Component {
               return (
                 <tr key={k}>
                   <th scope="row">{k + 1}</th>
-                  <td>{new Date(appt.date).toLocaleString()}</td>
+                  <td>{new Date(appt.date).toLocaleString().slice(0, 10)}</td>
+                  <td>
+                    {new Date(appt.date)
+                      .toLocaleString()
+                      .replace(/:\d{2}\s/, " ")
+                      .replace(",", " ")
+                      .slice(11, 20)}
+                  </td>
+
                   <td>
                     <Link
                       to={`/${appt.User.role}/${appt.User.userId}`}
