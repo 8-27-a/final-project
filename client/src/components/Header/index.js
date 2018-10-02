@@ -45,7 +45,10 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <NavLink className="navbar-brand text-center mr-5" to="/">
-          {brand}
+          {/* {brand} */}
+          Mentor
+          <span>4</span>
+          me
         </NavLink>
         <button
           className="navbar-toggler"

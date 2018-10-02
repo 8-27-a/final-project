@@ -12,6 +12,18 @@ body {
   color: #0f283a;
 }
 
+.navbar-brand span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 900;
+  background-color: #00b4d7;
+}
+
 .container {
   max-width: 1000px;
   width: 100%;
