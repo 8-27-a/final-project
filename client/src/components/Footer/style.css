@@ -1,6 +1,7 @@
 footer {
-    background-color: #343a40;
-    margin-top: 1rem;
+    /* background-color: #00b4d7; */
+    background-color: #16a1b9;
+    margin-top: .5rem;
     color: #fff;
 }
 
@@ -17,7 +18,7 @@ footer {
     background-color: #fff;
     color: #00b4d7;
     /* display: inline-block; */
-    /* justify-content: flex-end; */
+    justify-content: flex-end;
     float: right;
     margin-left: 10px;
 }
