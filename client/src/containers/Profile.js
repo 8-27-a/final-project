@@ -82,7 +82,7 @@ class Profile extends Component {
   };
 
   componentDidMount = () => {
-    const { userId, role } = decode(localStorage.getItem("JWT"));
+    const { userId } = decode(localStorage.getItem("JWT"));
 
     Axios.get(`${API_URL}/users/${userId}`).then(profile => {
       console.log("profile", profile);
@@ -102,7 +102,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="bg-light-grey text-white py-5">
+      <div className="bg-light-grey text-dark py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">

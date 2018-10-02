@@ -12,40 +12,43 @@ class Mentors extends Component {
   };
 
   componentDidMount = () => {
+    document.querySelector("body").classList.remove("home");
+
     Axios.get(`${API_URL}/mentors`).then(res => {
-      console.log(res);
       this.setState({ mentors: res.data });
     });
   };
 
-  onSearch = e => {
+  onSearch = () => {
     Axios.get(`${API_URL}/mentors?s=${this.state.search}`).then(res => {
-      this.setState({ search: e.target.value, mentors: res.data });
+      this.setState({ mentors: res.data });
     });
   };
 
   render() {
     return (
-      <div className="container mt-5">
+      <div className="container mt-5 style={{ minHeight: 800 }}">
         <div className="col-md-6">
           <form className="navbar-form" role="search">
             <div className="input-group add-on">
               <input
                 type="text"
-                className="form-control"
+                className="form-control mt-5 text-dark"
                 style={{
-                  backgroundColor: "rgba(0,0,0,.1)",
-                  color: "rgba(255,255,255,1)"
+                  backgroundColor: "rgba(0,0,0,.1)"
                 }}
                 placeholder="Search"
                 name="srch-term"
                 id="srch-term"
                 value={this.state.search}
-                onChange={this.onSearch}
+                onChange={e => {
+                  this.setState({ search: e.target.value });
+                  this.onSearch();
+                }}
               />
-              <div className="input-group-btn">
+              <div className="input-group-btn mt-5">
                 <button className="btn btn-default" type="submit">
-                  <i class="fa fa-search" />
+                  <i className="fa fa-search" />
                 </button>
               </div>
             </div>

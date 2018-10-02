@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class About extends Component {
   render() {
     return (
-      <div className="about" style={{ minHeight: 800 }}>
-        {/* style={{ backgroundImage: `url(require("images/tech4.gif"))` }}> */}
-        <h1 className="text-center text-white">About Us</h1>
+      <div className="pagetop" style={{ minHeight: 800, marginTop: 75 }}>
+        <h1 className="text-center text-dark">About Us</h1>
         <div
-          id="carouselExampleSlidesOnly"
+          id="carouselExampleControls"
           class="carousel slide"
           data-ride="carousel"
         >
@@ -16,67 +14,82 @@ class About extends Component {
             <div className="carousel-item active">
               <img
                 className="d-block w-100"
-                src="/images/tech4.gif"
+                src="/images/scenic1.jpg"
                 width="800"
                 height="700"
                 alt="First slide"
               />
+              <div className="carousel-caption">
+                <h1>Slide 1</h1>
+              </div>
             </div>
             <div className="carousel-item">
               <img
                 className="d-block w-100"
-                src="/images/tech1.jpg"
+                src="/images/scenic2.jpg"
                 width="800"
                 height="700"
                 alt="Second slide"
               />
+              <div className="carousel-caption">
+                <h1>Slide 2</h1>
+              </div>
             </div>
             <div className="carousel-item">
               <img
                 className="d-block w-100"
                 width="800"
                 height="700"
-                src="/images/tech2.jpg"
+                src="/images/scenic3.jpg"
                 alt="Third slide"
               />
+              <div className="carousel-caption">
+                <h1>Slide 3</h1>
+              </div>
             </div>
             <div className="carousel-item">
               <img
                 className="d-block w-100"
                 width="800"
                 height="700"
-                src="/images/tech.jpeg"
+                src="/images/scenic4.jpg"
                 alt="Fourth slide"
               />
+              <div className="carousel-caption">
+                <h1>Slide 4</h1>
+              </div>
             </div>
             <div className="carousel-item">
               <img
                 className="d-block w-100"
                 width="800"
                 height="700"
-                src="/images/tech4.jpg"
+                src="/images/scenic5.jpg"
                 alt="Fifth slide"
               />
+              <div className="carousel-caption">
+                <h1>Slide 5</h1>
+              </div>
             </div>
           </div>
-          <Link
-            className="carousel-control-prev"
-            to="#carouselExampleControls"
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleControls"
             role="button"
             data-slide="prev"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true" />
-            <span className="sr-only">Previous</span>
-          </Link>
-          <Link
-            className="carousel-control-next"
-            to="#carouselExampleControls"
+            <span class="carousel-control-prev-icon" aria-hidden="true" />
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleControls"
             role="button"
             data-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true" />
-            <span className="sr-only">Next</span>
-          </Link>
+            <span class="carousel-control-next-icon" aria-hidden="true" />
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     );

@@ -4,8 +4,6 @@ import Axios from "axios";
 import SignIn from "../components/Forms/SignIn";
 import { API_URL } from "../backend_api";
 
-console.log("API_URL", API_URL);
-
 class Login extends Component {
   state = {
     email: "",
@@ -36,7 +34,6 @@ class Login extends Component {
           });
         }
         // console.log(res.data);
-        //   this.setState({ email, password });
       });
     }
   };
@@ -59,7 +56,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="bg-navy text-white py-5" style={{ minHeight: 800 }}>
+      <div className="bg-navy text-dark py-5 mt-10" style={{ minHeight: 800 }}>
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">

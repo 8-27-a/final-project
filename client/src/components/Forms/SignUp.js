@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const SignUp = props => (
   <form>
-    <div className="form-group">
-      <h2 className="text-center mb-3">Sign up in seconds</h2>
+    <div className="form-group mt-5">
+      <h2 className="text-center mt-5 mb-3">Sign up in seconds</h2>
       <p className="text-center">
         <strong>Already a member?</strong>
         <Link to="/login/"> Sign in here</Link>
@@ -12,23 +12,23 @@ const SignUp = props => (
     </div>
 
     <div className="form-group">
-      <label htmlFor="first">First Name</label>
+      <label htmlFor="first">FIRST NAME</label>
       <input
         type="text"
         id="first"
         name="first"
-        className="form-control mt-2"
+        className="form-control"
         value={props.first}
         onChange={props.onChange}
       />
     </div>
     <div className="form-group">
-      <label htmlFor="last">Last Name</label>
+      <label htmlFor="last">LAST NAME</label>
       <input
         type="text"
         id="last"
         name="last"
-        className="form-control mt-2"
+        className="form-control"
         value={props.last}
         onChange={props.onChange}
       />
@@ -50,12 +50,12 @@ const SignUp = props => (
     </div>
 
     <div className="form-group">
-      <label htmlFor="email">Email Address</label>
+      <label htmlFor="email">EMAIL ADDRESS</label>
       <input
         type="email"
         id="email"
         name="email"
-        className="form-control mt-2"
+        className="form-control"
         placeholder="example@example.com"
         value={props.email}
         onChange={props.onChange}
@@ -65,12 +65,12 @@ const SignUp = props => (
       )}
     </div>
     <div className="form-group">
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password">PASSWORD</label>
       <input
         type="password"
         id="password"
         name="password"
-        className="form-control mt-2"
+        className="form-control"
         value={props.password}
         onChange={props.onChange}
       />
@@ -79,12 +79,12 @@ const SignUp = props => (
       )}
     </div>
     <div className="form-group">
-      <label htmlFor="password2">Confirm Password</label>
+      <label htmlFor="password2">CONFIRM PASSWORD</label>
       <input
         type="password"
         id="password2"
         name="password2"
-        className="form-control mt-2"
+        className="form-control"
         value={props.password2}
         onChange={props.onChange}
         required

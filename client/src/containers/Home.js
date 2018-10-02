@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 class Home extends Component {
+  componentDidMount = () => {
+    document.querySelector("body").classList.add("home");
+  };
+
   render() {
     return (
       // <div className="container text-center text-dark">
@@ -14,14 +18,14 @@ class Home extends Component {
             We are so glad that you are here! The first step for you is to look
             for a mentor.
           </h3>
+          <Link className="btn btn-lg btn-info" to="/mentors">
+            Find a mentor
+          </Link>
           <h5 className="paragraph">
             Mentor4me is an on-demand marketplace for top software engineers,
             developers, consultants, programmers, and tutors. Learn from expert
             mentors with team training & coaching experiences.
           </h5>
-          <Link className="btn btn-lg btn-danger" to="/mentors">
-            Find a mentor
-          </Link>
         </div>
       </div>
       // </div>

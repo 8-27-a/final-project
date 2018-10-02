@@ -3,8 +3,8 @@
 } */
 
 .home-image {
-  background-color: rgba(0, 0, 0, .3);
-  height: 50rem;
+  background-color: rgba(255, 255, 255, .1);
+  height: 53rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,35 +23,32 @@
   margin-bottom: 3rem;
 }
 
-.subtitle {
-  color: grey;
-}
-
 .btn-group-lg>.btn,
 .btn-lg {
-  margin-top: 4rem;
+  margin: 4rem;
   padding: .5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: .3rem;
 }
 
-.title,
-.subtitle,
-.paragraph {
-  margin-top: 4rem;
-  margin-bottom: .5rem;
+.title {
+  margin-bottom: 4.3rem;
+  font-weight: 700;
+  font-Size: 3.9rem;
+  /* color: #17a2b8; */
   color: white;
 }
 
-.title {
-  font-weight: 700;
-  color: red;
+.subtitle {
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 400;
+  font-size: 2.1rem;
 }
 
-.subtitle,
 .paragraph {
-  margin-left: 4rem;
-  margin-right: 4rem;
-  color: rgba(255, 255, 255, .8);
+  margin-top: 2rem;
+  color: white;
+  font-size: 1.5rem;
 }

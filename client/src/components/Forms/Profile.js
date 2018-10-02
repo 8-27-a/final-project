@@ -2,19 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Profile = props => {
-  console.log("props.success", props.success);
-  console.log("props.errors", props.errors);
   return (
     <form>
-      <div className="form-group">
-        <h4 className="text-center mb-3">Edit your profile</h4>
-        <p className="text-center">
-          <Link to={`/${props.role}/${props.userId}`}>Profile preview</Link>
-        </p>
+      <div className="form-group mt-5">
+        <h4 className="text-center mt-3 mb-3">Edit your profile settings</h4>
       </div>
       <div className="container">
         <div className="row">
-          <div className="form-group col-md-6 pl-0">
+          <div className="form-group col-md-6 p-0">
             <label htmlFor="first">First Name</label>
             <input
               type="text"
@@ -25,7 +20,7 @@ const Profile = props => {
               onChange={props.onChange}
             />
           </div>
-          <div className="form-group col-md-6 pr-0">
+          <div className="form-group col-md-6 p-0">
             <label htmlFor="last">Last Name</label>
             <input
               type="text"
@@ -66,7 +61,7 @@ const Profile = props => {
         )}
       </div>
       <div className="form-group">
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Reset Password</label>
         <input
           type="password"
           id="password"
@@ -116,19 +111,23 @@ const Profile = props => {
           required
         />
       </div>
-      <button
-        className="btn btn-secondary mb-3"
-        type="submit"
-        onClick={props.onSubmit}
-      >
-        Save Changes
-      </button>
-      {!!props.success && (
-        <div className="alert alert-success">{props.success}</div>
-      )}
-      {!!props.errors.global && (
-        <div className="alert alert-danger">{props.errors.global}</div>
-      )}
+      <div className="form-group">
+        <button className="btn btn-info" type="submit" onClick={props.onSubmit}>
+          Save Changes
+        </button>
+        <Link
+          to={`/${props.role}/${props.userId}`}
+          className="btn btn-outline-info ml-3"
+        >
+          Profile preview
+        </Link>
+        {!!props.success && (
+          <div className="alert alert-success mt-2">{props.success}</div>
+        )}
+        {!!props.errors.global && (
+          <div className="alert alert-danger">{props.errors.global}</div>
+        )}
+      </div>
     </form>
   );
 };

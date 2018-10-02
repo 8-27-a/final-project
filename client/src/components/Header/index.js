@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import decode from "jwt-decode";
 import axios from "axios";
 import { API_URL } from "../../backend_api";
+import "./style.css";
 
 class Header extends Component {
   state = {
@@ -15,7 +16,6 @@ class Header extends Component {
     const jwt = localStorage.getItem("JWT");
 
     if (jwt) {
-      console.log("token found.");
       const payload = decode(jwt);
 
       axios.get(`${API_URL}/users/${payload.userId}`).then(user => {
@@ -28,10 +28,6 @@ class Header extends Component {
     }
   };
 
-  componentWillUpdate = (nextProps, nextState) => {
-    console.log("CWU:", nextProps, nextState);
-  };
-
   logOut = () => {
     localStorage.removeItem("JWT");
     this.setState({ isAuth: false, token: false, avatarUrl: false });
@@ -41,9 +37,15 @@ class Header extends Component {
     const { brand } = this.props;
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-navy">
+      <nav
+        className={`navbar navbar-expand-lg navbar-dark fixed-top ${window
+          .location.pathname !== "/" && "bg-dark"}`}
+      >
         <NavLink className="navbar-brand text-center mr-5" to="/">
-          {brand}
+          {/* {brand} */}
+          Mentor
+          <span>4</span>
+          me
         </NavLink>
         <button
           className="navbar-toggler"

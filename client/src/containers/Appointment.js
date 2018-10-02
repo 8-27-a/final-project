@@ -4,8 +4,6 @@ import Axios from "axios";
 import { API_URL } from "../backend_api";
 import AppointmentForm from "../components/Forms/Appointment";
 
-console.log("API_URL", API_URL);
-
 class Appointment extends Component {
   state = {
     data: {
@@ -16,6 +14,13 @@ class Appointment extends Component {
       studentId: null
     },
     errors: {}
+  };
+
+  componentWillMount = () => {
+    const { role } = decode(localStorage.getItem("JWT"));
+    if (role === "mentor") {
+      this.props.history.push("/mentors");
+    }
   };
 
   componentDidMount = () => {
@@ -39,8 +44,6 @@ class Appointment extends Component {
     e.preventDefault();
 
     const { date, time, comment, mentorId, studentId } = this.state.data;
-    const errors = this.validate({ time });
-    this.setState({ errors });
 
     const newAppt = {
       date: `${date} ${time}:00`,
@@ -50,6 +53,9 @@ class Appointment extends Component {
       studentId
     };
 
+    const errors = this.validate({ date, time });
+    this.setState({ errors });
+
     if (Object.keys(errors).length === 0) {
       Axios.post(`${API_URL}/appointments`, newAppt).then(({ data: appt }) => {
         if (appt.success) {
@@ -58,7 +64,6 @@ class Appointment extends Component {
           this.setState({
             errors: { ...this.state.errors, global: appt.data.message }
           });
-          console.log("errors", errors);
         }
       });
     }
@@ -66,10 +71,15 @@ class Appointment extends Component {
 
   validate = data => {
     const errors = {};
-    const now = new Date().toLocaleString();
 
-    // if (data.date != null || (data.date != " " && now.isAfter(data.date)))
-    //   errors.date = "Please choose a date after today";
+    const currentDate = new Date().getTime();
+    const chosenDate = new Date(`${data.date} ${data.time}`).getTime();
+
+    if (chosenDate <= currentDate + 24 * 60 * 60 * 1000) {
+      errors.date = "Appointment must be booked at least 24 hrs prior";
+    }
+
+    console.log("date", chosenDate, currentDate + 24 * 60 * 60 * 1000);
     if (!data.date) errors.date = "Please choose a date";
     if (!data.time) errors.time = "Please choose a time and am/pm ";
 
@@ -79,12 +89,12 @@ class Appointment extends Component {
   render() {
     return (
       <div
-        className="bg-navy text-white py-5"
+        className="form-group py-5"
         style={{ minHeight: 750, marginTop: 20 }}
       >
         <div className="container">
-          <div className="row">
-            <div className="col-md-6 mx-auto mt-10">
+          <div className="row" style={{ marginTop: 15 }}>
+            <div className="col-md-6 mx-auto">
               <AppointmentForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
