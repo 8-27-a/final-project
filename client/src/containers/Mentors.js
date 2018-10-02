@@ -25,7 +25,7 @@ class Mentors extends Component {
 
   render() {
     return (
-      <div className="container mt-5">
+      <div className="container mt-5 style={{ minHeight: 800 }}">
         <div className="col-md-6">
           <form className="navbar-form" role="search">
             <div className="input-group add-on">

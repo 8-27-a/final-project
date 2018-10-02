@@ -19,7 +19,7 @@ class Home extends Component {
             developers, consultants, programmers, and tutors. Learn from expert
             mentors with team training & coaching experiences.
           </h5>
-          <Link className="btn btn-lg btn-danger" to="/mentors">
+          <Link className="btn btn-lg btn-info" to="/mentors">
             Find a mentor
           </Link>
         </div>
