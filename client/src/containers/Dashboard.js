@@ -91,12 +91,16 @@ class Dashboard extends Component {
               return (
                 <tr key={k}>
                   <th scope="row">{k + 1}</th>
-                  <td>{new Date(appt.date).toLocaleString().slice(0, 10)}</td>
+                  <td>
+                    {new Date(appt.date)
+                      .toLocaleString()
+                      .slice(0, 10)
+                      .replace(",", " ")}
+                  </td>
                   <td>
                     {new Date(appt.date)
                       .toLocaleString()
                       .replace(/:\d{2}\s/, " ")
-                      .replace(",", " ")
                       .slice(11, 20)}
                   </td>
 
