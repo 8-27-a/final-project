@@ -18,6 +18,13 @@ class Appointment extends Component {
     errors: {}
   };
 
+  componentWillMount = () => {
+    const { role } = decode(localStorage.getItem("JWT"));
+    if (role === "mentor") {
+      this.props.history.push("/mentors");
+    }
+  };
+
   componentDidMount = () => {
     const { userId } = decode(localStorage.getItem("JWT"));
     this.setState({
@@ -39,8 +46,6 @@ class Appointment extends Component {
     e.preventDefault();
 
     const { date, time, comment, mentorId, studentId } = this.state.data;
-    const errors = this.validate({ time });
-    this.setState({ errors });
 
     const newAppt = {
       date: `${date} ${time}:00`,
@@ -49,6 +54,9 @@ class Appointment extends Component {
       mentorId,
       studentId
     };
+
+    const errors = this.validate({ date, time });
+    this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
       Axios.post(`${API_URL}/appointments`, newAppt).then(({ data: appt }) => {
@@ -66,10 +74,7 @@ class Appointment extends Component {
 
   validate = data => {
     const errors = {};
-    const now = new Date().toLocaleString();
 
-    // if (data.date != null || (data.date != " " && now.isAfter(data.date)))
-    //   errors.date = "Please choose a date after today";
     if (!data.date) errors.date = "Please choose a date";
     if (!data.time) errors.time = "Please choose a time and am/pm ";
 
