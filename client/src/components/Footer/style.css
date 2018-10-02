@@ -16,7 +16,7 @@ footer {
     text-align: center;
     background-color: #fff;
     color: #00b4d7;
-    display: inline-block;
+    /* display: inline-block; */
     /* justify-content: flex-end; */
     float: right;
     margin-left: 10px;
