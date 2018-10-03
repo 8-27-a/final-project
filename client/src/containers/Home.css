@@ -3,7 +3,7 @@
 } */
 
 .home-image {
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, 0.1);
   height: 53rem;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,21 +23,33 @@
   margin-bottom: 3rem;
 }
 
-.btn-group-lg>.btn,
+.btn-group-lg > .btn,
 .btn-lg {
   margin: 4rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .title {
   margin-bottom: 4.3rem;
   font-weight: 700;
-  font-Size: 3.9rem;
+  font-size: 3.9rem;
   /* color: #17a2b8; */
   color: white;
+  animation: moveInBottom 0.3s ease-in;
 }
 
 .subtitle {
@@ -45,10 +57,34 @@
   color: white;
   font-weight: 400;
   font-size: 2.1rem;
+  animation: moveInBottom 0.5s ease-in;
 }
 
 .paragraph {
   margin-top: 2rem;
   color: white;
   font-size: 1.5rem;
+  animation: moveInBottom 0.8s ease-in;
+}
+
+/* Find A Mentor Button */
+.btn-info.home {
+  /* color: #fff; */
+  /* background-color: rgb(172, 180, 184);
+  border-color: rgb(43, 253, 218, 0.932); */
+  box-shadow: rgb(172, 180, 184) ff 0 0.05rem 0.05rem 0.05rem;
+  animation: moveInBottom 0.7s ease-in;
+}
+
+.btn-info.home:hover {
+  /* background-color: rgb(43, 253, 218, 0.932); */
+  /* border-color: #fff; */
+  /* color: #fff; */
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem black;
+}
+
+.btn-info.home:active {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem black;
 }
