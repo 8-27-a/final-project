@@ -1,7 +1,8 @@
-mt-5,
+.mt-5,
 .my-5 {
-  margin-top: 6rem !important;
+  margin-top: 5rem !important;
 }
+
 
 .fa-envelope-o {
   color: #00829c;

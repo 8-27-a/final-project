@@ -1,8 +1,16 @@
 footer {
     /* background-color: #00b4d7; */
-    background-color: #16a1b9;
+    /* background-color: rgba(0, 169, 211, 1); */
+    /* background-image: linear-gradient(to bottom right, rgba(0, 169, 211, .3), rgba(0, 169, 211, 1)); */
+    background-image: linear-gradient(to bottom right, #81bed9, #00abd5);
+    /* background-image: linear-gradient(to bottom right, #00abd5, #16a1b9); */
     margin-top: .5rem;
     color: #fff;
+}
+
+.mt-5,
+.my-5 {
+    margin-top: 5rem !important;
 }
 
 .copyright {
