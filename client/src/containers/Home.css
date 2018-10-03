@@ -35,7 +35,7 @@
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem);
+    transform: translateY(6rem);
   }
   100% {
     opacity: 1;
@@ -57,29 +57,23 @@
   color: white;
   font-weight: 400;
   font-size: 2.1rem;
-  animation: moveInBottom 0.5s ease-in;
+  animation: moveInBottom 0.6s ease-in;
 }
 
 .paragraph {
   margin-top: 2rem;
   color: white;
   font-size: 1.5rem;
-  animation: moveInBottom 0.8s ease-in;
+  animation: moveInBottom 0.9s ease-in;
 }
 
 /* Find A Mentor Button */
 .btn-info.home {
-  /* color: #fff; */
-  /* background-color: rgb(172, 180, 184);
-  border-color: rgb(43, 253, 218, 0.932); */
   box-shadow: rgb(172, 180, 184) ff 0 0.05rem 0.05rem 0.05rem;
   animation: moveInBottom 0.7s ease-in;
 }
 
 .btn-info.home:hover {
-  /* background-color: rgb(43, 253, 218, 0.932); */
-  /* border-color: #fff; */
-  /* color: #fff; */
   transform: translateY(-2px);
   box-shadow: 0 1rem 2rem black;
 }
@@ -87,4 +81,10 @@
 .btn-info.home:active {
   transform: translateY(-3px);
   box-shadow: 0 0.5rem 1rem black;
+}
+
+/* Social Media Links */
+
+.fa:hover {
+  color: #6c757d;
 }
