@@ -31,6 +31,7 @@ router.delete("/profile/:id", profileCtrl.remove);
 
 // appointment CRUD routes
 router.get("/appointments/:user_id", apptCtrl.getAll);
+router.get("/appointments", apptCtrl.getAllAppt);
 router.post("/appointments", apptCtrl.create);
 router.put("/appointment/:id", apptCtrl.update);
 router.get("/appointments/mentor/:id", apptCtrl.getAllMentor);
