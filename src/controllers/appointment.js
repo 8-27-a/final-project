@@ -78,6 +78,13 @@ const getAllStudent = (req, res) => {
   });
 };
 
+const getAllAppt = (req, res) => {
+  Appt.findAll({}).then(allAppts => {
+    console.log(allAppts);
+    res.json(allAppts);
+  });
+};
+
 const update = (req, res) => {
   const { date, time, comment, status } = req.body;
 
@@ -142,6 +149,7 @@ module.exports = {
   getOneMentor,
   getOneStudent,
   getAll,
+  getAllAppt,
   getAllMentor,
   getAllStudent,
   update,
