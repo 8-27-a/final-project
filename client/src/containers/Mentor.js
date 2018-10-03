@@ -38,7 +38,7 @@ class Mentor extends Component {
       <div className="container" style={{ minHeight: 800 }}>
         <div className="row">
           <div className="col-md-12">
-            <h1 className="mt-5 text-center">{mentor.role} Profile</h1>
+            <h2 className="mt-5 text-center">{mentor.role} profile</h2>
             <Card
               role={mentor.role}
               userId={mentor.userId}
@@ -52,7 +52,7 @@ class Mentor extends Component {
             {role !== "mentor" && (
               <Link
                 to={`/mentor/${this.props.match.params.id}/appt`}
-                className="btn btn-info mt-2 mr-3"
+                className="btn btn-info mt-2 ml-3"
               >
                 Book Appointment
               </Link>
