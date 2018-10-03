@@ -60,7 +60,7 @@ class Profile extends Component {
             errors: { ...this.state.errors, global: user.data.message }
           });
         }
-        console.log("errors", errors);
+        console.log("error", errors);
       });
     }
   };
@@ -102,6 +102,7 @@ class Profile extends Component {
 
   render() {
     return (
+
       <div className="bg-light-grey text-dark py-5">
         <div className="container">
           <div className="row">

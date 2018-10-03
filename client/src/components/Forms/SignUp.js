@@ -36,7 +36,7 @@ const SignUp = props => (
 
     <div className="form-group" onSubmit={props.handleSubmit}>
       <label>
-        MENTOR or STUDENT?
+        Mentor or Student?
         <select
           name="role"
           value={props.role}
