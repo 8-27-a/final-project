@@ -27,9 +27,8 @@ class Dashboard extends Component {
 
     Axios.put(`${API_URL}/appointment/${apptId}`, {
       comment: `
-      ${first}: ${this.state.comment}\n
-      \n
-      -->
+      ${first}: ${this.state.comment}
+      ==>
       ${oldComment}
       `
     }).then(res => {
@@ -95,7 +94,6 @@ class Dashboard extends Component {
                 return (
                   <tr key={k}>
                     <th scope="row">{k + 1}</th>
-                    {/* <td>{new Date(appt.date).toLocaleString()}</td> */}
                     <td>
                       {new Date(appt.date)
                         .toLocaleString()
