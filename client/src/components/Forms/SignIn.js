@@ -6,8 +6,8 @@ const SignIn = props => (
     {!!props.errors.global && (
       <div className="alert alert-danger">{props.errors.global}</div>
     )}
-    <div className="form-group">
-      <h2 className="text-center mb-3">Login To Your Account</h2>
+    <div className="form-group mt-5">
+      <h2 className="text-center mt-5 mb-3">Login To Your Account</h2>
       <p className="text-center">
         <strong>Not a member yet?</strong>
         <Link to="/register"> Sign up for free!</Link>
@@ -19,7 +19,7 @@ const SignIn = props => (
         type="email"
         name="email"
         id="email"
-        className="form-control"
+        className="form-control mt-2"
         placeholder="example@example.com"
         onChange={props.onChange}
         value={props.email}
@@ -46,7 +46,7 @@ const SignIn = props => (
         ""
       )}
     </div>
-    <button onClick={props.onSubmit} className="btn btn-info mt-4">
+    <button onClick={props.onSubmit} className="btn btn-info mt-5">
       Login
     </button>
   </form>

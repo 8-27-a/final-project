@@ -42,9 +42,6 @@ const Appointment = ({ onChange, onSubmit, data, errors }) => (
     <button type="submit" className="btn btn-info mt-5" onClick={onSubmit}>
       SUBMIT APPOINTMENT
     </button>
-    {!!errors.global && (
-      <div className="alert alert-danger">{errors.global}</div>
-    )}
   </form>
 );
 
