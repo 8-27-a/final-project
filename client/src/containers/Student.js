@@ -29,7 +29,7 @@ class Student extends Component {
         >
         <div className="row">
           <div className="col-md-12">
-            <h2 className="mt-5 text-center">{student.role} Profile</h2>
+            <h2 className="mt-5 text-center">{student.role} profile</h2>
             <Card
               role={student.role}
               userId={student.userId}
