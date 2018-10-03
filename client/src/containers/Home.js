@@ -18,7 +18,7 @@ class Home extends Component {
             We are so glad that you are here! The first step for you is to look
             for a mentor.
           </h3>
-          <Link className="btn btn-lg btn-info" to="/mentors">
+          <Link className="btn btn-lg btn-info home" to="/mentors">
             Find a mentor
           </Link>
           <h5 className="paragraph">
