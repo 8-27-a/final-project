@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class About extends Component {
   render() {
     return (
-      <div className="about" style={{ minHeight: 800 }}>
-        <h1 className="text-center text-white">About Us</h1>
+      <div className="pagetop" style={{ minHeight: 800, marginTop: 75 }}>
+        <h1 className="text-center text-dark">About Us</h1>
         <div
           id="carouselExampleControls"
           class="carousel slide"
@@ -14,7 +14,7 @@ class About extends Component {
             <div className="carousel-item active">
               <img
                 className="d-block w-100"
-                src="/images/tech4.gif"
+                src="/images/scenic1.jpg"
                 width="800"
                 height="700"
                 alt="First slide"
@@ -26,7 +26,7 @@ class About extends Component {
             <div className="carousel-item">
               <img
                 className="d-block w-100"
-                src="/images/tech1.jpg"
+                src="/images/scenic2.jpg"
                 width="800"
                 height="700"
                 alt="Second slide"
@@ -40,7 +40,7 @@ class About extends Component {
                 className="d-block w-100"
                 width="800"
                 height="700"
-                src="/images/tech2.jpg"
+                src="/images/scenic3.jpg"
                 alt="Third slide"
               />
               <div className="carousel-caption">
@@ -52,7 +52,7 @@ class About extends Component {
                 className="d-block w-100"
                 width="800"
                 height="700"
-                src="/images/tech.jpeg"
+                src="/images/scenic4.jpg"
                 alt="Fourth slide"
               />
               <div className="carousel-caption">
@@ -64,7 +64,7 @@ class About extends Component {
                 className="d-block w-100"
                 width="800"
                 height="700"
-                src="/images/tech4.jpg"
+                src="/images/scenic5.jpg"
                 alt="Fifth slide"
               />
               <div className="carousel-caption">

@@ -12,7 +12,7 @@ const SignUp = props => (
     </div>
 
     <div className="form-group">
-      <label htmlFor="first">First Name</label>
+      <label htmlFor="first">FIRST NAME</label>
       <input
         type="text"
         id="first"
@@ -23,7 +23,7 @@ const SignUp = props => (
       />
     </div>
     <div className="form-group">
-      <label htmlFor="last">Last Name</label>
+      <label htmlFor="last">LAST NAME</label>
       <input
         type="text"
         id="last"
@@ -50,7 +50,7 @@ const SignUp = props => (
     </div>
 
     <div className="form-group">
-      <label htmlFor="email">Email Address</label>
+      <label htmlFor="email">EMAIL ADDRESS</label>
       <input
         type="email"
         id="email"
@@ -65,7 +65,7 @@ const SignUp = props => (
       )}
     </div>
     <div className="form-group">
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password">PASSWORD</label>
       <input
         type="password"
         id="password"
@@ -79,7 +79,7 @@ const SignUp = props => (
       )}
     </div>
     <div className="form-group">
-      <label htmlFor="password2">Confirm Password</label>
+      <label htmlFor="password2">CONFIRM PASSWORD</label>
       <input
         type="password"
         id="password2"

@@ -64,7 +64,6 @@ class Appointment extends Component {
           this.setState({
             errors: { ...this.state.errors, global: appt.data.message }
           });
-          console.log("errors", errors);
         }
       });
     }
@@ -74,12 +73,13 @@ class Appointment extends Component {
     const errors = {};
 
     const currentDate = new Date().getTime();
-    const pickedDate = new Date(`${data.date} ${data.time}`).getTime();
+    const chosenDate = new Date(`${data.date} ${data.time}`).getTime();
 
-    if (pickedDate <= currentDate + 24 * 60 * 60 * 1000) {
+    if (chosenDate <= currentDate + 24 * 60 * 60 * 1000) {
       errors.date = "Appointment must be booked at least 24 hrs prior";
     }
 
+    console.log("date", chosenDate, currentDate + 24 * 60 * 60 * 1000);
     if (!data.date) errors.date = "Please choose a date";
     if (!data.time) errors.time = "Please choose a time and am/pm ";
 
@@ -89,12 +89,12 @@ class Appointment extends Component {
   render() {
     return (
       <div
-        className="form-group text-white py-5"
+        className="form-group py-5"
         style={{ minHeight: 750, marginTop: 20 }}
       >
         <div className="container">
-          <div className="row">
-            <div className="col-md-6 mx-auto mt-10">
+          <div className="row" style={{ marginTop: 15 }}>
+            <div className="col-md-6 mx-auto">
               <AppointmentForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}

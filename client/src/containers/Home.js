@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 class Home extends Component {
+  componentDidMount = () => {
+    document.querySelector("body").classList.add("home");
+  };
+
   render() {
     return (
       // <div className="container text-center text-dark">

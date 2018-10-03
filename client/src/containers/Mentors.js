@@ -12,6 +12,8 @@ class Mentors extends Component {
   };
 
   componentDidMount = () => {
+    document.querySelector("body").classList.remove("home");
+
     Axios.get(`${API_URL}/mentors`).then(res => {
       this.setState({ mentors: res.data });
     });
@@ -31,10 +33,9 @@ class Mentors extends Component {
             <div className="input-group add-on">
               <input
                 type="text"
-                className="form-control"
+                className="form-control mt-5 text-dark"
                 style={{
-                  backgroundColor: "rgba(0,0,0,.1)",
-                  color: "rgba(255,255,255,1)"
+                  backgroundColor: "rgba(0,0,0,.1)"
                 }}
                 placeholder="Search"
                 name="srch-term"
@@ -45,7 +46,7 @@ class Mentors extends Component {
                   this.onSearch();
                 }}
               />
-              <div className="input-group-btn">
+              <div className="input-group-btn mt-5">
                 <button className="btn btn-default" type="submit">
                   <i className="fa fa-search" />
                 </button>

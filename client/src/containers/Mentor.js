@@ -4,16 +4,22 @@ import decode from "jwt-decode";
 import Axios from "axios";
 import Card from "../components/Card";
 import { API_URL } from "../backend_api";
+import "./mentor.css";
 
 class Mentor extends Component {
   state = {
+    role: "student",
     mentor: {},
     Profile: {},
     isLoaded: false
   };
+
   componentWillMount = () => {
     if (!localStorage.getItem("JWT")) {
       this.props.history.push("/login");
+    } else {
+      const { role } = decode(localStorage.getItem("JWT"));
+      this.setState({ role });
     }
   };
 
@@ -25,15 +31,16 @@ class Mentor extends Component {
   };
 
   render() {
-    const { mentor } = this.state;
-    const { role } = decode(localStorage.getItem("JWT"));
-
+    const { mentor, role } = this.state;
+    // const { role } = decode(localStorage.getItem("JWT"));
     console.log("role", role);
     return (
-      <div className="container pt-15" style={{ minHeight: 800 }}>
+      <div className="container" style={{ minHeight: 800 }}>
         <div className="row">
           <div className="col-md-12">
+            <h1 className="mt-5 text-center">{mentor.role} Profile</h1>
             <Card
+              role={mentor.role}
               userId={mentor.userId}
               first={mentor.firstName}
               last={mentor.lastName}
@@ -45,18 +52,19 @@ class Mentor extends Component {
             {role !== "mentor" && (
               <Link
                 to={`/mentor/${this.props.match.params.id}/appt`}
-                className="btn btn-secondary mt-2 mr-3"
+                className="btn btn-info mt-2 mr-3"
               >
                 Book Appointment
               </Link>
             )}
-
-            <Link to="/mentors" className="btn btn-secondary mt-2 mr-3">
+            <Link to="/mentors" className="btn btn-outline-info mt-2 ml-3">
               Back
             </Link>
-            <Link to="/dashboard" className="btn btn-info mt-2 mr-3">
-              Dashboard
-            </Link>
+            {role !== "student" && (
+              <Link to="/dashboard" className="btn btn-info ml-3 mt-2">
+                Dashboard
+              </Link>
+            )}
           </div>
         </div>
       </div>
