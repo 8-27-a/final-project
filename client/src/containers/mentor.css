@@ -3,6 +3,14 @@ mt-5,
   margin-top: 6rem !important;
 }
 
+.fa-envelope-o {
+  color: #00829c;
+}
+
+.fa-envelope-o:hover {
+  color: #07f7ff;
+}
+
 /* .h2,
 h2 {
   font-size: 2rem;
