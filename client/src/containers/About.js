@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class About extends Component {
   render() {
     return (
-      <div className="pagetop" style={{ minHeight: 800, marginTop: 75 }}>
+      <div className="pagetop" style={{ height: "80vh", marginTop: 75 }}>
         <h1 className="text-center text-dark">About Us</h1>
         <div
           id="carouselExampleControls"
@@ -32,7 +32,7 @@ class About extends Component {
                 alt="Second slide"
               />
               <div className="carousel-caption">
-                <h1>Slide 2</h1>
+                <h2>Slide 2</h2>
               </div>
             </div>
             <div className="carousel-item">
@@ -44,7 +44,7 @@ class About extends Component {
                 alt="Third slide"
               />
               <div className="carousel-caption">
-                <h1>Slide 3</h1>
+                <h2>Slide 3</h2>
               </div>
             </div>
             <div className="carousel-item">
@@ -56,7 +56,7 @@ class About extends Component {
                 alt="Fourth slide"
               />
               <div className="carousel-caption">
-                <h1>Slide 4</h1>
+                <h2>Slide 4</h2>
               </div>
             </div>
             <div className="carousel-item">

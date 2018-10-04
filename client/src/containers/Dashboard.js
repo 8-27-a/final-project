@@ -62,8 +62,8 @@ class Dashboard extends Component {
       <div
         className="container text-center"
         style={{
-          minHeight: 800,
-          marginTop: 55,
+          height: "85vh",
+          marginTop: 58,
           backgroundColor: "rgb(230, 230, 230, .8)"
         }}
       >
@@ -184,7 +184,7 @@ class Dashboard extends Component {
                     {this.state.role === "mentor" && (
                       <td>
                         <button
-                          className="btn btn-info"
+                          className="btn btn-default mr-2"
                           onClick={() =>
                             this.handleStatus(appt.apptId, "accepted")
                           }

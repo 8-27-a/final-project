@@ -25,7 +25,7 @@ class Student extends Component {
 
     console.log("role", role);
     return (
-      <div className="container" style={{ minHeight: 800 }}>
+      <div className="container" style={{ height: "87vh" }}>
         <div className="row">
           <div className="col-md-12">
             <h2
