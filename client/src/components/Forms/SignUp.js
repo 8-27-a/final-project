@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SignUp = props => (
-  <form style={{ height: "71vh" }}>
-    <div className="form-group mt-5">
-      <h2 className="text-center mt-5 mb-3">Sign up in seconds</h2>
+  <form>
+    <div className="form-group">
+      <h2 className="text-center mt-2 mb-3">Sign up in seconds</h2>
       <p className="text-center">
         <strong>Already a member?</strong>
         <Link to="/login/"> Sign in here</Link>
@@ -21,6 +21,9 @@ const SignUp = props => (
         value={props.first}
         onChange={props.onChange}
       />
+      {props.errors.first && (
+        <small className="text-danger">{props.errors.first}</small>
+      )}
     </div>
     <div className="form-group">
       <label htmlFor="last">Last Name</label>
@@ -32,6 +35,9 @@ const SignUp = props => (
         value={props.last}
         onChange={props.onChange}
       />
+      {props.errors.last && (
+        <small className="text-danger">{props.errors.last}</small>
+      )}
     </div>
 
     <div className="form-group" onSubmit={props.handleSubmit}>

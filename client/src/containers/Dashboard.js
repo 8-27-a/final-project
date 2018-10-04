@@ -27,7 +27,7 @@ class Dashboard extends Component {
 
     Axios.put(`${API_URL}/appointment/${apptId}`, {
       comment: `
-      ${first}: ${this.state.comment} --> ${oldComment}
+      ${first}: ${this.state.comment}-->${oldComment}
       `
     }).then(res => {
       if (res.data.updated) {
@@ -75,10 +75,18 @@ class Dashboard extends Component {
         <table className="table w-100 d-block d-md-table">
           <thead className="thead-dark">
             <tr>
-              <th scope="col">#</th>
+              <th className="d-none d-md-table-cell" scope="col">
+                #
+              </th>
               <th scope="col">Date</th>
-              <th scope="col">Time</th>
-              <th scope="col" className="d-none d-md-block">
+              <th
+                className={`${this.state.role === "mentor" &&
+                  "d-none"} d-md-table-cell`}
+                scope="col"
+              >
+                Time
+              </th>
+              <th scope="col" className="d-none d-md-table-cell">
                 {this.state.role === "mentor" ? "Student" : "Mentor"}
               </th>
               <th scope="col">Comments</th>
@@ -91,20 +99,33 @@ class Dashboard extends Component {
               this.state.appointments.map((appt, k) => {
                 return (
                   <tr key={k}>
-                    <th scope="row">{k + 1}</th>
+                    <td className="d-none d-md-table-cell" scope="row">
+                      {k + 1}
+                    </td>
                     <td>
                       {new Date(appt.date)
                         .toLocaleString()
                         .slice(0, 10)
                         .replace(",", " ")}
+                      {this.state.role === "mentor" && (
+                        <p className="d-block d-md-none">
+                          {new Date(appt.date)
+                            .toLocaleString()
+                            .replace(/:\d{2}\s/, " ")
+                            .slice(11, 20)}
+                        </p>
+                      )}
                     </td>
-                    <td>
+                    <td
+                      className={`${this.state.role === "mentor" &&
+                        "d-none"} d-md-table-cell`}
+                    >
                       {new Date(appt.date)
                         .toLocaleString()
                         .replace(/:\d{2}\s/, " ")
                         .slice(11, 20)}
                     </td>
-                    <td className="d-none d-md-block">
+                    <td className="d-none d-md-table-cell">
                       <Link
                         to={`/${appt.User.role}/${appt.User.userId}`}
                         className="btn btn-link"
@@ -148,9 +169,10 @@ class Dashboard extends Component {
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <div className="modal-body">
-                              {/* <p>{appt.comment.split(/\r?-->/)}</p> */}
-                              <p>{appt.comment}</p>
+                            <div className="modal-body text-left">
+                              {appt.comment.split(/\r?-->/).map(comment => (
+                                <p>{comment}</p>
+                              ))}
                               <textarea
                                 className="form-control"
                                 onChange={e =>

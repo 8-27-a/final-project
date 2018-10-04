@@ -2,13 +2,13 @@ import React from "react";
 import "./style.css";
 
 const Footer = () => (
-  <footer className="mt-5 py-3 text-muted text-small">
+  <footer className="py-3 text-muted text-small fixed-bottom">
     <div className="container">
       <div className="row">
-        <div className="copyright col-md-6">
-          <p className="mb-0">&copy; 2018 Mentor4Me, All rights reserved</p>
+        <div className="copyright col-6">
+          <p className="mb-0">&copy; 2018 Mentor4Me.</p>
         </div>
-        <div className="col-md-6 social-media">
+        <div className="col-6 social-media">
           <a
             href="mailto:mentor4me@gmail.com"
             target="_blank"

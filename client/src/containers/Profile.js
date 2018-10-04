@@ -102,7 +102,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="container text-dark py-5" style={{ height: "87vh" }}>
+      <div className="container text-dark py-5">
         <div className="row">
           <div className="col-md-6 mx-auto">
             <ProfileForm
