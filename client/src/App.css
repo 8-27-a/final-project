@@ -121,15 +121,34 @@ a {
   }
 
   .title {
-    font-size: 30px
+    font-size: 30px;
+    /* display: none; */
+    color: transparent;
+    margin-bottom: 5rem;
+    animation: disable;
   }
 
   .subtitle {
-    font-size: 22px
+    font-size: 22px;
+    display: none;
+    animation: disable;
   }
 
   .paragraph {
-    font-size: 16px
+    font-size: 16px;
+    animation: disable;
+  }
+
+  .btn-info.home {
+    animation: disable;
+  }
+
+  .btn-info.home:hover {
+    transform: disable;
+  }
+
+  .btn-info.home:active {
+    transform: disable;
   }
 
   h1 {
