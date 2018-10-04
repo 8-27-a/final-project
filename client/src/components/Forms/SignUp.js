@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SignUp = props => (
-  <form>
+  <form style={{ height: "71vh" }}>
     <div className="form-group mt-5">
       <h2 className="text-center mt-5 mb-3">Sign up in seconds</h2>
       <p className="text-center">
@@ -12,7 +12,7 @@ const SignUp = props => (
     </div>
 
     <div className="form-group">
-      <label htmlFor="first">FIRST NAME</label>
+      <label htmlFor="first">First Name</label>
       <input
         type="text"
         id="first"
@@ -23,7 +23,7 @@ const SignUp = props => (
       />
     </div>
     <div className="form-group">
-      <label htmlFor="last">LAST NAME</label>
+      <label htmlFor="last">Last Name</label>
       <input
         type="text"
         id="last"
@@ -50,7 +50,7 @@ const SignUp = props => (
     </div>
 
     <div className="form-group">
-      <label htmlFor="email">EMAIL ADDRESS</label>
+      <label htmlFor="email">Email Address</label>
       <input
         type="email"
         id="email"
@@ -65,7 +65,7 @@ const SignUp = props => (
       )}
     </div>
     <div className="form-group">
-      <label htmlFor="password">PASSWORD</label>
+      <label htmlFor="password">Password</label>
       <input
         type="password"
         id="password"
@@ -79,7 +79,7 @@ const SignUp = props => (
       )}
     </div>
     <div className="form-group">
-      <label htmlFor="password2">CONFIRM PASSWORD</label>
+      <label htmlFor="password2">Confirm Password</label>
       <input
         type="password"
         id="password2"

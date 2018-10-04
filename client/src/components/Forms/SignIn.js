@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SignIn = props => (
-  <form>
+  <form style={{ height: "71vh" }}>
     {!!props.errors.global && (
       <div className="alert alert-danger">{props.errors.global}</div>
     )}

@@ -16,7 +16,7 @@ class About extends Component {
                 className="d-block w-100"
                 src="/images/scenic1.jpg"
                 width="800"
-                height="700"
+                height="800"
                 alt="First slide"
               />
               <div className="carousel-caption">
@@ -28,7 +28,7 @@ class About extends Component {
                 className="d-block w-100"
                 src="/images/scenic2.jpg"
                 width="800"
-                height="700"
+                height="820"
                 alt="Second slide"
               />
               <div className="carousel-caption">
@@ -39,7 +39,7 @@ class About extends Component {
               <img
                 className="d-block w-100"
                 width="800"
-                height="700"
+                height="820"
                 src="/images/scenic3.jpg"
                 alt="Third slide"
               />
@@ -51,7 +51,7 @@ class About extends Component {
               <img
                 className="d-block w-100"
                 width="800"
-                height="700"
+                height="820"
                 src="/images/scenic4.jpg"
                 alt="Fourth slide"
               />
@@ -63,7 +63,7 @@ class About extends Component {
               <img
                 className="d-block w-100"
                 width="800"
-                height="700"
+                height="820"
                 src="/images/scenic5.jpg"
                 alt="Fifth slide"
               />

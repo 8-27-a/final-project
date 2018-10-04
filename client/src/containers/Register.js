@@ -68,7 +68,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="bg-navy text-dark py-5">
+      <div className="text-dark py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">
