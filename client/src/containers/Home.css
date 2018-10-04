@@ -1,6 +1,6 @@
-/* body {
+body {
   padding: 0;
-} */
+}
 
 .home-image {
   background-color: rgba(255, 255, 255, 0.1);
@@ -23,7 +23,7 @@
   margin-bottom: 3rem;
 }
 
-.btn-group-lg > .btn,
+.btn-group-lg>.btn,
 .btn-lg {
   margin: 4rem;
   padding: 0.5rem 1rem;
@@ -37,6 +37,7 @@
     opacity: 0;
     transform: translateY(6rem);
   }
+
   100% {
     opacity: 1;
     transform: translate(0);
@@ -47,7 +48,6 @@
   margin-bottom: 4.3rem;
   font-weight: 700;
   font-size: 3.9rem;
-  /* color: #17a2b8; */
   color: white;
   animation: moveInBottom 0.3s ease-in;
 }
@@ -87,4 +87,5 @@
 
 .fa:hover {
   color: #6c757d;
+  /* color: #16a1b9; */
 }

@@ -74,7 +74,7 @@ class Dashboard extends Component {
           <h6>newest appointment on top</h6>
         </span>
 
-        <table className="table">
+        <table className="table w-100 d-block d-md-table">
           <thead className="thead-dark">
             <tr>
               <th scope="col">#</th>
@@ -121,7 +121,7 @@ class Dashboard extends Component {
                         data-toggle="modal"
                         data-target={`#exampleModal${appt.apptId}`}
                       >
-                        <i className="fa fa-comments" />
+                        <i className="fas fa-comments" />
                       </button>
 
                       <div
