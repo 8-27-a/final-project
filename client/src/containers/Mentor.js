@@ -62,9 +62,16 @@ class Mentor extends Component {
                 Book Appointment
               </Link>
             )}
-            <Link to="/mentors" className="btn btn-outline-info mt-2 ml-3">
-              Back
-            </Link>
+            {role !== "mentor" && (
+              <Link to="/mentors" className="btn btn-outline-info mt-2 ml-3">
+                Back
+              </Link>
+            )}
+            {role !== "student" && (
+              <Link to="/profile" className="btn btn-outline-info mt-2 ml-3">
+                Back
+              </Link>
+            )}
             {role !== "student" && (
               <Link to="/dashboard" className="btn btn-info ml-3 mt-2">
                 Dashboard

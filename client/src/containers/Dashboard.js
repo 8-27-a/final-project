@@ -27,9 +27,7 @@ class Dashboard extends Component {
 
     Axios.put(`${API_URL}/appointment/${apptId}`, {
       comment: `
-      ${first}: ${this.state.comment}
-      ==>
-      ${oldComment}
+      ${first}: ${this.state.comment} --> ${oldComment}
       `
     }).then(res => {
       if (res.data.updated) {
@@ -151,6 +149,7 @@ class Dashboard extends Component {
                               </button>
                             </div>
                             <div className="modal-body">
+                              {/* <p>{appt.comment.split(/\r?-->/)}</p> */}
                               <p>{appt.comment}</p>
                               <textarea
                                 className="form-control"

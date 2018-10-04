@@ -40,7 +40,7 @@ const Appointment = ({ onChange, onSubmit, data, errors }) => (
       />
     </div>
     <button type="submit" className="btn btn-info mt-5" onClick={onSubmit}>
-      SUBMIT APPOINTMENT
+      Submit Appointment
     </button>
   </form>
 );

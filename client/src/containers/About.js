@@ -20,7 +20,7 @@ class About extends Component {
                 alt="First slide"
               />
               <div className="carousel-caption">
-                <h1>Slide 1</h1>
+                <h2>Slide 1</h2>
               </div>
             </div>
             <div className="carousel-item">
