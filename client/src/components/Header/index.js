@@ -38,8 +38,9 @@ class Header extends Component {
 
     return (
       <nav
-        className={`navbar navbar-expand-lg navbar-dark fixed-top ${window
-          .location.pathname !== "/" && "bg-dark"}`}
+        className={`navbar navbar-expand-lg navbar-dark fixed-top ${
+          window.location.pathname !== "/" ? "bg-dark" : "bg-transparent"
+        }`}
       >
         <NavLink className="navbar-brand text-center mr-5" to="/">
           {/* {brand} */}

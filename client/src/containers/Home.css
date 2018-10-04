@@ -6,7 +6,7 @@ body {
   background-image: url("/images/bg-nature.jpeg");
   background-color: rgba(255, 255, 255, 0.1);
   /* height: 53rem; */
-  height: 87vh;
+  height: calc(100vh - 72px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,11 +21,14 @@ body {
 .home-text {
   text-align: center;
   position: absolute;
-  top: 50%;
+  width: 100%;
+  padding: 0 20px;
+  top: 12%;
   left: 50%;
-  transform: translate(-50%, -50%);
-
   margin-bottom: 3rem;
+  max-width: 740px;
+  margin-left: -370px;
+  margin-right: auto;
 }
 
 .btn-group-lg>.btn,
@@ -51,6 +54,7 @@ body {
 
 .title {
   margin-bottom: 4.3rem;
+  margin-top: 8rem;
   font-weight: 700;
   font-size: 3.9rem;
   color: white;
@@ -92,4 +96,12 @@ body {
 
 .fa:hover {
   color: #6c757d;
+}
+
+@media screen and (max-width: 768px) {
+  .home-text {
+    left: 0;
+    max-width: 100%;
+    margin-left: 0;
+  }
 }

@@ -42,13 +42,14 @@ class Appointment extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const { first } = decode(localStorage.getItem("JWT"));
 
     const { date, time, comment, mentorId, studentId } = this.state.data;
 
     const newAppt = {
       date: `${date} ${time}:00`,
       time,
-      comment,
+      comment: `${first}: ${comment}`,
       mentorId,
       studentId
     };
@@ -88,10 +89,7 @@ class Appointment extends Component {
 
   render() {
     return (
-      <div
-        className="form-group py-5"
-        style={{ minHeight: 750, marginTop: 20 }}
-      >
+      <div className="form-group py-5" style={{ marginTop: 20 }}>
         <div className="container">
           <div className="row" style={{ marginTop: 15 }}>
             <div className="col-md-6 mx-auto">

@@ -51,7 +51,8 @@ class Register extends Component {
   validate = data => {
     const errors = {};
 
-    if (!data.email) errors.email = "Enter email";
+    if (!data.first) errors.first = "Enter your first name";
+    if (!data.last) errors.last = "Enter your last name";
     if (!validator.isEmail(data.email)) errors.email = "Enter a valid email";
     if (!data.password) errors.password = "Enter password";
     if (data.password !== data.password2)

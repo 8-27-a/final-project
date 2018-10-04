@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SignIn = props => (
-  <form style={{ height: "71vh" }}>
+  <form>
     {!!props.errors.global && (
       <div className="alert alert-danger">{props.errors.global}</div>
     )}
-    <div className="form-group mt-5">
-      <h2 className="text-center mt-5 mb-3">Login To Your Account</h2>
+    <div className="form-group">
+      <h2 className="text-center mt-2">Login To Your Account</h2>
       <p className="text-center">
         <strong>Not a member yet?</strong>
         <Link to="/register"> Sign up for free!</Link>
@@ -46,7 +46,7 @@ const SignIn = props => (
         ""
       )}
     </div>
-    <button onClick={props.onSubmit} className="btn btn-info mt-5">
+    <button onClick={props.onSubmit} className="btn btn-info mt-3">
       Login
     </button>
   </form>
