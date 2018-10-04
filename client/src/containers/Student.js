@@ -25,11 +25,15 @@ class Student extends Component {
 
     console.log("role", role);
     return (
-      <div className="container" style={{ minHeight: 800 }}>
-        >
+      <div className="container" style={{ height: "87vh" }}>
         <div className="row">
           <div className="col-md-12">
-            <h2 className="mt-5 text-center">{student.role} profile</h2>
+            <h2
+              className="mt-5 text-center"
+              style={{ color: "rgba(242, 242, 242, 1)" }}
+            >
+              {student.role} profile
+            </h2>
             <Card
               role={student.role}
               userId={student.userId}
@@ -45,9 +49,6 @@ class Student extends Component {
                 Back
               </Link>
             )}
-            {/* <Link to="/" className="btn btn-outline-info mt-2 mr-3">
-              Home
-            </Link> */}
             <Link to="/dashboard" className="btn btn-info mt-2 ml-3">
               Dashboard
             </Link>

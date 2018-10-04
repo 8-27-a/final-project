@@ -7,13 +7,8 @@ body {
   position: relative;
 
   font-family: 'Lato', sans-serif;
-  /* background-color: rgb(255, 255, 255, .1); */
   background-color: #f2f2f2;
   color: #0f283a;
-}
-
-.home-image {
-  background-image: url("/images/bg-nature.jpeg");
 }
 
 .navbar-brand span {
@@ -50,7 +45,6 @@ body {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  /* color: rgba(255,255,255,.5); */
   color: white;
 }
 
@@ -59,14 +53,12 @@ body {
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .show>.nav-link {
-  /* color: #fff; */
   font-size: 16px;
   color: #16a1b9;
   background-color: transparent;
 }
 
 .nav-link.active {
-  /* background-color: #37474F; */
   color: #00b4d7;
 }
 
@@ -77,7 +69,6 @@ body {
 
 .nav-link {
   padding: 0;
-  /* color: #2b4263; */
   color: white;
   display: block;
   padding: .5rem 1rem;

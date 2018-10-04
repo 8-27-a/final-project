@@ -35,10 +35,15 @@ class Mentor extends Component {
     // const { role } = decode(localStorage.getItem("JWT"));
     console.log("role", role);
     return (
-      <div className="container" style={{ minHeight: 800 }}>
+      <div className="container" style={{ height: "87vh" }}>
         <div className="row">
           <div className="col-md-12">
-            <h2 className="mt-5 text-center">{mentor.role} profile</h2>
+            <h2
+              className="mt-5 text-center"
+              style={{ color: "rgba(242, 242, 242, 1)" }}
+            >
+              {mentor.role} profile
+            </h2>
             <Card
               role={mentor.role}
               userId={mentor.userId}
@@ -57,9 +62,16 @@ class Mentor extends Component {
                 Book Appointment
               </Link>
             )}
-            <Link to="/mentors" className="btn btn-outline-info mt-2 ml-3">
-              Back
-            </Link>
+            {role !== "mentor" && (
+              <Link to="/mentors" className="btn btn-outline-info mt-2 ml-3">
+                Back
+              </Link>
+            )}
+            {role !== "student" && (
+              <Link to="/profile" className="btn btn-outline-info mt-2 ml-3">
+                Back
+              </Link>
+            )}
             {role !== "student" && (
               <Link to="/dashboard" className="btn btn-info ml-3 mt-2">
                 Dashboard

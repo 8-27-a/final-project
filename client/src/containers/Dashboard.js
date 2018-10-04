@@ -27,9 +27,7 @@ class Dashboard extends Component {
 
     Axios.put(`${API_URL}/appointment/${apptId}`, {
       comment: `
-      ${first}: ${this.state.comment}
-      ==>
-      ${oldComment}
+      ${first}: ${this.state.comment} --> ${oldComment}
       `
     }).then(res => {
       if (res.data.updated) {
@@ -64,8 +62,8 @@ class Dashboard extends Component {
       <div
         className="container text-center"
         style={{
-          minHeight: 800,
-          marginTop: 55,
+          minHeight: 900,
+          marginTop: 58,
           backgroundColor: "rgb(230, 230, 230, .8)"
         }}
       >
@@ -74,7 +72,7 @@ class Dashboard extends Component {
           <h6>newest appointment on top</h6>
         </span>
 
-        <table className="table">
+        <table className="table w-100 d-block d-md-table">
           <thead className="thead-dark">
             <tr>
               <th scope="col">#</th>
@@ -121,7 +119,7 @@ class Dashboard extends Component {
                         data-toggle="modal"
                         data-target={`#exampleModal${appt.apptId}`}
                       >
-                        <i className="fa fa-comments" />
+                        <i className="fas fa-comments" />
                       </button>
 
                       <div
@@ -151,6 +149,7 @@ class Dashboard extends Component {
                               </button>
                             </div>
                             <div className="modal-body">
+                              {/* <p>{appt.comment.split(/\r?-->/)}</p> */}
                               <p>{appt.comment}</p>
                               <textarea
                                 className="form-control"
@@ -185,7 +184,7 @@ class Dashboard extends Component {
                     {this.state.role === "mentor" && (
                       <td>
                         <button
-                          className="btn btn-info"
+                          className="btn btn-default mr-2"
                           onClick={() =>
                             this.handleStatus(appt.apptId, "accepted")
                           }
