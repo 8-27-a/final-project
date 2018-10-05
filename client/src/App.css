@@ -129,14 +129,14 @@ a {
   border-color: #16a1b9;
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: .5rem;
     padding-left: .5rem;
   }
 }
 
-@media (max-width: 871px) {
+@media screen and (max-width: 871px) {
   .title {
     font-size: 40px
   }
@@ -176,6 +176,10 @@ a {
     animation: disable;
   }
 
+  .copyright {
+    display: none;
+  }
+
   .btn-info.home {
     animation: disable;
   }
@@ -203,4 +207,29 @@ a {
   .container {
     margin-top: 10px
   }
+}
+
+@media screen and (max-width: 375px) {
+  .title {
+    font-size: 30px;
+    margin-top: 3rem;
+  }
+
+  .subtitle {
+    font-size: 20px
+  }
+
+  .paragraph {
+    font-size: 10px
+  }
+
+  /* .social-media a {
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    justify-content: space-evenly;
+  } */
 }
