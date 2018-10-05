@@ -7,7 +7,7 @@ const SignIn = props => (
       <div className="alert alert-danger">{props.errors.global}</div>
     )}
     <div className="form-group">
-      <h2 className="text-center mt-2">Login To Your Account</h2>
+      <h2 className="text-center mt-4">Login To Your Account</h2>
       <p className="text-center">
         <strong>Not a member yet?</strong>
         <Link to="/register"> Sign up for free!</Link>

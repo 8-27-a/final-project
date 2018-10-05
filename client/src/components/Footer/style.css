@@ -4,16 +4,13 @@ footer {
     background-image: linear-gradient(to bottom right, #81bed9, #00abd5);
     /* background-image: linear-gradient(to bottom right, #00abd5, #16a1b9); */
     margin-top: .5rem;
-    color: #fff;
-}
-
-.mt-5,
-.my-5 {
-    margin-top: 5rem !important;
+    /* color: #fff; */
 }
 
 .copyright {
     color: #fff;
+    display: inline-block;
+    justify-content: flex-end;
 }
 
 .social-media a {
@@ -25,7 +22,7 @@ footer {
     background-color: #fff;
     color: #00b4d7;
     /* display: inline-block; */
-    justify-content: flex-end;
-    float: right;
-    margin-left: 10px;
+    /* justify-content: flex-end; */
+    float: left;
+    margin-left: 5px;
 }
