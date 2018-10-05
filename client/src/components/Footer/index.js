@@ -5,9 +5,6 @@ const Footer = () => (
   <footer className="py-3 text-muted text-small fixed-bottom">
     <div className="container">
       <div className="row">
-        <div className="copyright col-6">
-          <p className="mb-0">&copy; 2018 Mentor4Me.</p>
-        </div>
         <div className="col-6 social-media">
           <a
             href="mailto:mentor4me@gmail.com"
@@ -37,6 +34,9 @@ const Footer = () => (
           >
             <i className="fa fa-twitter" />
           </a>
+        </div>
+        <div className="copyright col-6">
+          <p className="mb-0">&copy; 2018 Mentor4Me</p>
         </div>
       </div>
     </div>
