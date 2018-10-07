@@ -1,18 +1,13 @@
 import React from "react";
+import "./style.css";
 
 const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
-  <div
-    className="card"
-    style={{
-      marginTop: 10
-    }}
-  >
+  <div className="card mt-5">
     <h2
-      className="card-title text-dark"
+      className="card-title text-dark "
       style={{
-        // color: "rgba(255,255,255, 1)",
         fontWeight: 700,
-        paddingLeft: 22,
+        paddingLeft: 30,
         paddingTop: 10
       }}
     >{`${first} ${last}`}</h2>
@@ -20,8 +15,8 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
       className="mx-auto rounded-circle"
       src={imgUrl ? imgUrl : "/images/no-avatar.png"}
       alt={`${first} ${last}`}
-      height="275"
-      width="275"
+      height="250"
+      width="250"
     />
     <div
       className="email text-center"
@@ -29,7 +24,6 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
         paddingTop: 10,
         paddingBottom: 5,
         color: "rgba(49, 205, 232, 1)"
-        // backgroundColor: "rgba(255, 255, 255, 0.7)"
       }}
     >
       <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
@@ -43,24 +37,23 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
       }}
     >
       <h3
-        className="card-text"
+        className="card-text p-2"
         style={{
           color: "hsl(0, 0%, 15%)",
-          fontWeight: 500,
-          paddingBottom: 15
+          fontWeight: 500
         }}
       >
         {summary}
       </h3>
-      <h5
-        className="card-text"
+      <h4
+        className="card-text px-2 "
         style={{
           color: "hsl(0, 0%, 45%)",
-          paddingBottom: 70
+          paddingBottom: 35
         }}
       >
         {bio}
-      </h5>
+      </h4>
     </div>
   </div>
 );

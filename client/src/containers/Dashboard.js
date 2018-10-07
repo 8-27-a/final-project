@@ -8,6 +8,7 @@ class Dashboard extends Component {
   state = {
     comment: "",
     appointments: [],
+    mentors: [],
     role: "",
     errors: {}
   };
@@ -15,6 +16,17 @@ class Dashboard extends Component {
   componentWillMount = () => {
     if (!localStorage.getItem("JWT")) {
       this.props.history.push("/login");
+    }
+  };
+
+  //shouldComponentUpdate = () => {};
+
+  componentWillUpdate = (nextProps, nextState) => {
+    //console.log("CWU:", this.state.appointments, nextState.appointments);
+    if (this.state.appointments !== nextState.appointments) {
+      setTimeout(() => {
+        this.state.appointments.map(appt => this.getMentor(appt.mentorId));
+      }, 1000);
     }
   };
 
@@ -44,9 +56,15 @@ class Dashboard extends Component {
     );
   };
 
+  getMentor = mentorId => {
+    Axios.get(`${API_URL}/mentors/${mentorId}`).then(
+      mentor => this.setState({ mentors: [...this.state.mentors, mentor.data] })
+      //console.log("mentor", mentor.data.firstName)
+    );
+  };
+
   handleStatus = (apptId, status) => {
     //e.preventDefault();
-
     Axios.put(`${API_URL}/appointment/${apptId}`, {
       status
     }).then(res => {
@@ -57,7 +75,26 @@ class Dashboard extends Component {
   };
 
   render() {
-    console.log("appts", this.state.appointments);
+    let mentorName = [];
+    if (this.state.mentors.length > 0) {
+      for (let mentor in this.state.mentors) {
+        this.state.appointments.map(appt => {
+          if (appt.mentorId === this.state.mentors[mentor].mentorId) {
+            mentorName.push(
+              `${this.state.mentors[mentor].firstName} ${
+                this.state.mentors[mentor].lastName
+              }`
+            );
+          } else {
+            return mentorName;
+          }
+        });
+
+        //console.log("ment", this.state.mentors[mentor].firstName);
+      }
+    }
+    //console.log("MMM", mentorName);
+
     return (
       <div
         className="container text-center"
@@ -75,9 +112,7 @@ class Dashboard extends Component {
         <table className="table w-100 d-block d-md-table">
           <thead className="thead-dark">
             <tr>
-              <th className="d-none d-md-table-cell" scope="col">
-                #
-              </th>
+              <th className="d-none d-md-table-cell" scope="col" />
               <th scope="col">Date</th>
               <th
                 className={`${this.state.role === "mentor" &&
@@ -126,17 +161,21 @@ class Dashboard extends Component {
                         .slice(11, 20)}
                     </td>
                     <td className="d-none d-md-table-cell">
-                      <Link
-                        to={`/${appt.User.role}/${appt.User.userId}`}
-                        className="btn btn-link"
-                      >
-                        {appt.User.first} {appt.User.last}
-                      </Link>
+                      {this.state.role === "mentor" ? (
+                        <Link
+                          to={`/student/${appt.studentId}`}
+                          className="btn btn-link"
+                        >
+                          {`${appt.User.first} ${appt.User.last}`}
+                        </Link>
+                      ) : (
+                        `${mentorName[k]}`
+                      )}
                     </td>
                     <td>
                       <button
                         type="button"
-                        className="btn btn-info"
+                        className="btn btn-outline-info"
                         data-toggle="modal"
                         data-target={`#exampleModal${appt.apptId}`}
                       >
@@ -170,9 +209,11 @@ class Dashboard extends Component {
                               </button>
                             </div>
                             <div className="modal-body text-left">
-                              {appt.comment.split(/\r?-->/).map(comment => (
-                                <p>{comment}</p>
-                              ))}
+                              {appt.comment
+                                .split(/\r?-->/)
+                                .map((comment, key) => (
+                                  <p key={key}>{comment}</p>
+                                ))}
                               <textarea
                                 className="form-control"
                                 onChange={e =>
@@ -206,12 +247,12 @@ class Dashboard extends Component {
                     {this.state.role === "mentor" && (
                       <td>
                         <button
-                          className="btn btn-default mr-2"
+                          className="btn btn-outline-info mr-2"
                           onClick={() =>
                             this.handleStatus(appt.apptId, "accepted")
                           }
                         >
-                          Accept
+                          <i className="far fa-check-circle" />
                         </button>
                         <button
                           className="btn btn-danger"
@@ -219,7 +260,7 @@ class Dashboard extends Component {
                             this.handleStatus(appt.apptId, "rejected")
                           }
                         >
-                          Decline
+                          <i className="far fa-times-circle" />
                         </button>
                       </td>
                     )}
