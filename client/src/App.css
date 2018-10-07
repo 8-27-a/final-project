@@ -25,7 +25,6 @@ body {
 }
 
 .container {
-  /* max-width: 1000px; */
   width: 100%;
   margin: auto;
 }
@@ -136,21 +135,6 @@ a {
   }
 }
 
-@media screen and (max-width: 871px) {
-  .title {
-    font-size: 40px
-  }
-
-  .subtitle {
-    font-size: 30px
-  }
-
-  .paragraph {
-    font-size: 20px
-  }
-}
-
-
 @media screen and (max-width: 768px) {
   .navbar-brand {
     width: auto;
@@ -223,7 +207,7 @@ a {
     font-size: 10px
   }
 
-  /* .social-media a {
+  .social-media a {
     height: 20px;
     width: 20px;
     line-height: 20px;
@@ -231,5 +215,5 @@ a {
     text-align: center;
     display: inline-block;
     justify-content: space-evenly;
-  } */
+  }
 }

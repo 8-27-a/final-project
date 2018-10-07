@@ -12,9 +12,7 @@ class About extends Component {
           <div className="carousel-item active">
             <img
               className="d-block w-100"
-              src="/images/scenic1.jpg"
-              width="800"
-              height="820"
+              src="/images/tech1.png"
               alt="First slide"
             />
             <div className="carousel-caption">
@@ -24,9 +22,7 @@ class About extends Component {
           <div className="carousel-item">
             <img
               className="d-block w-100"
-              src="/images/scenic2.jpg"
-              width="800"
-              height="820"
+              src="/images/tech2.jpg"
               alt="Second slide"
             />
             <div className="carousel-caption">
@@ -36,9 +32,7 @@ class About extends Component {
           <div className="carousel-item">
             <img
               className="d-block w-100"
-              src="/images/scenic3.jpg"
-              width="800"
-              height="820"
+              src="/images/tech3.jpg"
               alt="Third slide"
             />
             <div className="carousel-caption">
@@ -48,9 +42,7 @@ class About extends Component {
           <div className="carousel-item">
             <img
               className="d-block w-100"
-              src="/images/scenic4.jpg"
-              width="800"
-              height="820"
+              src="/images/tech4.jpg"
               alt="Fourth slide"
             />
             <div className="carousel-caption">
@@ -60,9 +52,7 @@ class About extends Component {
           <div className="carousel-item">
             <img
               className="d-block w-100"
-              src="/images/scenic5.jpg"
-              width="800"
-              height="820"
+              src="/images/tech5.jpg"
               alt="Fifth slide"
             />
             <div className="carousel-caption">

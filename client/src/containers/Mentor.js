@@ -38,12 +38,12 @@ class Mentor extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h2
+            <h3
               className="mt-5 text-center"
               style={{ color: "rgba(242, 242, 242, 1)" }}
             >
               {mentor.role} profile
-            </h2>
+            </h3>
             <Card
               role={mentor.role}
               userId={mentor.userId}
@@ -54,32 +54,34 @@ class Mentor extends Component {
               summary={mentor.summary}
               bio={mentor.bio}
             />
+            {/* <div className="col-md-12"> */}
             {role !== "mentor" && (
               <Link
                 to={`/mentor/${this.props.match.params.id}/appt`}
-                className="btn btn-info mt-2 ml-3"
+                className="btn btn-info mt-2 mr-3"
               >
                 Book Appointment
               </Link>
             )}
             {role !== "mentor" && (
-              <Link to="/mentors" className="btn btn-outline-info mt-2 ml-3">
+              <Link to="/mentors" className="btn btn-outline-info mt-2 mr-3">
                 Back
               </Link>
             )}
             {role !== "student" && (
-              <Link to="/profile" className="btn btn-outline-info mt-2 ml-3">
+              <Link to="/profile" className="btn btn-outline-info mt-2 mr-3">
                 Back
               </Link>
             )}
             {role !== "student" && (
-              <Link to="/dashboard" className="btn btn-info ml-3 mt-2">
+              <Link to="/dashboard" className="btn btn-info mr-3 mt-2">
                 Dashboard
               </Link>
             )}
           </div>
         </div>
       </div>
+      // </div>
     );
   }
 }
