@@ -10,6 +10,7 @@ const getOne = (req, res) => {
   }).then(mentor => {
     console.log("mentor", mentor);
     const output = {
+      mentorId: mentor.userId,
       firstName: mentor.first,
       lastName: mentor.last,
       email: mentor.email,
