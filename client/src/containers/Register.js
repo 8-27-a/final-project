@@ -24,7 +24,7 @@ class Register extends Component {
     e.preventDefault();
 
     const { first, last, role, email, password, password2 } = this.state;
-    const errors = this.validate({ email, password, password2 });
+    const errors = this.validate({ first, last, email, password, password2 });
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {

@@ -118,7 +118,7 @@ class Header extends Component {
             ) : (
               <React.Fragment>
                 <li className="nav-item">
-                  <NavLink to="/login" className="btn btn-outline-info mr-3">
+                  <NavLink to="/login" className="btn btn-outline-light mr-3">
                     Login
                   </NavLink>
                 </li>
