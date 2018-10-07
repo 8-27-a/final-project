@@ -25,15 +25,9 @@ class Student extends Component {
 
     console.log("role", role);
     return (
-      <div className="container" style={{ height: "87vh" }}>
+      <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h2
-              className="mt-5 text-center"
-              style={{ color: "rgba(242, 242, 242, 1)" }}
-            >
-              {student.role} profile
-            </h2>
             <Card
               role={student.role}
               userId={student.userId}

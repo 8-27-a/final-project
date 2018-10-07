@@ -38,12 +38,6 @@ class Mentor extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h3
-              className="mt-5 text-center"
-              style={{ color: "rgba(242, 242, 242, 1)" }}
-            >
-              {mentor.role} profile
-            </h3>
             <Card
               role={mentor.role}
               userId={mentor.userId}
