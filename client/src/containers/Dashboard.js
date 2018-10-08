@@ -90,7 +90,7 @@ class Dashboard extends Component {
           }
         });
 
-        //console.log("ment", this.state.mentors[mentor].firstName);
+        //console.log("mentor", this.state.mentors[mentor].firstName);
       }
     }
     //console.log("MMM", mentorName);
@@ -99,7 +99,7 @@ class Dashboard extends Component {
       <div
         className="container text-center"
         style={{
-          minHeight: 900,
+          // minHeight: 900,
           marginTop: 58,
           backgroundColor: "rgb(230, 230, 230, .8)"
         }}

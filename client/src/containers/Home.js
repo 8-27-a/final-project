@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./home.css";
 
 class Home extends Component {
   componentDidMount = () => {
@@ -62,12 +62,19 @@ class Home extends Component {
                     >
                       <i className="fa fa-envelope-o" />
                     </a>
-                    <a href="https://github.com/llcoolk" className="card-link">
+                    <a
+                      href="https://github.com/llcoolk"
+                      className="card-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className="fa fa-github" />
                     </a>
                     <a
-                      href="www.linkedin.com/in/leen-kim"
+                      href="http://www.linkedin.com/in/leen-kim"
                       className="card-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fa fa-linkedin" />
                     </a>
@@ -99,18 +106,24 @@ class Home extends Component {
                     <a
                       href="mailto:codyjacobs191@gmail.com"
                       className="card-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fa fa-envelope-o" />
                     </a>
                     <a
                       href="https://github.com/codered613"
                       className="card-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fa fa-github" />
                     </a>
                     <a
-                      href="www.linkedin.com/in/cody-jacobs"
+                      href="https://www.linkedin.com/in/cody-jacobs"
                       className="card-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fa fa-linkedin" />
                     </a>
@@ -142,12 +155,19 @@ class Home extends Component {
                     <a href="mailto:daxisda1@gmail.com" className="card-link">
                       <i className="fa fa-envelope-o" />
                     </a>
-                    <a href="https://github.com/daxisda1" className="card-link">
+                    <a
+                      href="https://github.com/daxisda1"
+                      target="_blank"
+                      className="card-link"
+                      rel="noopener noreferrer"
+                    >
                       <i className="fa fa-github" />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/dane-shambrook-656ba790/"
                       className="card-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fa fa-linkedin" />
                     </a>
