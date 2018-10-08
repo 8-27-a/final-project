@@ -41,7 +41,6 @@ class Login extends Component {
   validate = data => {
     const errors = {};
 
-    if (!data.email) errors.email = "Enter email";
     if (!validator.isEmail(data.email)) errors.email = "Enter a valid email";
     if (!data.password) errors.password = "Enter password";
 
