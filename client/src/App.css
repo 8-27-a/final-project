@@ -176,16 +176,16 @@ a {
     transform: disable;
   }
 
-  /* h1 {
+  h1 {
     font-size: 30px
-  } */
+  }
 
   h2 {
     font-size: 22px
   }
 
   h3 {
-    font-size: 20px
+    font-size: 16px
   }
 
   .container {
@@ -200,19 +200,11 @@ a {
   }
 
   .subtitle {
-    font-size: 20px;
+    font-size: 20px
   }
 
   .paragraph {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  h3 {
-    font-size: 20px;
+    font-size: 10px
   }
 
   .social-media a {
