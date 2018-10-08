@@ -49,6 +49,7 @@ body {
   color: #6c757d;
 }
 
+
 .btn-group-lg>.btn,
 .btn-lg {
   margin: 4rem;
@@ -177,16 +178,8 @@ body {
   }
 }
 
+
 @media screen and (max-width: 768px) {
-  .home-image .title {
-    margin-top: 6rem;
-  }
-
-  .home-image .paragraph {
-    margin-top: 0;
-    ;
-  }
-
   .home-text {
     left: 0;
     max-width: 100%;
