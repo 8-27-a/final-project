@@ -26,8 +26,8 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
         color: "rgba(49, 205, 232, 1)"
       }}
     >
-      <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
-        <i className="fa fa-envelope-o"> {`${email}`}</i>
+      <a href={`mailto:${email}`} rel="noopener noreferrer">
+        <i className="fa fa-envelope"> {`${email}`}</i>
       </a>
     </div>
     <div

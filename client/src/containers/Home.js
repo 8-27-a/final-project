@@ -34,7 +34,9 @@ class Home extends Component {
         </section>
         {/* ======= Dev Team Intro ===== */}
         <section className="about-us text-center" style={{ marginTop: 50 }}>
-          <h2>Project Team Members</h2>
+          <h2 style={{ color: "#0e283b", marginBottom: 25 }}>
+            Project Team Members
+          </h2>
           <div className="container">
             <div className="row">
               <div className="col-md-4">
@@ -57,29 +59,30 @@ class Home extends Component {
                       have ever expected! I'm passionate about Jesus, golf, and
                       cooking, and now I'm also passionate about coding!
                     </p>
-                    {/* <div className="social-media text-center mb-3"> */}
-                    <a
-                      href="mailto:leenkim@alumni.usc.edu"
-                      className="card-link"
-                    >
-                      <i className="fa fa-envelope-o" />
-                    </a>
-                    <a
-                      href="https://github.com/llcoolk"
-                      className="card-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fa fa-github" />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/leen-kim"
-                      className="card-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fa fa-linkedin" />
-                    </a>
+                    <div className="social-media mb-5">
+                      <a
+                        href="mailto:leenkim@alumni.usc.edu"
+                        className="card-link"
+                      >
+                        <i className="fa fa-envelope" />
+                      </a>
+                      <a
+                        href="https://github.com/llcoolk"
+                        className="card-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fa fa-github" />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/leen-kim"
+                        className="card-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fa fa-linkedin" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -105,28 +108,30 @@ class Home extends Component {
                       efficiently and coding really gives you an incredible
                       platform to display creativity.
                     </p>
-                    <a
-                      href="mailto:codyjacobs191@gmail.com"
-                      className="card-link"
-                    >
-                      <i className="fa fa-envelope-o" />
-                    </a>
-                    <a
-                      href="https://github.com/codered613"
-                      className="card-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fa fa-github" />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/cody-jacobs"
-                      className="card-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fa fa-linkedin" />
-                    </a>
+                    <div className="social-media text-center mb-5">
+                      <a
+                        href="mailto:codyjacobs191@gmail.com"
+                        className="card-link"
+                      >
+                        <i className="fa fa-envelope" />
+                      </a>
+                      <a
+                        href="https://github.com/codered613"
+                        className="card-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fa fa-github" />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/cody-jacobs"
+                        className="card-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fa fa-linkedin" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -152,25 +157,27 @@ class Home extends Component {
                       that are waiting for us to use tech to find the solution
                       to.
                     </p>
-                    <a href="mailto:daxisda1@gmail.com" className="card-link">
-                      <i className="fa fa-envelope-o" />
-                    </a>
-                    <a
-                      href="https://github.com/daxisda1"
-                      className="card-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fa fa-github" />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/dane-shambrook-656ba790/"
-                      className="card-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fa fa-linkedin" />
-                    </a>
+                    <div className="social-media text-center mb-5">
+                      <a href="mailto:daxisda1@gmail.com" className="card-link">
+                        <i className="fa fa-envelope" />
+                      </a>
+                      <a
+                        href="https://github.com/daxisda1"
+                        className="card-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fa fa-github" />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/dane-shambrook-656ba790/"
+                        className="card-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fa fa-linkedin" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

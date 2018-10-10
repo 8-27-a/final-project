@@ -4,7 +4,6 @@ import decode from "jwt-decode";
 import Axios from "axios";
 import Card from "../components/Card";
 import { API_URL } from "../backend_api";
-import "./mentor.css";
 
 class Mentor extends Component {
   state = {
