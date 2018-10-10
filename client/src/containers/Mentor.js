@@ -31,7 +31,7 @@ class Mentor extends Component {
   };
 
   render() {
-    const { mentor, role, userId, mentorId } = this.state;
+    const { mentor, role, userId } = this.state;
     // const { role } = decode(localStorage.getItem("JWT"));
     console.log("role", role);
     console.log("mentorId", mentor.mentorId);

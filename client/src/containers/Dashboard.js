@@ -89,7 +89,6 @@ class Dashboard extends Component {
             return mentorName;
           }
         });
-
         //console.log("ment", this.state.mentors[mentor].firstName);
       }
     }
@@ -99,7 +98,8 @@ class Dashboard extends Component {
       <div
         className="container text-center"
         style={{
-          minHeight: 900,
+          padding: 5,
+          // minHeight: 900,
           marginTop: 58,
           backgroundColor: "rgb(230, 230, 230, .8)"
         }}

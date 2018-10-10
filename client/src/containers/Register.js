@@ -43,7 +43,6 @@ class Register extends Component {
           });
           console.log("errors", user.data);
         }
-        // this.setState({ email, password });
       });
     }
   };
@@ -73,17 +72,19 @@ class Register extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">
-              <SignUp
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-                errors={this.state.errors}
-                first={this.state.first}
-                last={this.state.last}
-                role={this.state.role}
-                email={this.state.email}
-                password={this.state.password}
-                password2={this.state.password2}
-              />
+              <div className="bg-dark rounded p-4 m-4 text-white">
+                <SignUp
+                  onChange={this.handleChange}
+                  onSubmit={this.handleSubmit}
+                  errors={this.state.errors}
+                  first={this.state.first}
+                  last={this.state.last}
+                  role={this.state.role}
+                  email={this.state.email}
+                  password={this.state.password}
+                  password2={this.state.password2}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -63,13 +63,15 @@ class Login extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">
-              <SignIn
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-                errors={this.state.errors}
-                email={this.state.email}
-                password={this.state.password}
-              />
+              <div className="bg-dark rounded p-4 m-4 text-white">
+                <SignIn
+                  onChange={this.handleChange}
+                  onSubmit={this.handleSubmit}
+                  errors={this.state.errors}
+                  email={this.state.email}
+                  password={this.state.password}
+                />
+              </div>
             </div>
           </div>
         </div>

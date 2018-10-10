@@ -15,8 +15,8 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
       className="mx-auto rounded-circle"
       src={imgUrl ? imgUrl : "/images/no-avatar.png"}
       alt={`${first} ${last}`}
-      height="250"
-      width="250"
+      height="300"
+      width="300"
     />
     <div
       className="email text-center"
@@ -34,6 +34,7 @@ const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
       className="card-body"
       style={{
         backgroundColor: "rgba(49, 205, 232, .4)"
+        // backgroundColor: "#fff3cb"
       }}
     >
       <h3
