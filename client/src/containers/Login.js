@@ -47,9 +47,13 @@ class Login extends Component {
     return errors;
   };
 
+  refreshPage = () => {
+    window.location.reload();
+  };
+
   componentWillMount = () => {
     if (localStorage.getItem("JWT")) {
-      this.props.history.push("/");
+      this.props.history.push("/").then(this.refreshPage);
     }
   };
 
