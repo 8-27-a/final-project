@@ -66,12 +66,12 @@ class Mentor extends Component {
             )}
             {mentor.mentorId === userId && (
               <Link to="/profile" className="btn btn-outline-info mt-2 mr-3">
-                Back to Profile
+                Profile
               </Link>
             )}
             {mentor.mentorId === userId && (
               <Link to="/mentors" className="btn btn-outline-info mt-2 mr-3">
-                Mentors List
+                Mentors
               </Link>
             )}
             {role !== "student" && (
@@ -82,7 +82,6 @@ class Mentor extends Component {
           </div>
         </div>
       </div>
-      // </div>
     );
   }
 }
