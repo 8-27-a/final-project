@@ -89,7 +89,7 @@ class Appointment extends Component {
 
   render() {
     return (
-      <div className="form-group py-5" style={{ marginTop: 20 }}>
+      <div className="form-group">
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">
