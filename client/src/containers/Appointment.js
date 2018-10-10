@@ -91,14 +91,16 @@ class Appointment extends Component {
     return (
       <div className="form-group py-5" style={{ marginTop: 20 }}>
         <div className="container">
-          <div className="row" style={{ marginTop: 15 }}>
+          <div className="row">
             <div className="col-md-6 mx-auto">
-              <AppointmentForm
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-                errors={this.state.errors}
-                data={this.state.data}
-              />
+              <div className="bg-dark rounded p-4 m-4 text-white">
+                <AppointmentForm
+                  onChange={this.handleChange}
+                  onSubmit={this.handleSubmit}
+                  errors={this.state.errors}
+                  data={this.state.data}
+                />
+              </div>
             </div>
           </div>
         </div>

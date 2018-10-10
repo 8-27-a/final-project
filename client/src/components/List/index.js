@@ -11,9 +11,11 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
       <div className="row m-0 p-0">
         <div className="col-md-4">
           <img
-            className="rounded-circle d-block w-100"
+            className="mx-auto rounded-circle"
             src={imgUrl ? imgUrl : "/images/no-avatar.png"}
             alt={`${first} ${last}`}
+            height="250"
+            width="250"
           />
         </div>
         <div className="list-body col-md-8">
