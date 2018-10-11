@@ -85,6 +85,14 @@ class Home extends Component {
                       >
                         <i className="fa fa-linkedin" />
                       </a>
+                      <a
+                        href="http://leen-kim.com"
+                        className="card-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fa fa-link" />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -111,7 +119,7 @@ class Home extends Component {
                       You have to be able to adapt to challenges quickly and
                       efficiently and coding really gives you an incredible
                       platform to display creativity. Besides coding, I'm a
-                      ice-hockey player and currenty playing in Akwesasne
+                      ice-hockey player and currenty playing in the Akwesasne
                       league.
                     </p>
                     <div className="social-media text-center mb-5">

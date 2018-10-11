@@ -16,7 +16,7 @@ class Login extends Component {
   };
 
   refreshPage = () => {
-    window.location.reload();
+    document.location.reload(true);
   };
 
   handleSubmit = e => {
