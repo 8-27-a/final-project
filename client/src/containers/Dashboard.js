@@ -86,10 +86,11 @@ class Dashboard extends Component {
               }`
             );
           } else {
-            return mentorName;
+            return mentorName[0];
           }
         });
-        //console.log("ment", this.state.mentors[mentor].firstName);
+
+        //console.log("mentor", this.state.mentors[mentor].firstName);
       }
     }
     //console.log("MMM", mentorName);
@@ -134,9 +135,7 @@ class Dashboard extends Component {
               this.state.appointments.map((appt, k) => {
                 return (
                   <tr key={k}>
-                    <td className="d-none d-md-table-cell" scope="row">
-                      {k + 1}
-                    </td>
+                    <td className="d-none d-md-table-cell">{k + 1}</td>
                     <td>
                       {new Date(appt.date)
                         .toLocaleString()
