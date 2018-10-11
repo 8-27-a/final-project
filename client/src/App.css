@@ -85,7 +85,7 @@ body {
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .show>.nav-link {
-  font-size: 16px;
+  font-size: 20px;
   color: #16a1b9;
 }
 
@@ -95,10 +95,6 @@ body {
 
 .bg-transparent .navbar-nav .nav-link.active {
   color: #fff;
-}
-
-.bg-dark {
-  background-color: #525151;
 }
 
 .navbar-nav .nav-link {
