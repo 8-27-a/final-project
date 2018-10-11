@@ -163,8 +163,8 @@ class Home extends Component {
                       There are many problems that are waiting for us to use
                       technology to find the solution to in this world and
                       that's why I love learning how to code. Currently, my wife
-                      and I serve at a church youth ministry where my father
-                      pastors.
+                      and I serve at the youth ministry at a church where my
+                      father pastors.
                     </p>
                     <div className="social-media text-center mb-5">
                       <a href="mailto:daxisda1@gmail.com" className="card-link">
