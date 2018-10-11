@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const SignIn = props => (
   <form>
-    {/* {!!props.errors.global && (
+    {!!props.errors.global && (
       <div className="alert alert-danger">{props.errors.global}</div>
-    )} */}
+    )}
     <div className="form-group">
       <h2 className="text-center mt-4">Login To Your Account</h2>
       <p className="text-center">

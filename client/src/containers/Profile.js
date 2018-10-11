@@ -25,6 +25,20 @@ class Profile extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  refreshPage = () => {
+    window.location.reload();
+  };
+
+  validate = data => {
+    const errors = {};
+
+    if (!data.email) errors.email = "Enter email";
+    if (data.password !== data.password2)
+      errors.password = "Password does not match";
+
+    return errors;
+  };
+
   handleSubmit = e => {
     e.preventDefault();
     const { userId } = decode(localStorage.getItem("JWT"));
@@ -55,6 +69,7 @@ class Profile extends Component {
       }).then(user => {
         if (user.data.updated) {
           this.setState({ success: "Your changes has been saved" });
+          this.refreshPage();
         } else {
           this.setState({
             errors: { ...this.state.errors, global: user.data.message }
@@ -65,23 +80,8 @@ class Profile extends Component {
     }
   };
 
-  validate = data => {
-    const errors = {};
-
-    if (!data.email) errors.email = "Enter email";
-    if (data.password !== data.password2)
-      errors.password = "Password does not match";
-
-    return errors;
-  };
-
-  refreshPage = () => {
-    window.location.reload();
-  };
-
   componentWillMount = () => {
     if (!localStorage.getItem("JWT")) {
-      this.props.history.push("/login").then(this.props.refreshPage);
     }
   };
 
