@@ -26,7 +26,7 @@ class Profile extends Component {
   };
 
   refreshPage = () => {
-    window.location.reload();
+    document.location.reload(true);
   };
 
   validate = data => {
