@@ -15,6 +15,10 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  refreshPage = () => {
+    window.location.reload();
+  };
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -25,6 +29,7 @@ class Login extends Component {
     if (Object.keys(errors).length === 0) {
       Axios.post(`${API_URL}/auth`, { email, password }).then(user => {
         if (user.data.success) {
+          this.refreshPage();
           localStorage.setItem("JWT", user.data.token);
           this.props.history.push("/");
         } else {
@@ -33,27 +38,22 @@ class Login extends Component {
             errors: { ...this.state.errors, global: user.data.message }
           });
         }
-        // console.log(res.data);
+        // console.log("user.data", user.data);
       });
     }
   };
 
   validate = data => {
     const errors = {};
-
+    // console.log("password", data.password);
     if (!validator.isEmail(data.email)) errors.email = "Enter a valid email";
     if (!data.password) errors.password = "Enter password";
-
     return errors;
-  };
-
-  refreshPage = () => {
-    window.location.reload();
   };
 
   componentWillMount = () => {
     if (localStorage.getItem("JWT")) {
-      this.props.history.push("/").then(this.refreshPage);
+      this.props.history.push("/").then(this.refreshPage());
     }
   };
 
@@ -65,11 +65,11 @@ class Login extends Component {
             <div className="col-md-6 mx-auto">
               <div className="bg-dark rounded p-4 m-4 text-white">
                 <SignIn
-                  onChange={this.handleChange}
-                  onSubmit={this.handleSubmit}
-                  errors={this.state.errors}
                   email={this.state.email}
                   password={this.state.password}
+                  errors={this.state.errors}
+                  onChange={this.handleChange}
+                  onSubmit={this.handleSubmit}
                 />
               </div>
             </div>
