@@ -33,11 +33,14 @@ class Home extends Component {
           </div>
         </section>
         {/* ======= Dev Team Intro ===== */}
-        <section className="about-us text-center" style={{ marginTop: 50 }}>
-          <h2 style={{ color: "#0e283b", marginBottom: 25 }}>
-            Dev Team Members
-          </h2>
+        <section className="about-us" style={{ marginTop: 25 }}>
           <div className="container">
+            <h2
+              className="bg-light p-4 m-5 text-center"
+              style={{ color: "#0e283b", marginBottom: 25 }}
+            >
+              Dev Team Members
+            </h2>
             <div className="row">
               <div className="col-md-4">
                 <div className="card-home home">
