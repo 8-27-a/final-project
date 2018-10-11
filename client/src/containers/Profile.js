@@ -106,26 +106,28 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="container text-dark py-5">
-        <div className="row">
-          <div className="col-md-6 mx-auto">
-            <div className="bg-dark rounded p-4 m-4 text-white">
-              <ProfileForm
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-                errors={this.state.errors}
-                success={this.state.success}
-                first={this.state.first}
-                last={this.state.last}
-                imgUrl={this.state.imgUrl}
-                email={this.state.email}
-                role={this.state.role}
-                password={this.state.password}
-                password2={this.state.password2}
-                summary={this.state.summary}
-                bio={this.state.bio}
-                userId={this.state.userId}
-              />
+      <div className="text-dark mt-3 py-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 mx-auto">
+              <div className="bg-dark rounded p-4 m-4 text-white">
+                <ProfileForm
+                  onChange={this.handleChange}
+                  onSubmit={this.handleSubmit}
+                  errors={this.state.errors}
+                  success={this.state.success}
+                  first={this.state.first}
+                  last={this.state.last}
+                  imgUrl={this.state.imgUrl}
+                  email={this.state.email}
+                  role={this.state.role}
+                  password={this.state.password}
+                  password2={this.state.password2}
+                  summary={this.state.summary}
+                  bio={this.state.bio}
+                  userId={this.state.userId}
+                />
+              </div>
             </div>
           </div>
         </div>

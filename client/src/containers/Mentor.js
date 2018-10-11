@@ -65,19 +65,24 @@ class Mentor extends Component {
             )}
             {mentor.mentorId === userId && (
               <Link to="/profile" className="btn btn-outline-info mt-2 mr-3">
-                Profile
+                Back
               </Link>
             )}
-            {mentor.mentorId === userId && (
+            {/* {mentor.mentorId === userId && (
               <Link to="/mentors" className="btn btn-outline-info mt-2 mr-3">
                 Mentors
               </Link>
-            )}
-            {role !== "student" && (
+            )} */}
+            {mentor.mentorId === userId && (
               <Link to="/dashboard" className="btn btn-info mr-3 mt-2">
                 Dashboard
               </Link>
             )}
+            {/* {role !== "student" && (
+              <Link to="/dashboard" className="btn btn-info mr-3 mt-2">
+                Dashboard
+              </Link>
+            )} */}
           </div>
         </div>
       </div>

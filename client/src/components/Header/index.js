@@ -86,7 +86,7 @@ class Header extends Component {
                     aria-expanded="false"
                   >
                     <img
-                      height="30"
+                      height="35"
                       className="rounded-circle"
                       src={
                         this.state.avatarUrl
@@ -118,12 +118,15 @@ class Header extends Component {
             ) : (
               <React.Fragment>
                 <li className="nav-item">
-                  <NavLink to="/login" className="btn btn-outline-light mr-3">
+                  <NavLink
+                    to="/login"
+                    className="btn btn-outline-light mt-1 mr-3"
+                  >
                     Login
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/register" className="btn btn-info mr-3">
+                  <NavLink to="/register" className="btn btn-info mt-1 mr-3">
                     Sign Up
                   </NavLink>
                 </li>
