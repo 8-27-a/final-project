@@ -62,7 +62,7 @@ class Home extends Component {
                       about Jesus, golf, cooking, and now I'm also passionate
                       about coding!
                     </p>
-                    <div className="social-media mb-5">
+                    <div className="social-media">
                       <a
                         href="mailto:leenkim@alumni.usc.edu"
                         className="card-link"
@@ -122,7 +122,7 @@ class Home extends Component {
                       ice-hockey player and currenty playing in the Akwesasne
                       league.
                     </p>
-                    <div className="social-media text-center mb-5">
+                    <div className="social-media text-center">
                       <a
                         href="mailto:codyjacobs191@gmail.com"
                         className="card-link"
@@ -174,7 +174,7 @@ class Home extends Component {
                       and I serve at the youth ministry at a church where my
                       father pastors.
                     </p>
-                    <div className="social-media text-center mb-5">
+                    <div className="social-media text-center">
                       <a href="mailto:daxisda1@gmail.com" className="card-link">
                         <i className="fa fa-envelope" />
                       </a>
