@@ -35,7 +35,7 @@ class Home extends Component {
         {/* ======= Dev Team Intro ===== */}
         <section className="about-us text-center" style={{ marginTop: 50 }}>
           <h2 style={{ color: "#0e283b", marginBottom: 25 }}>
-            Project Team Members
+            Dev Team Members
           </h2>
           <div className="container">
             <div className="row">
@@ -49,15 +49,18 @@ class Home extends Component {
                   <div className="card-body home m-3">
                     <h2 className="card-title-home m-2">Leen Kim</h2>
                     <p className="card-text-home">
-                      I was born in South Korea and have been living in Orange
-                      County, CA since I was 13. I put my career in IT on pause
-                      to raise my 3 sons. I have my educational background in
-                      Mechanical Engineering and have worked for a major auto
-                      importer as a Business Systems Analyst for 10 years and
-                      now looking to pick up where I left off. Learning to be a
-                      Full Stack Web developer turned out to be better than I
-                      have ever expected! I'm passionate about Jesus, golf, and
-                      cooking, and now I'm also passionate about coding!
+                      I was born in S. Korea and have been living in OC, CA
+                      since I was 14. I have my educational background in
+                      Mechanical Engineering from USC and have worked in the
+                      automotive industry for 10+ yrs mainly as a systems
+                      analyst working on software development and running adhoc
+                      queries for the users. I put my career on a pause to raise
+                      my 3 sons who are now adults and am looking to pick up
+                      where I left off with an upgrade in programming languages
+                      and technology. Becoming a FullStack developer has turned
+                      out to be better than I have ever expected! I'm passionate
+                      about Jesus, golf, cooking, and now I'm also passionate
+                      about coding!
                     </p>
                     <div className="social-media mb-5">
                       <a
@@ -97,16 +100,19 @@ class Home extends Component {
                   <div className="card-body home m-3">
                     <h2 className="card-title-home m-2">Cody Jacobs</h2>
                     <p className="card-text-home">
-                      I grew up and currently reside in Akwesasne, NY. Before
-                      getting into coding I was mostly involved in Music
-                      Production-Audio Engineering. After taking a break from
-                      Music Production, I wanted to pursue something else that
-                      still involved computers and technology. I signed up to
-                      attend the Bethel Tech school to become a web developer
-                      soon after. I love the versatility that come with coding.
+                      My name is Cody Jacobs and I grew up and currently reside
+                      in Akwesasne, NY. Before getting into coding I was mostly
+                      involved in Music Production-Audio Engineering. After
+                      taking a break from Music Production, I wanted to pursue
+                      something that still involved computers and technology. I
+                      was at Bethel Redding for a year and learned about their
+                      School of Technology and signed up to become a web
+                      developer. I love the versatility that come with coding.
                       You have to be able to adapt to challenges quickly and
                       efficiently and coding really gives you an incredible
-                      platform to display creativity.
+                      platform to display creativity. Besides coding, I'm a
+                      ice-hockey player and currenty playing in Akwesasne
+                      league.
                     </p>
                     <div className="social-media text-center mb-5">
                       <a
@@ -147,15 +153,18 @@ class Home extends Component {
                     <h2 className="card-title-home m-2">Dane Shambrook</h2>
                     <p className="card-text-home">
                       I was born and raised in Orange County, CA. I have been
-                      working in the service industry since I was 17. I have
-                      traveled extensively and was living with my wife in Uganda
-                      when I came back to the USA to start a career that would
-                      allow me to travel and still maintain a sense of freedom
-                      and stability. I love coding because it allows you to
-                      bring an idea into something tangible and no limits to
-                      what can be done. There are many problems this world faces
-                      that are waiting for us to use tech to find the solution
-                      to.
+                      working in the service industry for the past 10 years
+                      since I was 17. I have traveled extensively and was living
+                      with my wife in Uganda when I came back to the USA to
+                      start a career that would allow me to travel and still
+                      maintain a sense of freedom and stability. I love coding
+                      because it allows you to bring an idea into something
+                      tangible and there are no limits to what can be done.
+                      There are many problems that are waiting for us to use
+                      technology to find the solution to in this world and
+                      that's why I love learning how to code. Currently, my wife
+                      and I serve at a church youth ministry where my father
+                      pastors.
                     </p>
                     <div className="social-media text-center mb-5">
                       <a href="mailto:daxisda1@gmail.com" className="card-link">
