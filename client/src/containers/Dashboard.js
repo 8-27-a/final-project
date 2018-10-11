@@ -113,7 +113,9 @@ class Dashboard extends Component {
         <table className="table w-100 d-block d-md-table">
           <thead className="thead-dark">
             <tr>
-              <th className="d-none d-md-table-cell" scope="col" />
+              <th className="d-none d-md-table-cell" scope="col">
+                #
+              </th>
               <th scope="col">Date</th>
               <th
                 className={`${this.state.role === "mentor" &&
