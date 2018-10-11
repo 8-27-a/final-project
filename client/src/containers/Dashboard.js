@@ -225,19 +225,19 @@ class Dashboard extends Component {
                             </div>
                             <div className="modal-footer">
                               <button
-                                type="button"
-                                className="btn btn-secondary"
-                                data-dismiss="modal"
-                              >
-                                Close
-                              </button>
-                              <button
                                 onClick={() =>
                                   this.handleReply(appt.apptId, appt.comment)
                                 }
                                 className="btn btn-info"
                               >
-                                Reply
+                                <span className="fa fa-send" />
+                              </button>
+                              <button
+                                type="button"
+                                className="btn btn-outline-info"
+                                data-dismiss="modal"
+                              >
+                                <span className="fa fa-times" />
                               </button>
                             </div>
                           </div>
