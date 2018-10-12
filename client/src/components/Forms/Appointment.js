@@ -41,8 +41,8 @@ const Appointment = ({ onChange, onSubmit, data, errors }) => (
         onChange={onChange}
       />
     </div>
-    <button type="submit" className="btn btn-info mt-5" onClick={onSubmit}>
-      Submit Appointment
+    <button type="submit" className="btn btn-info" onClick={onSubmit}>
+      Submit
     </button>
   </form>
 );
