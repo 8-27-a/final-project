@@ -169,12 +169,13 @@ a {
     animation: disable;
   }
 
-  .btn-info.home:hover {
+  .btn-info.home:hover .btn-info.home:active {
     transform: disable;
   }
 
-  .btn-info.home:active {
-    transform: disable;
+  .btn-info.profile {
+    display: flex;
+    justify-content: flex-end;
   }
 
   /* h1 {
@@ -193,6 +194,7 @@ a {
     margin-top: 10px
   }
 }
+
 
 @media screen and (max-width: 375px) {
   .title {

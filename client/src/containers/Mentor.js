@@ -53,18 +53,24 @@ class Mentor extends Component {
             {role !== "mentor" && (
               <Link
                 to={`/mentor/${this.props.match.params.id}/appt`}
-                className="btn btn-info mt-2 mr-3"
+                className="btn btn-info profile mt-2 mr-3"
               >
                 Book Appointment
               </Link>
             )}
             {mentor.mentorId !== userId && (
-              <Link to="/mentors" className="btn btn-outline-info mt-2 mr-3">
+              <Link
+                to="/mentors"
+                className="btn btn-outline-info profile mt-2 mr-3"
+              >
                 Back
               </Link>
             )}
             {mentor.mentorId === userId && (
-              <Link to="/profile" className="btn btn-outline-info mt-2 mr-3">
+              <Link
+                to="/profile"
+                className="btn btn-outline-info profile mt-2 mr-3"
+              >
                 Back
               </Link>
             )}
@@ -74,7 +80,7 @@ class Mentor extends Component {
               </Link>
             )} */}
             {mentor.mentorId === userId && (
-              <Link to="/dashboard" className="btn btn-info mr-3 mt-2">
+              <Link to="/dashboard" className="btn btn-info profile mr-3 mt-2">
                 Dashboard
               </Link>
             )}

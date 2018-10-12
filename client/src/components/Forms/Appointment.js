@@ -3,7 +3,9 @@ import React from "react";
 const Appointment = ({ onChange, onSubmit, data, errors }) => (
   <form>
     <div className="form-group">
-      <h2 className="text-center">Create an Appointment</h2>
+      <h2 className="text-center" style={{ color: "#16a1b9" }}>
+        Create an Appointment
+      </h2>
     </div>
     <div className="form-group">
       <label htmlFor="date">Date</label>

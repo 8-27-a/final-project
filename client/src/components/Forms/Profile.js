@@ -5,11 +5,13 @@ const Profile = props => {
   return (
     <form>
       <div className="form-group">
-        <h4 className="text-center">Edit your profile settings</h4>
+        <h2 className="text-center" style={{ color: "#16a1b9" }}>
+          Edit Your Profile Settings
+        </h2>
       </div>
       <div className="container">
         <div className="row">
-          <div className="form-group col-md-6 p-0">
+          <div className="form-group col-md-6 p-1">
             <label htmlFor="first">First Name</label>
             <input
               type="text"
@@ -20,7 +22,7 @@ const Profile = props => {
               onChange={props.onChange}
             />
           </div>
-          <div className="form-group col-md-6 p-0">
+          <div className="form-group col-md-6 p-1">
             <label htmlFor="last">Last Name</label>
             <input
               type="text"
@@ -113,13 +115,13 @@ const Profile = props => {
       </div>
       <div className="form-group">
         <button className="btn btn-info" type="submit" onClick={props.onSubmit}>
-          Save Changes
+          Save
         </button>
         <Link
           to={`/${props.role}/${props.userId}`}
           className="btn btn-outline-info ml-3"
         >
-          Profile preview
+          Preview
         </Link>
         {!!props.success && (
           <div className="alert alert-success mt-2">{props.success}</div>
