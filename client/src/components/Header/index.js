@@ -69,9 +69,9 @@ class Header extends Component {
                 Find a mentor
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mr-3">
               <NavLink className="nav-link" to="/about">
-                About Us
+                About
               </NavLink>
             </li>
             {localStorage.getItem("JWT") ? (
