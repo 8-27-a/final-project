@@ -63,9 +63,11 @@ class About extends Component {
             />
             <div className="carousel-caption-4 py-20">
               <h1 className="caption-4">
-                You need the right tools to bring clarity to your project. We
+                Getting started as a coder and need some help? Find top notch
+                tutors to get your career started in the tech space...
+                {/* You need the right tools to bring clarity to your project. We
                 are here to connect you with mentors who will conquer it with
-                you...
+                you... */}
                 <br />
                 Find a Mentor4me!
               </h1>

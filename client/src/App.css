@@ -85,7 +85,7 @@ body {
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .show>.nav-link {
-  font-size: 20px;
+  font-size: 18px;
   color: #16a1b9;
 }
 
@@ -138,6 +138,7 @@ a {
 @media screen and (max-width: 768px) {
   .navbar-brand {
     width: auto;
+    font-size: 20px;
   }
 
   .title {
@@ -168,12 +169,13 @@ a {
     animation: disable;
   }
 
-  .btn-info.home:hover {
+  .btn-info.home:hover .btn-info.home:active {
     transform: disable;
   }
 
-  .btn-info.home:active {
-    transform: disable;
+  .btn-info.profile {
+    display: flex;
+    justify-content: flex-end;
   }
 
   /* h1 {
@@ -192,6 +194,7 @@ a {
     margin-top: 10px
   }
 }
+
 
 @media screen and (max-width: 375px) {
   .title {

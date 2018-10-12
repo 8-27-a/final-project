@@ -42,7 +42,7 @@ class Header extends Component {
           window.location.pathname !== "/" ? "bg-dark" : "bg-transparent"
         }`}
       >
-        <NavLink className="navbar-brand text-center mr-5" to="/">
+        <NavLink className="navbar-brand text-center" to="/">
           {/* {brand} */}
           Mentor
           <span>4</span>
@@ -69,9 +69,9 @@ class Header extends Component {
                 Find a mentor
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mr-3">
               <NavLink className="nav-link" to="/about">
-                About Us
+                About
               </NavLink>
             </li>
             {localStorage.getItem("JWT") ? (

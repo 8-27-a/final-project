@@ -17,6 +17,7 @@ class Login extends Component {
 
   refreshPage = () => {
     document.location.reload(true);
+    // window.location = document.(`${API_URL}`);
   };
 
   handleSubmit = e => {
@@ -29,9 +30,9 @@ class Login extends Component {
     if (Object.keys(errors).length === 0) {
       Axios.post(`${API_URL}/auth`, { email, password }).then(user => {
         if (user.data.success) {
-          this.refreshPage();
           localStorage.setItem("JWT", user.data.token);
           this.props.history.push("/");
+          this.refreshPage();
         } else {
           console.log("err", user.data.message);
           this.setState({
@@ -63,7 +64,7 @@ class Login extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 mx-auto">
-              <div className="bg-dark rounded p-4 m-4 text-white">
+              <div className="bg-dark rounded p-5 m-5 text-white">
                 <SignIn
                   email={this.state.email}
                   password={this.state.password}

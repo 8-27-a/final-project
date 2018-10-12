@@ -94,7 +94,7 @@ class Appointment extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-6 mx-auto">
-                <div className="bg-dark rounded p-4 m-4 text-white">
+                <div className="bg-dark rounded p-5 m-5 text-white">
                   <AppointmentForm
                     onChange={this.handleChange}
                     onSubmit={this.handleSubmit}
