@@ -38,10 +38,11 @@ const Profile = props => {
       <div className="form-group">
         <label htmlFor="imgUrl">Profile Image</label>
         <input
-          type="text"
+          type="url"
           id="imgUrl"
           name="imgUrl"
           className="form-control"
+          placeholder="ex) https://blog.com/mypic.jpg"
           value={props.imgUrl}
           onChange={props.onChange}
         />
@@ -97,6 +98,7 @@ const Profile = props => {
           id="summary"
           name="summary"
           className="form-control"
+          placeholder="my skillsets..."
           value={props.summary}
           onChange={props.onChange}
           required
@@ -108,6 +110,7 @@ const Profile = props => {
           id="bio"
           name="bio"
           className="form-control"
+          placeholder="my bio..."
           value={props.bio}
           onChange={props.onChange}
           required
