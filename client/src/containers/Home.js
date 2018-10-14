@@ -33,11 +33,11 @@ class Home extends Component {
           </div>
         </section>
         {/* ======= Dev Team Intro ===== */}
-        <section className="about-us" style={{ marginTop: 25 }}>
+        <section className="about-us text-center">
           <div className="container">
             <h2
-              className="bg-light p-4 m-5 text-center"
-              style={{ color: "#0e283b", marginBottom: 25 }}
+              className="bg-light text-left m-0 p-0 ml-2"
+              style={{ backgroundColor: "#f2f2f2" }}
             >
               Dev Team Members
             </h2>
@@ -65,7 +65,7 @@ class Home extends Component {
                       about Jesus, golf, cooking, and now I'm also passionate
                       about coding!
                     </p>
-                    <div className="social-media text-center">
+                    <div className="social-media text-">
                       <a
                         href="mailto:leenkim@alumni.usc.edu"
                         className="card-link"
