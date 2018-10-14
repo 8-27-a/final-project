@@ -2,6 +2,10 @@ body {
   padding: 0;
 }
 
+.bg-light.devteam {
+  background-color: #f2f2f2 !important;
+}
+
 .home-image {
   background-image: url("/images/bg-nature.jpeg");
   height: 59rem;

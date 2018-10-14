@@ -36,8 +36,8 @@ class Home extends Component {
         <section className="about-us text-center">
           <div className="container">
             <h2
-              className="bg-light text-left m-0 p-0 ml-2"
-              style={{ backgroundColor: "#f2f2f2" }}
+              className="bg-light devteam text-left m-0 p-1 ml-2 mr-2"
+              // style={{ backgroundColor: "none" }}
             >
               Dev Team Members
             </h2>
