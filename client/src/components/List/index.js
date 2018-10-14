@@ -20,7 +20,7 @@ const List = ({ userId, first, last, imgUrl, summary, bio }) => (
         </div>
         <div className="list-body col-md-8">
           <h1
-            className="list-name"
+            className="list-name capitalize"
             style={{ fontWeight: 700, paddingTop: 10, paddingBottom: 20 }}
           >{`${first} ${last}`}</h1>
           <h3

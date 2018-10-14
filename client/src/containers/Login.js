@@ -17,7 +17,6 @@ class Login extends Component {
 
   refreshPage = () => {
     document.location.reload(true);
-    // window.location = document.(`${API_URL}`);
   };
 
   handleSubmit = e => {
