@@ -182,6 +182,10 @@ a {
     font-size: 30px
   } */
 
+  h2.capitalize {
+    text-transform: capitalize;
+  }
+
   h2 {
     font-size: 22px
   }

@@ -65,7 +65,7 @@ class Home extends Component {
                       about Jesus, golf, cooking, and now I'm also passionate
                       about coding!
                     </p>
-                    <div className="social-media">
+                    <div className="social-media text-center">
                       <a
                         href="mailto:leenkim@alumni.usc.edu"
                         className="card-link"

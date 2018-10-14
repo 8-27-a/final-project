@@ -4,7 +4,7 @@ import "./style.css";
 const Card = ({ first, last, email, role, imgUrl, summary, bio, userId }) => (
   <div className="card mt-5">
     <h2
-      className="card-title text-dark "
+      className="card-title text-dark capitalize"
       style={{
         fontWeight: 700,
         paddingLeft: 30,
