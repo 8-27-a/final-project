@@ -273,7 +273,7 @@
 
 @media screen and (min-width : 320px) and (max-width : 480px) {
   img.d-block.w-100 {
-    margin-top: 17rem;
+    margin-top: 2rem;
   }
 
   .carousel-caption-1 .caption-1,
@@ -288,7 +288,7 @@
 
 @media screen and (min-width : 320px) and (max-width : 480px) {
   img.d-block.w-100 {
-    margin-top: 17rem;
+    margin-top: 2rem;
   }
 
   .carousel-caption-6 .caption-6,
