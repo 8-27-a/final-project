@@ -74,13 +74,15 @@ class Header extends Component {
                 About
               </NavLink>
             </li>
-            <li className="nav-item mr-3">
-              <NavLink className="nav-link" to="/demo">
-                Demo
-              </NavLink>
-            </li>
             {localStorage.getItem("JWT") ? (
               <React.Fragment>
+                <li className="nav-item mr-3">
+                  <NavLink className="nav-link" to="/demo">
+                    Demo
+                  </NavLink>
+                </li>
+                {/* {localStorage.getItem("JWT") ? ( */}
+                {/* <React.Fragment> */}
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link dropdown-toggle"
