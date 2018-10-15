@@ -128,6 +128,12 @@ a {
   border-color: #16a1b9;
 }
 
+.username {
+
+  text-transform: capitalize;
+
+}
+
 @media screen and (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: .5rem;

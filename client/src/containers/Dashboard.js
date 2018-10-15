@@ -165,7 +165,7 @@ class Dashboard extends Component {
                       {this.state.role === "mentor" ? (
                         <Link
                           to={`/student/${appt.studentId}`}
-                          className="btn btn-link"
+                          className="btn btn-link username"
                         >
                           {`${appt.User.first} ${appt.User.last}`}
                         </Link>
@@ -195,7 +195,7 @@ class Dashboard extends Component {
                           <div className="modal-content">
                             <div className="modal-header">
                               <h5
-                                className="modal-title"
+                                className="modal-title username"
                                 id="exampleModalLabel"
                               >
                                 {appt.User.first} {appt.User.last}
@@ -248,7 +248,7 @@ class Dashboard extends Component {
                     {this.state.role === "mentor" && (
                       <td>
                         <button
-                          className="btn btn-outline-info mr-2"
+                          className="btn btn-outline-success mr-2"
                           onClick={() =>
                             this.handleStatus(appt.apptId, "accepted")
                           }
