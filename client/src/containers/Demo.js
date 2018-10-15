@@ -8,6 +8,7 @@ class Demo extends Component {
         id="carouselExampleControls"
         className="carousel slide"
         data-ride="carousel"
+        data-interval="500000"
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -31,7 +32,7 @@ class Demo extends Component {
                 that a user can find
                 <br />
                 and make appointments with mentors of their choice <br />
-                based on their profiles and mentors can also view student
+                based on their profile info and mentors can also view student
                 <br /> profiles before accepting an appointment request - an app
                 <br />
                 that is user friendly and protects the privacy by allowing only
@@ -57,6 +58,7 @@ class Demo extends Component {
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Find a mentor
                 <br />
+                <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp;- Mentors List
                 <br />
@@ -66,18 +68,19 @@ class Demo extends Component {
                 &nbsp;- Appointment Booking
                 <br />
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;- About
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - About
                 <br />
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;- Demo
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Demo
                 <br />
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;- User
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - User
+                <br />
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp;- Dashboard
                 <br />
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp;- Profile Setting
               </h1>
             </div>

@@ -75,7 +75,7 @@ class Header extends Component {
                 Find a mentor
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mr-2">
               <NavLink className="nav-link" to="/about">
                 About
               </NavLink>
