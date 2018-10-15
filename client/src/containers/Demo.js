@@ -18,20 +18,26 @@ class Demo extends Component {
             />
             <div className="carousel-caption-6 py-20">
               <h1 className="caption-6">
-                <small>Team Name:</small> <strong>Make Coding Fun Again</strong>{" "}
+                <small>Team Name:</small>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <strong>Make Coding Fun Again</strong> <br />
                 <br />
-                <small>Project Name:</small> <strong>Mentor4me </strong>
+                <small>Project Name:</small>
+                &nbsp; &nbsp; &nbsp; <strong>Mentor4me </strong>
                 <br />
                 <br />
                 <br />
-                <small>Purpose:</small> To create an app that a user can find
+                <small>Purpose:</small> &nbsp; &nbsp; &nbsp; To create an app
+                that a user can find
                 <br />
                 and make appointments with mentors of their choice <br />
                 based on their profiles and mentors can also view student
                 <br /> profiles before accepting an appointment request - an app
-                that is <br /> user friendly and protects the privacy by
-                allowing only the authenticated users to view personal profiles
-                of other users.
+                <br />
+                that is user friendly and protects the privacy by allowing only
+                <br />
+                the authenticated users to view personal profiles of other
+                users.
               </h1>
             </div>
           </div>
@@ -46,20 +52,33 @@ class Demo extends Component {
               <h1 className="caption-7">
                 <small>Site map:</small>
                 <br />
-                <br />- Home / dev team intro
-                <br />- Find a mentor
+                <br />- Home
                 <br />
-                &nbsp; &nbsp; &nbsp;- Mentors List
                 <br />
-                &nbsp; &nbsp; &nbsp;- Mentor Profile <br />
-                &nbsp; &nbsp; &nbsp;- Appointment Booking
-                <br />- About
-                <br />- Demo
-                <br />- User
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Find a mentor
                 <br />
-                &nbsp; &nbsp; &nbsp;- Dashboard
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;- Mentors List
                 <br />
-                &nbsp; &nbsp; &nbsp;- Profile Setting
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;- Mentor Profile <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;- Appointment Booking
+                <br />
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;- About
+                <br />
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;- Demo
+                <br />
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;- User
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;- Dashboard
+                <br />
+                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;- Profile Setting
               </h1>
             </div>
           </div>
@@ -73,11 +92,10 @@ class Demo extends Component {
             <div className="carousel-caption-8 py-20">
               <h1 className="caption-8">
                 <small>User Functions:</small>
-                <br />- User can signup, login, select a user role of mentor
-                <br />
-                or student, update profile (includes first & last name,
-                <br /> avatar image url, reset password, skillsets , and <br />
-                personal bio)
+                <br />- User can signup, login, select a user role of <br />
+                mentor/student, update profile (includes first & <br />
+                last name, avatar image url, reset password, <br />
+                skillsets , and personal bio)
                 <br />
                 <br />
                 <small>Student Functions:</small>
@@ -107,9 +125,8 @@ class Demo extends Component {
             <div className="carousel-caption-9 py-20">
               <h1 className="caption-9">
                 <small>Mentor Functions:</small>
-                <br />- View mentor list with abbreviated profile and click{" "}
-                <br />
-                to view detail profile of mentors
+                <br />- View mentor list with abbreviated profile and <br />
+                click to view detail profile of mentors
                 <br />
                 <br />- View Dashboard that displays all appointments with
                 <br />
@@ -123,7 +140,8 @@ class Demo extends Component {
                 <small>About & Demo features:</small>
                 <br /> - Carousel slides that promote the mentor4me app.
                 <br /> - Carousel slides that introduce the app, its
-                functionalities, and the technologies used.
+                functionalities,
+                <br /> and the technologies used.
                 <br />
                 <br />
                 <small>Dev Team Intro feature:</small>
