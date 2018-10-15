@@ -46,12 +46,13 @@ class Header extends Component {
           {/* {brand} */}
           <img
             height="35"
-            className="rounded-circle"
+            className="rounded-circle mr-2"
             src="/images/logo1.png"
             alt=""
           />
-          Mentor4me
-          {/* <span>4</span> */}
+          <span className="logotext">Mentor</span>
+          <span>4</span>
+          <span className="logotext">me</span>
         </NavLink>
         <button
           className="navbar-toggler"
