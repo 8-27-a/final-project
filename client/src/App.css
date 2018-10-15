@@ -12,6 +12,7 @@ body {
   padding-bottom: 80px;
 }
 
+/* circle around 4 */
 .navbar-brand span {
   width: 30px;
   height: 30px;
@@ -60,6 +61,12 @@ body {
   position: relative;
 }
 
+.navbar-toggler.active .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+
+
 .navbar-dark .navbar-toggler-icon::before,
 .navbar-dark .navbar-toggler-icon::after {
   content: "";
@@ -78,6 +85,14 @@ body {
 
 .navbar-dark .navbar-nav .nav-link {
   color: white;
+}
+
+.navbar-dark .navbar-toggler.active .navbar-toggler-icon::before {
+  transform: rotate(-40deg) translate(-10px, 5px);
+}
+
+.navbar-dark .navbar-toggler.active .navbar-toggler-icon::after {
+  transform: rotate(40deg) translate(-10px, -5px);
 }
 
 .navbar,
@@ -129,9 +144,7 @@ a {
 }
 
 .username {
-
   text-transform: capitalize;
-
 }
 
 @media screen and (min-width: 992px) {

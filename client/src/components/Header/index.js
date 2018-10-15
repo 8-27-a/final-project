@@ -42,11 +42,16 @@ class Header extends Component {
           window.location.pathname !== "/" ? "bg-dark" : "bg-transparent"
         }`}
       >
-        <NavLink className="navbar-brand text-center" to="/">
+        <NavLink className="navbar-brand text-center ml-3" to="/">
           {/* {brand} */}
-          Mentor
-          <span>4</span>
-          me
+          <img
+            height="35"
+            className="rounded-circle"
+            src="/images/logo1.png"
+            alt=""
+          />
+          Mentor4me
+          {/* <span>4</span> */}
         </NavLink>
         <button
           className="navbar-toggler"
