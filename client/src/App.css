@@ -240,4 +240,9 @@ a {
     justify-content: space-evenly;
     padding-top: 0;
   }
+
+  .copyright {
+    display: none;
+  }
+
 }
