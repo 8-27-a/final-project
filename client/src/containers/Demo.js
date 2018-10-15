@@ -32,13 +32,12 @@ class Demo extends Component {
                 that a user can find
                 <br />
                 and make appointments with mentors of their choice <br />
-                based on their profile info and mentors can also view student
-                <br /> profiles before accepting an appointment request - an app
+                based on their profile info and mentors can also view <br />
+                student profiles before accepting an appointment request <br />-
+                an app that is user friendly and protects the privacy by only
                 <br />
-                that is user friendly and protects the privacy by allowing only
-                <br />
-                the authenticated users to view personal profiles of other
-                users.
+                allowing the authenticated users to view personal profiles of
+                other users.
               </h1>
             </div>
           </div>
@@ -112,7 +111,6 @@ class Demo extends Component {
                 <br />
                 and with an optional comment <br /> <br />- View Dashboard that
                 displays all appointments with mentor name, ability to send/
-                <br />
                 receive comments with the mentor, and see the appointment status
                 (pending, accepted, rejected)
               </h1>
@@ -143,8 +141,7 @@ class Demo extends Component {
                 <small>About & Demo features:</small>
                 <br /> - Carousel slides that promote the mentor4me app.
                 <br /> - Carousel slides that introduce the app, its
-                functionalities,
-                <br /> and the technologies used.
+                functionalities, and the technologies used.
                 <br />
                 <br />
                 <small>Dev Team Intro feature:</small>
