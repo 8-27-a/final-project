@@ -8,7 +8,7 @@ class Demo extends Component {
         id="carouselExampleControls"
         className="carousel slide"
         data-ride="carousel"
-        data-interval="500000"
+        data-interval="50000"
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -29,15 +29,14 @@ class Demo extends Component {
                 <br />
                 <br />
                 <small>Purpose:</small> &nbsp; &nbsp; &nbsp; To create an app
-                that a user can find
+                that a user can search
                 <br />
                 and make appointments with mentors of their choice <br />
-                based on their profile info and mentors can also view <br />
-                student profiles before accepting an appointment request <br />-
-                an app that is user friendly and protects the privacy by only
+                and mentors can review and update appointment requests;
                 <br />
-                allowing the authenticated users to view personal profiles of
-                other users.
+                an app that is user friendly and protects the privacy by
+                allowing <br />
+                only the authenticated users on pages with private user info.
               </h1>
             </div>
           </div>
@@ -57,7 +56,6 @@ class Demo extends Component {
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Find a mentor
                 <br />
-                <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp;- Mentors List
                 <br />
@@ -67,14 +65,13 @@ class Demo extends Component {
                 &nbsp;- Appointment Booking
                 <br />
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - About
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- About
                 <br />
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Demo
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Demo
                 <br />
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - User
-                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- User
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp;- Dashboard
@@ -94,23 +91,24 @@ class Demo extends Component {
             <div className="carousel-caption-8 py-20">
               <h1 className="caption-8">
                 <small>User Functions:</small>
-                <br />- User can signup, login, select a user role of <br />
-                mentor/student, update profile (includes first & <br />
-                last name, avatar image url, reset password, <br />
-                skillsets , and personal bio)
+                <br />
+                <br />- User can signup, login, select a role of <br />
+                mentor or student, and update personal profile
                 <br />
                 <br />
                 <small>Student Functions:</small>
-                <br />- View mentor list with abbreviated profile and click to
                 <br />
-                view detail profile or search for a mentor by their first or
+                <br />- View the mentors list with abbreviated profile, search
+                by
                 <br />
-                last name
+                first or last name, click to view detail profile
                 <br />
-                <br />- Make appointment with a mentor by selecting date, time,
+                <br />- Make appointment with a mentor by entering date, time,
+                and comment
                 <br />
-                and with an optional comment <br /> <br />- View Dashboard that
-                displays all appointments with mentor name, ability to send/
+                <br />- View Dashboard which displays all appointments with
+                mentor name, ability to send/
+                <br />
                 receive comments with the mentor, and see the appointment status
                 (pending, accepted, rejected)
               </h1>
@@ -126,27 +124,26 @@ class Demo extends Component {
             <div className="carousel-caption-9 py-20">
               <h1 className="caption-9">
                 <small>Mentor Functions:</small>
-                <br />- View mentor list with abbreviated profile and <br />
-                click to view detail profile of mentors
                 <br />
-                <br />- View Dashboard that displays all appointments with
+                <br />- View mentor list with abbreviated profile,
                 <br />
-                student name, link to student’s profile detail, appointment
+                search by first or last name, click to view detail <br />
+                profile
                 <br />
-                status, and ability to accept or reject an appointment, and
+                <br />- View Dashboard which displays all appointments with
                 <br />
-                ability to send/receive comments with the students
+                the student name, link to student’s profile, appointment
+                <br />
+                status, ability to accept or reject an appointment, and to{" "}
+                <br />
+                send/ receive comments with the student
                 <br />
                 <br />
                 <small>About & Demo features:</small>
-                <br /> - Carousel slides that promote the mentor4me app.
+                <br />
+                <br /> - Carousel slides that promote the mentor4me app
                 <br /> - Carousel slides that introduce the app, its
-                functionalities, and the technologies used.
-                <br />
-                <br />
-                <small>Dev Team Intro feature:</small>
-                <br /> - A section in the home page that introduces the
-                developer team members
+                functionalities, and the technologies used
               </h1>
             </div>
           </div>
@@ -161,13 +158,77 @@ class Demo extends Component {
               <h1 className="caption-10">
                 <small>Technologies used:</small>
                 <br />
-                <br />- JavaScript
-                <br />- MERN stack
-                <br />- MySQL <br />- Express
-                <br />- ReactJS
-                <br />- NodeJS
-                <br />- Github for source control
-                <br />- Heroku for cloud deployment
+                <br />- HTML5/CSS3 &nbsp;
+                <span>
+                  <img
+                    className="tech"
+                    src="/images/html.jpeg"
+                    height="50px"
+                    alt=""
+                  />
+                </span>
+                <br />- JavaScript &nbsp;
+                <span>
+                  <img
+                    className="tech"
+                    src="/images/js.png"
+                    height="50px"
+                    alt=""
+                  />
+                </span>
+                <br />- MySQL &nbsp;
+                <span>
+                  <img
+                    className="tech"
+                    src="/images/mssql.jpeg"
+                    height="50px"
+                    alt=""
+                  />
+                </span>
+                <br />- Node, Express &nbsp;
+                <span>
+                  <img
+                    className="tech"
+                    src="/images/node.png"
+                    height="50px"
+                    alt=""
+                  />
+                </span>
+                <span>
+                  <img
+                    className="tech"
+                    src="/images/express.png"
+                    height="50px"
+                    alt=""
+                  />
+                </span>
+                <br />- ReactJS &nbsp;
+                <span>
+                  <img
+                    className="tech"
+                    src="/images/react.png"
+                    height="50px"
+                    alt=""
+                  />
+                </span>
+                <br />- Github &nbsp;
+                <span>
+                  <img
+                    className="tech"
+                    src="/images/git.png"
+                    height="50px"
+                    alt=""
+                  />
+                </span>
+                <br />- Heroku &nbsp;
+                <span>
+                  <img
+                    className="tech"
+                    src="/images/heroku.png"
+                    height="50px"
+                    alt=""
+                  />
+                </span>
                 <br />
               </h1>
             </div>
