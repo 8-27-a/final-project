@@ -71,11 +71,11 @@ class Header extends Component {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link ml-3" to="/mentors">
+              <NavLink className="nav-link ml-2" to="/mentors">
                 Find a mentor
               </NavLink>
             </li>
-            <li className="nav-item ml-3">
+            <li className="nav-item ml-2">
               <NavLink className="nav-link" to="/about">
                 About
               </NavLink>
@@ -83,7 +83,7 @@ class Header extends Component {
             {localStorage.getItem("JWT") ? (
               <React.Fragment>
                 <li className="nav-item ">
-                  <NavLink className="nav-link ml-3" to="/demo">
+                  <NavLink className="nav-link ml-2" to="/demo">
                     Demo
                   </NavLink>
                 </li>
@@ -100,7 +100,7 @@ class Header extends Component {
                   >
                     <img
                       height="35"
-                      className="rounded-circle ml-3"
+                      className="rounded-circle ml-2"
                       src={
                         this.state.avatarUrl
                           ? this.state.avatarUrl
@@ -120,7 +120,7 @@ class Header extends Component {
                     <div className="dropdown-divider" />
                     <NavLink
                       to="/"
-                      className="btn btn-outline-info ml-3"
+                      className="btn btn-outline-info ml-2"
                       onClick={() => this.logOut()}
                     >
                       Log Out
@@ -133,13 +133,13 @@ class Header extends Component {
                 <li className="nav-item">
                   <NavLink
                     to="/login"
-                    className="btn btn-outline-light mt-1 ml-3"
+                    className="btn btn-outline-light mt-1 ml-2"
                   >
                     Login
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/register" className="btn btn-info mt-1 ml-3">
+                  <NavLink to="/register" className="btn btn-info mt-1 ml-2">
                     Sign Up
                   </NavLink>
                 </li>
