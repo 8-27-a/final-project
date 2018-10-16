@@ -21,7 +21,13 @@ class About extends Component {
               <h1 className="caption-1">
                 It's a new week and there's always room to build a project that
                 never existed before...
-                <br /> Find a Mentor4me!
+                <br /> Find a &nbsp;
+                <span style={{ color: "#159899" }}>
+                  Mentor
+                  <span style={{ color: "#f7ce46" }}>4</span>
+                  me
+                </span>
+                &nbsp;!
               </h1>
             </div>
           </div>
@@ -35,8 +41,13 @@ class About extends Component {
             <div className="carousel-caption-2 py-20">
               <h1 className="caption-2">
                 Stuck on your code and a coffee isn't cutting it...?
-                <br />
-                Find a Mentor4me!
+                <br /> Find a &nbsp;
+                <span style={{ color: "#159899" }}>
+                  Mentor
+                  <span style={{ color: "#f7ce46" }}>4</span>
+                  me
+                </span>
+                &nbsp;!
               </h1>
             </div>
           </div>
@@ -51,7 +62,13 @@ class About extends Component {
               <h1 className="caption-3">
                 When you can't find the error and hours have gone by. Maybe it's
                 time to get some assistance...
-                <br /> Find a Mentor4me!
+                <br /> Find a &nbsp;
+                <span style={{ color: "#159899" }}>
+                  Mentor
+                  <span style={{ color: "#f7ce46" }}>4</span>
+                  me
+                </span>
+                &nbsp;!
               </h1>
             </div>
           </div>
@@ -67,11 +84,13 @@ class About extends Component {
                 Getting started as a coder and need some help? <br />
                 Find top notch tutors to get your career started in the tech
                 space...
-                {/* You need the right tools to bring clarity to your project. We
-                are here to connect you with mentors who will conquer it with
-                you... */}
-                <br />
-                Find a Mentor4me!
+                <br /> Find a &nbsp;
+                <span style={{ color: "#159899" }}>
+                  Mentor
+                  <span style={{ color: "#f7ce46" }}>4</span>
+                  me
+                </span>
+                &nbsp;!
               </h1>
             </div>
           </div>
@@ -85,8 +104,13 @@ class About extends Component {
             <div className="carousel-caption-5 py-20">
               <h1 className="caption-5">
                 Having trouble with your code? Keep calm and...
-                <br />
-                Find a Mentor4me!
+                <br /> Find a &nbsp;
+                <span style={{ color: "#159899" }}>
+                  Mentor
+                  <span style={{ color: "#f7ce46" }}>4</span>
+                  me
+                </span>
+                &nbsp;!
               </h1>
             </div>
           </div>
