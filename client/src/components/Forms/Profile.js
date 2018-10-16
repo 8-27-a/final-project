@@ -111,7 +111,7 @@ const Profile = props => {
           name="bio"
           className="form-control"
           placeholder="my bio..."
-          maxLetter={1000}
+          maxLetters={500}
           value={props.bio}
           onChange={props.onChange}
           required

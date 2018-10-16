@@ -71,19 +71,19 @@ class Header extends Component {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/mentors">
+              <NavLink className="nav-link ml-3" to="/mentors">
                 Find a mentor
               </NavLink>
             </li>
-            <li className="nav-item mr-2">
+            <li className="nav-item ml-3">
               <NavLink className="nav-link" to="/about">
                 About
               </NavLink>
             </li>
             {localStorage.getItem("JWT") ? (
               <React.Fragment>
-                <li className="nav-item mr-3">
-                  <NavLink className="nav-link" to="/demo">
+                <li className="nav-item ">
+                  <NavLink className="nav-link ml-3" to="/demo">
                     Demo
                   </NavLink>
                 </li>
@@ -100,7 +100,7 @@ class Header extends Component {
                   >
                     <img
                       height="35"
-                      className="rounded-circle"
+                      className="rounded-circle ml-3"
                       src={
                         this.state.avatarUrl
                           ? this.state.avatarUrl
@@ -133,13 +133,13 @@ class Header extends Component {
                 <li className="nav-item">
                   <NavLink
                     to="/login"
-                    className="btn btn-outline-light mt-1 mr-3"
+                    className="btn btn-outline-light mt-1 ml-3"
                   >
                     Login
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/register" className="btn btn-info mt-1 mr-3">
+                  <NavLink to="/register" className="btn btn-info mt-1 ml-3">
                     Sign Up
                   </NavLink>
                 </li>
