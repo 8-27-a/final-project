@@ -248,7 +248,7 @@ class Dashboard extends Component {
                     {this.state.role === "mentor" && (
                       <td>
                         <button
-                          className="btn btn-outline-success mr-2"
+                          className="btn btn-outline-info ml-1"
                           onClick={() =>
                             this.handleStatus(appt.apptId, "accepted")
                           }
@@ -256,7 +256,7 @@ class Dashboard extends Component {
                           <i className="far fa-check-circle" />
                         </button>
                         <button
-                          className="btn btn-danger"
+                          className="btn btn-danger ml-1"
                           onClick={() =>
                             this.handleStatus(appt.apptId, "rejected")
                           }

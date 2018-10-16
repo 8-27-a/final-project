@@ -33,7 +33,7 @@ class Home extends Component {
           </div>
         </section>
         {/* ======= Dev Team Intro ===== */}
-        <section className="about-us text-center">
+        <section className="about-us text-center mt-4">
           <div className="container">
             <h2
               className="bg-light devteam text-left m-0 p-1 ml-2 mr-2"
@@ -52,18 +52,18 @@ class Home extends Component {
                   <div className="card-body home m-3">
                     <h2 className="card-title-home m-2">Leen Kim</h2>
                     <p className="card-text-home">
-                      I was born in S. Korea and have been living in OC, CA
-                      since I was 14. I have my educational background in
-                      Mechanical Engineering from USC and have worked in the
-                      automotive industry for 10+ yrs mainly as a systems
-                      analyst working on software development and running adhoc
-                      queries for the users. I put my career on a pause to raise
-                      my 3 sons who are now adults and am looking to pick up
-                      where I left off with an upgrade in programming languages
-                      and technology. Becoming a FullStack developer has turned
-                      out to be better than I have ever expected! I'm passionate
-                      about Jesus, golf, cooking, and now I'm also passionate
-                      about coding!
+                      <br /> ✝️ 🏌🏻‍♀️ ⛳️ 👩🏻‍🍳 👩🏻‍💻 <br />I was born in S. Korea and
+                      have been living in OC, CA since I was 14. I have my
+                      educational background in Mechanical Engineering from USC
+                      and have worked in the automotive industry for 10+ yrs
+                      mainly as a systems analyst working on software
+                      development and running adhoc queries for the users. I put
+                      my career on a pause to raise my 3 sons who are now adults
+                      and am looking to pick up where I left off with an upgrade
+                      in programming languages and technology. Becoming a
+                      FullStack developer has turned out to be better than I
+                      have ever expected! I'm passionate about Jesus, golf,
+                      cooking, and now I'm also passionate about coding!
                     </p>
                     <div className="social-media text-">
                       <a
@@ -111,6 +111,8 @@ class Home extends Component {
                   <div className="card-body home m-3">
                     <h2 className="card-title-home m-2">Cody Jacobs</h2>
                     <p className="card-text-home">
+                      <br /> 🏒 🥅 🎼 🎶 🎧
+                      <br />
                       My name is Cody Jacobs and I grew up and currently reside
                       in Akwesasne, NY. Before getting into coding I was mostly
                       involved in Music Production-Audio Engineering. After
@@ -163,8 +165,10 @@ class Home extends Component {
                   <div className="card-body home m-3">
                     <h2 className="card-title-home m-2">Dane Shambrook</h2>
                     <p className="card-text-home">
-                      I was born and raised in Orange County, CA. I have been
-                      working in the service industry for the past 10 years
+                      <br />
+                      💑 🗺 ✈️ 🚌 💒
+                      <br />I was born and raised in Orange County, CA. I have
+                      been working in the service industry for the past 10 years
                       since I was 17. I have traveled extensively and was living
                       with my wife in Uganda when I came back to the USA to
                       start a career that would allow me to travel and still
