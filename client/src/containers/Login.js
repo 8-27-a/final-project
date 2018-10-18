@@ -53,7 +53,7 @@ class Login extends Component {
 
   componentWillMount = () => {
     if (localStorage.getItem("JWT")) {
-      this.props.history.push("/").then(this.refreshPage());
+      this.props.history.push("/");
     }
   };
 
