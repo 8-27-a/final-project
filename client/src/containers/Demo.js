@@ -34,13 +34,13 @@ class Demo extends Component {
                 <br />
                 <br />
                 <small style={{ color: "red" }}>Purpose:</small> &nbsp; &nbsp;
-                &nbsp; To create an app that a user can search
+                &nbsp; To create an app that a user can look for
                 <br />
                 and make appointments with mentors of their choice <br />
                 and mentors can review and update appointment requests;
                 <br />
-                an app that is user friendly and protects the privacy by
-                allowing <br />
+                an app that is easy to use and protects the privacy by allowing
+                <br />
                 only the authenticated users on pages with private user info.
               </h1>
             </div>
@@ -56,33 +56,42 @@ class Demo extends Component {
               <h1 className="caption-7">
                 <small style={{ color: "red" }}>Site map:</small>
                 <br />
-                <br />- Home
+                <br /> Home
                 <br />
                 <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Find a mentor
+                &nbsp; &nbsp; &nbsp;- Find a mentor
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Mentors
+                List
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Mentor
+                Profile <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-
+                Appointment Booking
+                <br />
+                <br />
+                &nbsp; &nbsp; &nbsp;- About
+                <br />
+                <br />
+                &nbsp; &nbsp; &nbsp;- Demo
+                <br />
+                <br />
+                &nbsp; &nbsp; &nbsp;- User
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Mentor
+                Dashboard
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp;- Mentors List
+                &nbsp; &nbsp;- Student Profile
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Student
+                Dashboard
+                <br />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Profile
+                Setting
                 <br />
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp;- Mentor Profile <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp;- Appointment Booking
-                <br />
-                <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- About
-                <br />
-                <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Demo
-                <br />
-                <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- User
-                <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp;- Dashboard
-                <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp;- Profile Setting
+                &nbsp; &nbsp; - User Profile
               </h1>
             </div>
           </div>

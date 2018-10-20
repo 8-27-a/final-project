@@ -66,7 +66,7 @@ class Header extends Component {
         <div className="collapse navbar-collapse" id="navbarsExample07">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/">
+              <NavLink exact className="nav-link ml-2" to="/">
                 Home <span className="sr-only">(current)</span>
               </NavLink>
             </li>
@@ -120,7 +120,7 @@ class Header extends Component {
                     <div className="dropdown-divider" />
                     <NavLink
                       to="/"
-                      className="btn btn-outline-info ml-2"
+                      className="btn btn-outline-info ml-4"
                       onClick={() => this.logOut()}
                     >
                       Log Out

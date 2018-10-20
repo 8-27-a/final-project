@@ -13,7 +13,11 @@ class Home extends Component {
         <section className="homepage mt-15">
           <div className="home-image">
             <div className="home-text">
-              <h1 className="title">FIND A MENTOR-4-ME</h1>
+              <h1 className="title">
+                FIND A Mentor
+                <span style={{ color: "#f7ce46" }}>4</span>
+                me
+              </h1>
               <h2 className="subtitle">
                 {/* We are so glad that you are here! The first step for you is to
                 look for a mentor. */}
@@ -124,7 +128,7 @@ class Home extends Component {
                       developer. I love the versatility that come with coding.
                       You have to be able to adapt to challenges quickly and
                       efficiently and coding really gives you an incredible
-                      platform to display creativity. Besides coding, I'm a
+                      platform to display creativity. Besides coding, I'm an
                       ice-hockey player and currenty playing in the Akwesasne
                       league.
                     </p>
@@ -167,7 +171,7 @@ class Home extends Component {
                     <h2 className="card-title-home m-2">Dane Shambrook</h2>
                     <p className="card-text-home">
                       <br />
-                      💑 🗺 ✈️ 🚌 💒
+                      💑 🗺 ✈️ 🚌 ⛪️
                       <br />I was born and raised in Orange County, CA. I have
                       been working in the service industry for the past 10 years
                       since I was 17. I have traveled extensively and was living
@@ -179,7 +183,7 @@ class Home extends Component {
                       There are many problems that are waiting for us to use
                       technology to find the solution to in this world and
                       that's why I love learning how to code. Currently, my wife
-                      and I serve at the youth ministry at a church where my
+                      and I serve in the youth ministry at the church which my
                       father pastors.
                     </p>
                     <div className="social-media text-center">
