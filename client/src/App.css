@@ -54,7 +54,7 @@ body {
   outline: none;
 }
 
-.navbar-dark .navbar-toggler-icon {
+.navbar-dark .navbar-toggler .navbar-toggler-icon {
   background-image: none;
   background-color: #fff;
   height: 2px;
@@ -86,11 +86,11 @@ body {
   color: white;
 }
 
-.navbar-dark .navbar-toggler.show .navbar-toggler-icon::before {
+btn.navbar-dark .navbar-toggler.collapse .navbar-toggler-icon::before {
   transform: rotate(-45deg) translate(-10px, 5px);
 }
 
-.navbar-dark .navbar-toggler.show .navbar-toggler-icon::after {
+btn.navbar-dark .nav≈bar-toggler.collapse .navbar-toggler-icon::after {
   transform: rotate(45deg) translate(-10px, -5px);
 }
 
