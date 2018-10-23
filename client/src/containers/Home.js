@@ -60,15 +60,15 @@ class Home extends Component {
                       have been living in OC, CA since I was 14. I have my
                       educational background in Mechanical Engineering from USC
                       and have worked in the automotive industry for 10+ yrs
-                      mainly as a business systems analyst working on software
-                      development and running adhoc queries for the users. I put
-                      my career on pause to raise my 3 sons who are now in their
-                      twenties and am looking to pick up where I left off with
-                      an upgrade with programming languages and new
-                      technologies. Becoming a FullStack developer has turned
-                      out to be better than I have ever expected! I'm passionate
-                      about Jesus, golf, cooking, and now I'm also passionate
-                      about coding!
+                      mainly as a business systems analyst and worked with all
+                      phases of system develop-ment lifecycle. I put my career
+                      on pause to raise our 3 sons who are now in their twenties
+                      and am looking to pick up where I left off with an upgrade
+                      in programming languages and new technologies. I'm glad I
+                      chose FullStack web development because I can now create
+                      and deploy an entire solution, frontend and backend! I'm
+                      passionate about Jesus, golf, cooking, and now I'm also
+                      passionate about coding!
                     </p>
                     <div className="social-media text-">
                       <a
@@ -131,6 +131,8 @@ class Home extends Component {
                       platform to display creativity. Besides coding, I'm an
                       ice-hockey player and currenty playing in the Akwesasne
                       league.
+                      <br />
+                      <br />
                     </p>
                     <div className="social-media text-center">
                       <a
@@ -185,6 +187,8 @@ class Home extends Component {
                       that's why I love learning how to code. Currently, my wife
                       and I serve in the youth ministry at the church which my
                       father pastors.
+                      <br />
+                      <br />
                     </p>
                     <div className="social-media text-center">
                       <a href="mailto:daxisda1@gmail.com" className="card-link">
