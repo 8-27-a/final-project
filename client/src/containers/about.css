@@ -115,7 +115,7 @@
   position: absolute;
   bottom: 20px;
   text-align: left;
-  color: 455354;
+  color: #455354;
   left: 13%;
   right: 15%;
   z-index: 10;
@@ -128,7 +128,7 @@
   position: absolute;
   bottom: 20px;
   text-align: left;
-  color: 455354;
+  color: #455354;
   left: 30%;
   right: 20%;
   z-index: 10;
@@ -159,7 +159,7 @@
     left: 25%;
     right: 20%;
     z-index: 10;
-    margin-bottom: 17%;
+    margin-bottom: 20%;
   }
 
   .caption-8 {
@@ -181,7 +181,7 @@
     position: absolute;
     bottom: 20px;
     text-align: left;
-    color: 455354;
+    color: #455354;
     left: 17%;
     right: 15%;
     z-index: 10;
@@ -194,11 +194,11 @@
     position: absolute;
     bottom: 20px;
     text-align: left;
-    color: 455354;
+    color: #455354;
     left: 30%;
     right: 20%;
     z-index: 10;
-    margin-bottom: 27%;
+    margin-bottom: 5%;
   }
 }
 
@@ -267,7 +267,7 @@
   .carousel-caption-8 .caption-8,
   .carousel-caption-9 .caption-9,
   .carousel-caption-10 .caption-10 {
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 5%;
   }
 }

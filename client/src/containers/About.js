@@ -8,7 +8,7 @@ class About extends Component {
         id="carouselExampleControls"
         className="carousel slide"
         data-ride="carousel"
-        data-interval="8000"
+        data-interval="6000"
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
